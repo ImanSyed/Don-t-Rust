@@ -112,7 +112,10 @@ public class EnemyScript : MonoBehaviour {
         anim.SetBool("Running", false);
         yield return new WaitForSeconds(Random.Range(1, 5));
         waypoint = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
-        anim.SetBool("Running", true);
+        if (!alert)
+        {
+            anim.SetBool("Running", true);
+        }
         rest = false;
     }
 
