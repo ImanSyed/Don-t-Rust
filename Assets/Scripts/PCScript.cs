@@ -21,6 +21,8 @@ public class PCScript : MonoBehaviour {
 
     Collider2D col;
 
+    Vector3 pos;
+
 
     private void Start()
     {
@@ -78,7 +80,7 @@ public class PCScript : MonoBehaviour {
 
         if ((Vector2)craftUI.transform.localPosition == craftUI.start)
         {
-            Vector3 pos = transform.position;
+            pos = transform.position;
             float speed = originalSpeed;
             switch (legType)
             {
@@ -215,6 +217,14 @@ public class PCScript : MonoBehaviour {
                 attackDelay = 1f;
                 break;
             default:
+                GetComponent<Animator>().Play("Attack1", 0);
+                foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+                {
+                    if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                    {
+                        child.GetComponent<Animator>().Play("Attack1", 0);
+                    }
+                }
                 damage = originalDamage;
                 break;
         }
@@ -230,7 +240,6 @@ public class PCScript : MonoBehaviour {
             point.x -= 0.5f;
         }
         col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Enemies"));
-        Debug.DrawLine(transform.position, point, Color.red, 2);
         if (col)
         {
             StartCoroutine(col.GetComponent<EnemyScript>().ReceiveDamage(damage, stunDuration));
@@ -265,6 +274,13 @@ public class PCScript : MonoBehaviour {
                 break;
         }
         collecting = false;
-        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Interactables")
+        {
+            pos = transform.position;
+        }
     }
 }

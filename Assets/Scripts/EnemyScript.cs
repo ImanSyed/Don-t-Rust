@@ -153,7 +153,7 @@ public class EnemyScript : MonoBehaviour {
         {
             anim.SetBool("Running", true);
         }
-        if (Vector2.Distance(transform.position, pc.transform.position) < 0.75f && !attacking)
+        if (Vector2.Distance(transform.position, pc.transform.position) < 0.6f && !attacking)
         {
             StartCoroutine(PerformAttack());
         }
@@ -174,7 +174,6 @@ public class EnemyScript : MonoBehaviour {
     IEnumerator PerformAttack()
     {
         anim.SetBool("Running", false);
-        anim.Play("Attack", 0);
         attacking = true;
         float attackDelay = 0;
         if(enemyType == Enemy.green)
@@ -189,24 +188,17 @@ public class EnemyScript : MonoBehaviour {
         {
             attackDelay = 0.75f;
         }
+        Vector2 point = pc.transform.position;
+        point.y += 0.2f;
+        Vector2 peepee = transform.position;
+        peepee.y += 0.3f;
         yield return new WaitForSeconds(0.25f);
         if (!stunned)
         {
-            Vector2 point = transform.position;
-            if (GetComponent<SpriteRenderer>().flipX)
-            {
-                point.x -= 0.5f;
-            }
-            else
-            {
-                point.x += 0.5f;
-            }
-
             Collider2D col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Player"));
-            Debug.DrawLine(transform.position, point, Color.yellow, attackDelay);
+            Debug.DrawLine(peepee, point, Color.yellow, attackDelay);
         }
         yield return new WaitForSeconds(attackDelay);
-        Debug.Log(1);
         attacking = false;
 
     }
