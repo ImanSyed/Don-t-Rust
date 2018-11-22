@@ -137,11 +137,11 @@ public class Crafting : MonoBehaviour {
     {
         if((Vector2)transform.localPosition == destination)
         {
-            moveDirection = -1;
-            childIcons[counter2].GetComponent<IconScript>().Check();
+            moveDirection = -1;            
         }
         else if((Vector2)transform.localPosition == start)
         {
+            childIcons[counter2].GetComponent<IconScript>().Check();
             moveDirection = 1;
         }
     }

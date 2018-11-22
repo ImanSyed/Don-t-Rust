@@ -37,7 +37,6 @@ public class IconScript: MonoBehaviour{
         }
     }
 
-
     IEnumerator Craft()
     {
         available = false;
