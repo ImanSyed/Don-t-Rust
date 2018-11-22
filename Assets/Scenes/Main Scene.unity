@@ -264,7 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &55912247
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &313912509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3070,7 +3070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originalSpeed: 0.05
-  resources: 
+  resources: 00000000000000000000000000000000
   hasSpace: 1
   inventory: []
 --- !u!61 &481561870
@@ -3720,7 +3720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &820447881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,7 +3810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &883902964
 GameObject:
   m_ObjectHideFlags: 0
@@ -3976,7 +3976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &990465092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4066,7 +4066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &1022581551
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,7 +4255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &1188130425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,7 +4345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &1323997032
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,7 +4435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &1327772606
 GameObject:
   m_ObjectHideFlags: 0
@@ -4525,7 +4525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &1333306900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,7 +5081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 
+  requirements: 01000000000000000000000000000000
 --- !u!1 &1774127274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,4 +5481,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: Red Arms
   available: 0
-  requirements: 01000000
+  requirements: 01000000000000000000000000000000
