@@ -7,4 +7,8 @@ AnimatorOverrideController:
   m_PrefabInternal: {fileID: 0}
   m_Name: PC_Legs
   m_Controller: {fileID: 9100000, guid: ce128875c4bd68f48a3d297c33b8184f, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: a33e37de62e5f554699c0b80c80e095d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a4777dce43850f6418cea72416c5d05a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cc03b1f70f4408d408f911df6f500700, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 21b56767f432595499dc5ba0cf9f3a69, type: 2}

@@ -16,6 +16,7 @@ public class ObjectScript : MonoBehaviour {
     private void Start()
     {
         pc = FindObjectOfType<PCScript>();
+        GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 32);
     }
 
     public void Interact()

@@ -104,19 +104,47 @@ public class PCScript : MonoBehaviour {
                 if (!GetComponent<Animator>().GetBool("Running"))
                 {
                     GetComponent<Animator>().SetBool("Running", true);
+                    foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+                    {
+                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                        {
+                            child.GetComponent<Animator>().SetBool("Running", true);
+                        }
+                    }
                 }
                 if (pos.x < transform.position.x)
                 {
                     GetComponent<SpriteRenderer>().flipX = false;
+                    foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+                    {
+                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                        {
+                            child.flipX = false;
+                        }
+                    }
                 }
                 else
                 {
                     GetComponent<SpriteRenderer>().flipX = true;
+                    foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+                    {
+                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                        {
+                            child.flipX = true;
+                        }
+                    }
                 }
             }
             else if (GetComponent<Animator>().GetBool("Running"))
             {
                 GetComponent<Animator>().SetBool("Running", false);
+                foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+                {
+                    if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                    {
+                        child.GetComponent<Animator>().SetBool("Running", false);
+                    }
+                }
             }
             transform.position = pos;
             GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 32);
@@ -140,6 +168,13 @@ public class PCScript : MonoBehaviour {
 
     void ToggleCrafting() {
         GetComponent<Animator>().SetBool("Running", false);
+        foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+            {
+                child.GetComponent<Animator>().SetBool("Running", false);
+            }
+        }
         craftUI.Toggle();
     }
 
@@ -151,6 +186,13 @@ public class PCScript : MonoBehaviour {
     public IEnumerator AddToInventory(string item, int amount)
     {
         GetComponent<Animator>().SetBool("Running", false);
+        foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+            {
+                child.GetComponent<Animator>().SetBool("Running", false);
+            }
+        }
         yield return new WaitForSeconds(1.25f);
         switch(item)
         {
