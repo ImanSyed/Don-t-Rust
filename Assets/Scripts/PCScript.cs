@@ -117,18 +117,18 @@ public class PCScript : MonoBehaviour {
                     GetComponent<SpriteRenderer>().flipX = false;
                     foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
                     {
-                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs" || child.gameObject.name == "Shadow")
                         {
                             child.flipX = false;
                         }
                     }
                 }
-                else
+                else if(pos.x > transform.position.x)
                 {
                     GetComponent<SpriteRenderer>().flipX = true;
                     foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
                     {
-                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs" || child.gameObject.name == "Shadow")
                         {
                             child.flipX = true;
                         }
@@ -137,12 +137,15 @@ public class PCScript : MonoBehaviour {
             }
             else if (GetComponent<Animator>().GetBool("Running"))
             {
-                GetComponent<Animator>().SetBool("Running", false);
-                foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+                if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow))
                 {
-                    if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                    GetComponent<Animator>().SetBool("Running", false);
+                    foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
                     {
-                        child.GetComponent<Animator>().SetBool("Running", false);
+                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                        {
+                            child.GetComponent<Animator>().SetBool("Running", false);
+                        }
                     }
                 }
             }
@@ -161,6 +164,10 @@ public class PCScript : MonoBehaviour {
                 else if (child.gameObject.name == "Legs")
                 {
                     child.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 3;
+                }
+                else if (child.gameObject.name == "Shadow")
+                {
+                    child.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 4;
                 }
             }
         }
