@@ -444,6 +444,7 @@ GameObject:
   - component: {fileID: 262091275}
   - component: {fileID: 262091276}
   - component: {fileID: 262091277}
+  - component: {fileID: 262091278}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -539,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d569c916ecf8db4691d9e65f51b1249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: 1
+  enemyType: 0
   trigger: {fileID: 262091276}
 --- !u!58 &262091276
 CircleCollider2D:
@@ -555,7 +556,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1.5
 --- !u!61 &262091277
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -581,6 +582,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34199476, y: 0.35564828}
   m_EdgeRadius: 0
+--- !u!50 &262091278
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 262091271}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &313912509
 GameObject:
   m_ObjectHideFlags: 0

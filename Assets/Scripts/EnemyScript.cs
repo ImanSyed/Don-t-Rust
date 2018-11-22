@@ -11,9 +11,9 @@ public class EnemyScript : MonoBehaviour {
 
     public Enemy enemyType;
 
-    bool aggro, rest;
+    bool aggro, rest, alert;
 
-    float speed, health, damage;
+    float originalSpeed, health, damage, currentSpeed;
 
     PCScript pc;
     Animator anim;
@@ -27,37 +27,47 @@ public class EnemyScript : MonoBehaviour {
         pc = FindObjectOfType<PCScript>();
         if(enemyType == Enemy.green)
         {
-            speed = 0.05f;
+            originalSpeed = 0.025f;
             health = 50;
         }
         else if(enemyType == Enemy.red)
         {
-            speed = 0.06f;
+            originalSpeed = 0.035f;
             health = 30;
 
         }
         else if(enemyType == Enemy.yellow)
         {
-            speed = 0.04f;
+            originalSpeed = 0.01f;
             health = 60;
 
         }
+        currentSpeed = originalSpeed;
     }
 
 	void Update () {
+        GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 32);
         if (!aggro)
         {
             Wander();
+            if (currentSpeed != originalSpeed)
+            {
+                currentSpeed -= 0.025f;
+            }
         }
         else
         {
             Chase();
+            if(currentSpeed == originalSpeed)
+            {
+                currentSpeed += 0.025f;
+            }
         }
 	}
 
     void Wander()
     {
-        if (!rest) {
+        if (!rest && !alert) {
             if ((Vector2)transform.position == waypoint)
             {
                 waypoint = Vector2.zero;
@@ -79,9 +89,21 @@ public class EnemyScript : MonoBehaviour {
                 GetComponent<SpriteRenderer>().flipX = true;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, waypoint, speed);
+            transform.position = Vector2.MoveTowards(transform.position, waypoint, originalSpeed);
             
-            GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 32);
+            
+        }
+
+        if (alert)
+        {
+            if (pc.transform.position.x > transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (pc.transform.position.x < transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
     }
     IEnumerator Rest()
@@ -104,6 +126,7 @@ public class EnemyScript : MonoBehaviour {
         else if(!aggro)
         {
             aggro = true;
+            trigger.radius = 2.5f;
         }
     }
 
@@ -115,7 +138,19 @@ public class EnemyScript : MonoBehaviour {
 
     void Chase()
     {
-        transform.position = Vector2.MoveTowards(transform.position, pc.transform.position, speed);
+        if(!anim.GetBool("Running"))
+        {
+            anim.SetBool("Running", true);
+        }
+        if (pc.transform.position.x > transform.position.x)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if (pc.transform.position.x < transform.position.x)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        transform.position = Vector2.MoveTowards(transform.position, pc.transform.position, currentSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -125,8 +160,14 @@ public class EnemyScript : MonoBehaviour {
             if (collision.tag == "Player")
             {
                 aggro = true;
-                trigger.radius = 3.5f;
+                trigger.radius = 2.5f;
             }
+        }
+        else
+        {
+            alert = true;
+            waypoint = Vector2.zero;
+            anim.SetBool("Running", false);
         }
     }
 
@@ -137,8 +178,12 @@ public class EnemyScript : MonoBehaviour {
             if (collision.tag == "Player")
             {
                 aggro = false;
-                trigger.radius = 2f;
+                trigger.radius = 1.5f;
             }
+        }
+        else
+        {
+            alert = false;
         }
     }
 }
