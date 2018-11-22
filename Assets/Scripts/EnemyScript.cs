@@ -163,7 +163,7 @@ public class EnemyScript : MonoBehaviour {
             if (collision.tag == "Player")
             {
                 aggro = true;
-                trigger.radius = 2.5f;
+                trigger.radius = 3f;
             }
         }
         else

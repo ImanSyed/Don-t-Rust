@@ -3168,6 +3168,7 @@ MonoBehaviour:
   resources: 00000000000000000000000000000000
   hasSpace: 1
   inventory: []
+  attackTrigger: {fileID: 0}
 --- !u!61 &481561870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4407,6 +4408,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4690357036810434, guid: b34663773aed5704eb0663057871c918, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50438442018150202, guid: b34663773aed5704eb0663057871c918,
+        type: 2}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114041034686952134, guid: b34663773aed5704eb0663057871c918,
+        type: 2}
+      propertyPath: enemyType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

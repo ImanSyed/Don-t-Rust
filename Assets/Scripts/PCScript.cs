@@ -13,13 +13,15 @@ public class PCScript : MonoBehaviour {
 
     public GameObject[] inventory;
 
-    float energy = 750;
+    float energy = 750, originalDamage = 10;
 
-    bool collecting;
+    bool collecting, attacking;
 
     short armType, torsoType, legType;
 
-    Collider2D obj;
+    Collider2D col;
+
+    [SerializeField] Collider2D attackTrigger;
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class PCScript : MonoBehaviour {
 
     void Update()
     {
-        if (!collecting)
+        if (!collecting && !attacking)
         {
             Move();
             Inputs();
@@ -48,17 +50,17 @@ public class PCScript : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 
-                obj = Physics2D.OverlapCircle(transform.position, 1, 1 << LayerMask.NameToLayer("Interactable"));
-                if (obj && obj.GetComponent<ObjectScript>())
+                col = Physics2D.OverlapCircle(transform.position, 1, 1 << LayerMask.NameToLayer("Interactables"));
+                if (col && col.GetComponent<ObjectScript>())
                 {
                     collecting = true;
-                    obj.GetComponent<ObjectScript>().Interact();
+                    col.GetComponent<ObjectScript>().Interact();
 
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.F) && !attacking)
             {
-
+                StartCoroutine(Attack());
             }
 
         }
@@ -99,6 +101,12 @@ public class PCScript : MonoBehaviour {
             }
             pos.x += Input.GetAxis("Horizontal") * speed;
             pos.y += Input.GetAxis("Vertical") * speed;
+            if(pos.x != transform.position.x && pos.y != transform.position.y)
+            {
+                pos = transform.position;
+                pos.x += Input.GetAxis("Horizontal") * speed * 0.75f;
+                pos.y += Input.GetAxis("Vertical") * speed * 0.75f;
+            }
             if (pos.x != transform.position.x || pos.y != transform.position.y)
             {
                 if (!GetComponent<Animator>().GetBool("Running"))
@@ -190,6 +198,45 @@ public class PCScript : MonoBehaviour {
 
     }
 
+    IEnumerator Attack()
+    {
+        attacking = true;
+        float damage = originalDamage;
+        float delay = 0.5f;
+        switch (armType)
+        {
+            case 1:
+                damage += -5;
+                delay = 0.2f;
+                break;
+            case 2:
+                damage += 15;
+                delay = 1f;
+                break;
+            default:
+                damage = originalSpeed;
+                break;
+        }
+        yield return new WaitForSeconds(delay);
+        Vector2 point = transform.position;
+        if (GetComponent<SpriteRenderer>().flipX)
+        {
+            point.x -= 1;
+        }
+        else
+        {
+            point.x += 1;
+        }
+        col = Physics2D.OverlapBox(point, Vector2.one, 1 << LayerMask.NameToLayer("Enemies"));
+        if (col && col.GetComponent<EnemyScript>())
+        {
+            col.GetComponent<EnemyScript>().ReceiveDamage(originalDamage);
+            Debug.Log(1);
+        }
+        attacking = false;
+
+    }
+
     public IEnumerator AddToInventory(string item, int amount)
     {
         GetComponent<Animator>().SetBool("Running", false);
@@ -205,8 +252,8 @@ public class PCScript : MonoBehaviour {
         {
             case "Gears":
                 resources[0] += amount;
-                Destroy(obj.gameObject);
-                obj = null;
+                Destroy(col.gameObject);
+                col = null;
                 break;
             case "Red Arms":
                 break;
