@@ -65,6 +65,8 @@ public class Crafting : MonoBehaviour {
             {
                 activeTray = parentIcons[counter1].transform.GetChild(0).gameObject;
                 activeTray.GetComponent<Animator>().Play("Back", 0);
+                childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.white;
+                childIcons[counter2].GetComponent<IconScript>().available = false;
                 counter1++;
                 if (counter1 > parentIcons.Length - 1)
                 {
@@ -83,6 +85,8 @@ public class Crafting : MonoBehaviour {
             {
                 activeTray = parentIcons[counter1].transform.GetChild(0).gameObject;
                 activeTray.GetComponent<Animator>().Play("Back", 0);
+                childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.white;
+                childIcons[counter2].GetComponent<IconScript>().available = false;
                 counter1--;
                 if (counter1 < 0)
                 {
@@ -137,7 +141,10 @@ public class Crafting : MonoBehaviour {
     {
         if((Vector2)transform.localPosition == destination)
         {
-            moveDirection = -1;            
+            moveDirection = -1;  
+            childIcons[counter2].GetComponent<IconScript>().available = false;
+            childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.white;
+
         }
         else if((Vector2)transform.localPosition == start)
         {
