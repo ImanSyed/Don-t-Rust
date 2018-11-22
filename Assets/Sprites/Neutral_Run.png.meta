@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b5a33032cbc0a74c8f819beb9b28fdc
+guid: 6940c120392b1b74890b6fe0ecbe9313
 TextureImporter:
   fileIDToRecycleName:
     21300000: Neutral_Idle_0
@@ -21,11 +21,30 @@ TextureImporter:
     21300032: Neutral_Idle_16
     21300034: Neutral_Idle_17
     21300036: Neutral_Idle_18
-    21300038: Neutral_Idle_19
-    21300040: Neutral_Idle_20
-    21300042: Neutral_Idle_21
-    21300044: Neutral_Idle_22
-    21300046: Neutral_Idle_23
+    21300038: Neutral_Run_0
+    21300040: Neutral_Run_1
+    21300042: Neutral_Run_2
+    21300044: Neutral_Run_3
+    21300046: Neutral_Run_4
+    21300048: Neutral_Run_5
+    21300050: Neutral_Run_6
+    21300052: Neutral_Run_7
+    21300054: Neutral_Run_8
+    21300056: Neutral_Run_9
+    21300058: Neutral_Run_10
+    21300060: Neutral_Run_11
+    21300062: Neutral_Run_12
+    21300064: Neutral_Run_13
+    21300066: Neutral_Run_14
+    21300068: Neutral_Run_15
+    21300070: Neutral_Run_16
+    21300072: Neutral_Run_17
+    21300074: Neutral_Run_18
+    21300076: Neutral_Run_19
+    21300078: Neutral_Run_20
+    21300080: Neutral_Run_21
+    21300082: Neutral_Run_22
+    21300084: Neutral_Run_23
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Neutral_Idle_0
+      name: Neutral_Run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -122,13 +141,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf7d996fb872bce448e2698bf1a18921
+      spriteID: 4b3a2902a05980c4ea2e6dd3bb2a6163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_1
+      name: Neutral_Run_1
       rect:
         serializedVersion: 2
         x: 32
@@ -142,13 +161,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 344b189eb5af5eb40b8960753f346a14
+      spriteID: a927af2e7ea8fb341983473965ebc5b9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_2
+      name: Neutral_Run_2
       rect:
         serializedVersion: 2
         x: 64
@@ -162,13 +181,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59370f95c58f1b542991ebc61e43e5c3
+      spriteID: cd26544b71063ea4494ba638d2e8516d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_3
+      name: Neutral_Run_3
       rect:
         serializedVersion: 2
         x: 96
@@ -182,13 +201,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cbba55baf3eebd4a894b77a434faca8
+      spriteID: 633ceb40d91cd85489c9db274562eb32
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_4
+      name: Neutral_Run_4
       rect:
         serializedVersion: 2
         x: 128
@@ -202,13 +221,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1298d136b4e2f254eabe8e5ef202954b
+      spriteID: dfb8c437cd43eb446b3c5c119fa6314b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_5
+      name: Neutral_Run_5
       rect:
         serializedVersion: 2
         x: 160
@@ -222,13 +241,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be11017f013a39c4bb543117bd085e48
+      spriteID: 712ac87a69d283d46b818dd4cf5f9049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_6
+      name: Neutral_Run_6
       rect:
         serializedVersion: 2
         x: 0
@@ -242,13 +261,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa304b7433b30b54c87c0d5ac720b3d0
+      spriteID: f7358fd589168fc458a34616093fd6af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_7
+      name: Neutral_Run_7
       rect:
         serializedVersion: 2
         x: 32
@@ -262,13 +281,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb936099fa9180147b090660ecc72771
+      spriteID: 008cc01d9153a2a4f9ad2934d1c24e3a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_8
+      name: Neutral_Run_8
       rect:
         serializedVersion: 2
         x: 64
@@ -282,13 +301,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36edb5011035c9d4ab309c0de6c5bea8
+      spriteID: 98e8522df2df44346baa99b914e3310c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_9
+      name: Neutral_Run_9
       rect:
         serializedVersion: 2
         x: 96
@@ -302,13 +321,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 364d38aeb88935c4f96c92d8a6c27e5d
+      spriteID: c8e1bbf8d52d3b7468c158c3469b217e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_10
+      name: Neutral_Run_10
       rect:
         serializedVersion: 2
         x: 128
@@ -322,13 +341,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a522790806ac1e74fb1c1293f2c4bca6
+      spriteID: f2bd6e27bdc152245b3d6c5a6ba2d52d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_11
+      name: Neutral_Run_11
       rect:
         serializedVersion: 2
         x: 160
@@ -342,13 +361,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f63bca5d7baa66b4182e06b2b5e1f2d6
+      spriteID: 3d56f734afaf2a64f84c4dc07d508c5d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_12
+      name: Neutral_Run_12
       rect:
         serializedVersion: 2
         x: 0
@@ -362,13 +381,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d9b8fdca77d3854fbb56fb79b12db5d
+      spriteID: 9318acd5cd7932d4b914c06e164d4efc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_13
+      name: Neutral_Run_13
       rect:
         serializedVersion: 2
         x: 32
@@ -382,13 +401,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b0625f0515650549809682625c12a62
+      spriteID: b972cb5a5a49e254f88a3f1adee2f9fa
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_14
+      name: Neutral_Run_14
       rect:
         serializedVersion: 2
         x: 64
@@ -402,13 +421,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8983382abaeca14894acb46ec797d78
+      spriteID: 56a260e3079aac549a8d55fdc92b54b7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_15
+      name: Neutral_Run_15
       rect:
         serializedVersion: 2
         x: 96
@@ -422,13 +441,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a300e513b31d45419b42a16470e6e78
+      spriteID: 04196aa85bcd5bf4d86d51a5cdfc4616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_16
+      name: Neutral_Run_16
       rect:
         serializedVersion: 2
         x: 128
@@ -442,13 +461,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b3ab2a90eef0144784046f8fc7a84b0
+      spriteID: f7bc77ca5ff59c042b75fd18fb8c1dad
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_17
+      name: Neutral_Run_17
       rect:
         serializedVersion: 2
         x: 160
@@ -462,13 +481,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84d49ec21451e834986a2863471cfee1
+      spriteID: 2870bc86de9ecbf47bbd74ea4d239ca2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_18
+      name: Neutral_Run_18
       rect:
         serializedVersion: 2
         x: 0
@@ -482,13 +501,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89da294623da3fa45a31327afbdcccc3
+      spriteID: 15467694ccf6e2a439bfc8a0a2264ec1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_19
+      name: Neutral_Run_19
       rect:
         serializedVersion: 2
         x: 32
@@ -502,13 +521,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7aafd8a18c4fa649b9461a368739867
+      spriteID: caf7a0c87e72d5041b5216605c361dad
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_20
+      name: Neutral_Run_20
       rect:
         serializedVersion: 2
         x: 64
@@ -522,13 +541,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97d570d87ca52c646b9e132f8000e0b7
+      spriteID: dadc25e1257db6a4684b50dcd8d93cdd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_21
+      name: Neutral_Run_21
       rect:
         serializedVersion: 2
         x: 96
@@ -542,13 +561,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d9d8602ae634e149a6deb5e6b3b33fd
+      spriteID: 64e85f3f44c4aa64fb17327a4de43f59
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_22
+      name: Neutral_Run_22
       rect:
         serializedVersion: 2
         x: 128
@@ -562,13 +581,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1916ac2b0d5fd44db8750cd5b52fb2a
+      spriteID: d77748215afa9df4691e67eb8a62c072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Neutral_Idle_23
+      name: Neutral_Run_23
       rect:
         serializedVersion: 2
         x: 160
@@ -582,7 +601,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c7f1d73c9bb54b44bf404e1b4aac93b
+      spriteID: 0eb243f8326ab584b88dd0488421d79b
       vertices: []
       indices: 
       edges: []
