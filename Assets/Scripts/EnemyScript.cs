@@ -11,7 +11,7 @@ public class EnemyScript : MonoBehaviour {
 
     public Enemy enemyType;
 
-    bool aggro, rest, alert;
+    bool aggro, rest, alert, attacking, stunned, dying;
 
     float originalSpeed, health, damage, currentSpeed;
 
@@ -47,20 +47,23 @@ public class EnemyScript : MonoBehaviour {
 
 	void Update () {
         GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 32);
-        if (!aggro)
+        if (!attacking && !stunned && !dying)
         {
-            Wander();
-            if (currentSpeed != originalSpeed)
+            if (!aggro)
             {
-                currentSpeed -= 0.025f;
+                Wander();
+                if (currentSpeed != originalSpeed)
+                {
+                    currentSpeed -= 0.025f;
+                }
             }
-        }
-        else
-        {
-            Chase();
-            if(currentSpeed == originalSpeed)
+            else
             {
-                currentSpeed += 0.025f;
+                Chase();
+                if (currentSpeed == originalSpeed)
+                {
+                    currentSpeed += 0.025f;
+                }
             }
         }
 	}
@@ -89,9 +92,7 @@ public class EnemyScript : MonoBehaviour {
                 GetComponent<SpriteRenderer>().flipX = true;
             }
 
-            transform.position = Vector2.MoveTowards(transform.position, waypoint, originalSpeed);
-            
-            
+            transform.position = Vector2.MoveTowards(transform.position, waypoint, originalSpeed);   
         }
 
         if (alert)
@@ -122,8 +123,11 @@ public class EnemyScript : MonoBehaviour {
     public IEnumerator ReceiveDamage(float amount, float stunDuration)
     {
         health -= amount;
+        stunned = true;
+        attacking = false;
         yield return new WaitForSeconds(stunDuration);
-        if(health <= 0)
+        stunned = false;
+        if (health <= 0)
         {
             StartCoroutine(KillMe());
         }
@@ -132,62 +136,114 @@ public class EnemyScript : MonoBehaviour {
             aggro = true;
             trigger.radius = 2.5f;
         }
+        
     }
 
     IEnumerator KillMe()
     {
-        yield return new WaitForSeconds(1.5f);
+        aggro = attacking = stunned = alert = rest = false;
+        dying = true;
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 
     void Chase()
     {
-        if(!anim.GetBool("Running"))
+        if (!anim.GetBool("Running"))
         {
             anim.SetBool("Running", true);
         }
-        if (pc.transform.position.x > transform.position.x)
+        if (Vector2.Distance(transform.position, pc.transform.position) < 0.75f && !attacking)
         {
-            GetComponent<SpriteRenderer>().flipX = false;
+            StartCoroutine(PerformAttack());
         }
-        else if (pc.transform.position.x < transform.position.x)
+        else
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+            if (pc.transform.position.x > transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (pc.transform.position.x < transform.position.x)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            transform.position = Vector2.MoveTowards(transform.position, pc.transform.position, currentSpeed);
         }
-        transform.position = Vector2.MoveTowards(transform.position, pc.transform.position, currentSpeed);
+    }
+
+    IEnumerator PerformAttack()
+    {
+        anim.SetBool("Running", false);
+        anim.Play("Attack", 0);
+        attacking = true;
+        float attackDelay = 0;
+        if(enemyType == Enemy.green)
+        {
+            attackDelay = 0.5f;
+        }
+        if (enemyType == Enemy.red)
+        {
+            attackDelay = 1f;
+        }
+        if (enemyType == Enemy.yellow)
+        {
+            attackDelay = 0.75f;
+        }
+        yield return new WaitForSeconds(0.25f);
+        if (!stunned)
+        {
+            Vector2 point = transform.position;
+            if (GetComponent<SpriteRenderer>().flipX)
+            {
+                point.x -= 0.5f;
+            }
+            else
+            {
+                point.x += 0.5f;
+            }
+
+            Collider2D col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Player"));
+            Debug.DrawLine(transform.position, point, Color.yellow, attackDelay);
+        }
+        yield return new WaitForSeconds(attackDelay);
+        Debug.Log(1);
+        attacking = false;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (enemyType == Enemy.yellow)
+        if (collision.tag == "Player" && !collision.isTrigger)
         {
-            if (collision.tag == "Player")
+            if (enemyType == Enemy.yellow)
             {
+
                 aggro = true;
                 trigger.radius = 3.25f;
             }
-        }
-        else
-        {
-            alert = true;
-            waypoint = Vector2.zero;
-            anim.SetBool("Running", false);
+            else
+            {
+                alert = true;
+                waypoint = Vector2.zero;
+                anim.SetBool("Running", false);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (aggro)
+        if (collision.tag == "Player" && !collision.isTrigger)
         {
-            if (collision.tag == "Player")
+            if (aggro)
             {
                 aggro = false;
                 trigger.radius = 1.75f;
+
             }
-        }
-        else
-        {
-            alert = false;
+            else
+            {
+                alert = false;
+            }
         }
     }
 }

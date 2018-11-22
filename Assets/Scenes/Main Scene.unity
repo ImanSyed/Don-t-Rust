@@ -4954,7 +4954,7 @@ GameObject:
   - component: {fileID: 481561871}
   - component: {fileID: 481561872}
   - component: {fileID: 481561870}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6307,7 +6307,7 @@ Prefab:
     - target: {fileID: 114041034686952134, guid: b34663773aed5704eb0663057871c918,
         type: 2}
       propertyPath: enemyType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1003701947102546, guid: b34663773aed5704eb0663057871c918, type: 2}
       propertyPath: m_Layer
@@ -6317,6 +6317,21 @@ Prefab:
         type: 2}
       propertyPath: m_Radius
       value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 58317874148293806, guid: b34663773aed5704eb0663057871c918,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50438442018150202, guid: b34663773aed5704eb0663057871c918,
+        type: 2}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50438442018150202, guid: b34663773aed5704eb0663057871c918,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b34663773aed5704eb0663057871c918, type: 2}

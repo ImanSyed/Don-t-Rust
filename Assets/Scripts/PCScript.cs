@@ -203,7 +203,7 @@ public class PCScript : MonoBehaviour {
         attackStun = true;
         float damage = originalDamage;
         float stunDuration = 0.3f;
-        float delay = 0.75f;
+        float attackDelay = 0.75f;
         switch (armType)
         {
             case 1:
@@ -212,7 +212,7 @@ public class PCScript : MonoBehaviour {
                 break;
             case 2:
                 damage += 15;
-                delay = 1f;
+                attackDelay = 1f;
                 break;
             default:
                 damage = originalDamage;
@@ -238,7 +238,7 @@ public class PCScript : MonoBehaviour {
         }
         yield return new WaitForSeconds(0.15f);
         attackStun = false;
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(attackDelay);
         attacking = false;
 
     }
@@ -265,5 +265,6 @@ public class PCScript : MonoBehaviour {
                 break;
         }
         collecting = false;
+        
     }
 }
