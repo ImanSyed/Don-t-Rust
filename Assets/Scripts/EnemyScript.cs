@@ -27,7 +27,7 @@ public class EnemyScript : MonoBehaviour {
         pc = FindObjectOfType<PCScript>();
         if(enemyType == Enemy.green)
         {
-            originalSpeed = 0.025f;
+            originalSpeed = 0.02f;
             health = 50;
         }
         else if(enemyType == Enemy.red)

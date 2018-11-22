@@ -15,7 +15,7 @@ public class PCScript : MonoBehaviour {
 
     float energy = 750, originalDamage = 10;
 
-    bool collecting, attacking;
+    bool collecting, attacking, attackStun, hitStun;
 
     short armType, torsoType, legType;
 
@@ -29,7 +29,7 @@ public class PCScript : MonoBehaviour {
 
     void Update()
     {
-        if (!collecting && !attacking)
+        if (!collecting && !attackStun)
         {
             Move();
             Inputs();
@@ -200,15 +200,15 @@ public class PCScript : MonoBehaviour {
     IEnumerator Attack()
     {
         attacking = true;
+        attackStun = true;
         float damage = originalDamage;
-        float stunDuration = 0.1f;
-        float delay = 0.5f;
+        float stunDuration = 0.3f;
+        float delay = 0.75f;
         switch (armType)
         {
             case 1:
                 damage += -5;
-                delay = 0.3f;
-                stunDuration = 0.25f;
+                stunDuration = 0.65f;
                 break;
             case 2:
                 damage += 15;
@@ -233,10 +233,11 @@ public class PCScript : MonoBehaviour {
         Debug.DrawLine(transform.position, point, Color.red, 2);
         if (col)
         {
-            Debug.Log(col.gameObject.name);
-            col.GetComponent<EnemyScript>().ReceiveDamage(damage, stunDuration);
+            StartCoroutine(col.GetComponent<EnemyScript>().ReceiveDamage(damage, stunDuration));
            
         }
+        yield return new WaitForSeconds(0.15f);
+        attackStun = false;
         yield return new WaitForSeconds(delay);
         attacking = false;
 
