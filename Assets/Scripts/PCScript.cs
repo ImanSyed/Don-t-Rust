@@ -107,11 +107,11 @@ public class PCScript : MonoBehaviour {
                 }
                 if (pos.x < transform.position.x)
                 {
-                    GetComponent<SpriteRenderer>().flipX = true;
+                    GetComponent<SpriteRenderer>().flipX = false;
                 }
                 else
                 {
-                    GetComponent<SpriteRenderer>().flipX = false;
+                    GetComponent<SpriteRenderer>().flipX = true;
                 }
             }
             else if (GetComponent<Animator>().GetBool("Running"))
@@ -120,6 +120,21 @@ public class PCScript : MonoBehaviour {
             }
             transform.position = pos;
             GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 32);
+            foreach(SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+            {
+                if(child.gameObject.name == "Arms")
+                {
+                    child.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 1;
+                }
+                else if(child.gameObject.name == "Torso")
+                {
+                    child.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 2;
+                }
+                else if (child.gameObject.name == "Legs")
+                {
+                    child.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 3;
+                }
+            }
         }
     }
 
