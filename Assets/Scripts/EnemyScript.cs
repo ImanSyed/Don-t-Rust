@@ -119,9 +119,10 @@ public class EnemyScript : MonoBehaviour {
         rest = false;
     }
 
-    public void ReceiveDamage(float amount)
+    public IEnumerator ReceiveDamage(float amount, float stunDuration)
     {
         health -= amount;
+        yield return new WaitForSeconds(stunDuration);
         if(health <= 0)
         {
             StartCoroutine(KillMe());
@@ -163,7 +164,7 @@ public class EnemyScript : MonoBehaviour {
             if (collision.tag == "Player")
             {
                 aggro = true;
-                trigger.radius = 3f;
+                trigger.radius = 3.25f;
             }
         }
         else
@@ -181,7 +182,7 @@ public class EnemyScript : MonoBehaviour {
             if (collision.tag == "Player")
             {
                 aggro = false;
-                trigger.radius = 1.5f;
+                trigger.radius = 1.75f;
             }
         }
         else

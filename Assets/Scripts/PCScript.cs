@@ -21,7 +21,6 @@ public class PCScript : MonoBehaviour {
 
     Collider2D col;
 
-    [SerializeField] Collider2D attackTrigger;
 
     private void Start()
     {
@@ -202,37 +201,43 @@ public class PCScript : MonoBehaviour {
     {
         attacking = true;
         float damage = originalDamage;
+        float stunDuration = 0.1f;
         float delay = 0.5f;
         switch (armType)
         {
             case 1:
                 damage += -5;
-                delay = 0.2f;
+                delay = 0.3f;
+                stunDuration = 0.25f;
                 break;
             case 2:
                 damage += 15;
                 delay = 1f;
                 break;
             default:
-                damage = originalSpeed;
+                damage = originalDamage;
                 break;
         }
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(0.1f);
         Vector2 point = transform.position;
+        point.y += 0.5f;
         if (GetComponent<SpriteRenderer>().flipX)
         {
-            point.x -= 1;
+            point.x += 0.5f;
         }
         else
         {
-            point.x += 1;
+            point.x -= 0.5f;
         }
-        col = Physics2D.OverlapBox(point, Vector2.one, 1 << LayerMask.NameToLayer("Enemies"));
-        if (col && col.GetComponent<EnemyScript>())
+        col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Enemies"));
+        Debug.DrawLine(transform.position, point, Color.red, 2);
+        if (col)
         {
-            col.GetComponent<EnemyScript>().ReceiveDamage(originalDamage);
-            Debug.Log(1);
+            Debug.Log(col.gameObject.name);
+            col.GetComponent<EnemyScript>().ReceiveDamage(damage, stunDuration);
+           
         }
+        yield return new WaitForSeconds(delay);
         attacking = false;
 
     }
