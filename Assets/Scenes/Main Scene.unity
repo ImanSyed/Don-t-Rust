@@ -369,6 +369,10 @@ Prefab:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 1300537183777556, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
   m_IsPrefabAsset: 0
@@ -4937,6 +4941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalSpeed: 0.05
   dust: {fileID: 1352856967356804, guid: 686b47c1db4d8704d8d052dfe599c230, type: 2}
+  craftUI: {fileID: 0}
   resources: 00000000000000000000000000000000
   hasSpace: 1
   inventory: []
@@ -4979,7 +4984,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.65
 --- !u!50 &481561872
 Rigidbody2D:
   serializedVersion: 4
@@ -6709,6 +6714,71 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &1837701092
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4251105004914290, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251105004914290, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251105004914290, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251105004914290, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251105004914290, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251105004914290, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251105004914290, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251105004914290, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300537183777556, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_Name
+      value: Craft Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 212642878442346858, guid: 7cb61a8ff5ae5c645857fc94758228b3,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.7242837
+      objectReference: {fileID: 0}
+    - target: {fileID: 212642878442346858, guid: 7cb61a8ff5ae5c645857fc94758228b3,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212642878442346858, guid: 7cb61a8ff5ae5c645857fc94758228b3,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300537183777556, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+      propertyPath: m_TagString
+      value: Craft
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1840159150
 GameObject:
   m_ObjectHideFlags: 0
