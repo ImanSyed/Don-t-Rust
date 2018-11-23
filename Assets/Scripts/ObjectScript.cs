@@ -4,7 +4,7 @@ public class ObjectScript : MonoBehaviour {
 
     public enum ObjectType
     {
-        gears
+        none, gears
     }
 
     public ObjectType myType;
