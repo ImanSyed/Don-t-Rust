@@ -13,9 +13,9 @@ public class PCScript : MonoBehaviour {
 
     public GameObject[] inventory;
 
-    float energy = 750, originalDamage = 10;
+    float energy = 750, originalDamage = 10, health = 50;
 
-    bool collecting, attacking, attackStun, hitStun;
+    bool collecting, attacking, attackStun, hitStun, stunned;
 
     short armType, torsoType, legType;
 
@@ -31,7 +31,7 @@ public class PCScript : MonoBehaviour {
 
     void Update()
     {
-        if (!collecting && !attackStun)
+        if (!collecting && !attackStun && !stunned)
         {
             Move();
             Inputs();
@@ -249,7 +249,28 @@ public class PCScript : MonoBehaviour {
         attackStun = false;
         yield return new WaitForSeconds(attackDelay);
         attacking = false;
+    }
 
+    public IEnumerator ReceiveDamage(float amount, float stunDuration)
+    {
+        health -= amount;
+        stunned = true;
+        attacking = false;
+        GetComponent<Animator>().Play("Stunned", 0);
+        if (health <= 0)
+        {
+            StartCoroutine(KillMe());
+        }
+        yield return new WaitForSeconds(stunDuration);
+        stunned = false;
+        
+    }
+
+    IEnumerator KillMe()
+    {
+
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     public IEnumerator AddToInventory(string item, int amount)

@@ -29,18 +29,20 @@ public class EnemyScript : MonoBehaviour {
         {
             originalSpeed = 0.02f;
             health = 50;
+            damage = 10;
         }
         else if(enemyType == Enemy.red)
         {
             originalSpeed = 0.035f;
-            health = 30;
+            damage = 7.5f;
+            health = 40;
 
         }
         else if(enemyType == Enemy.yellow)
         {
             originalSpeed = 0.01f;
             health = 60;
-
+            damage = 15f;
         }
         currentSpeed = originalSpeed;
     }
@@ -190,13 +192,14 @@ public class EnemyScript : MonoBehaviour {
         }
         Vector2 point = pc.transform.position;
         point.y += 0.2f;
-        Vector2 peepee = transform.position;
-        peepee.y += 0.3f;
         yield return new WaitForSeconds(0.25f);
         if (!stunned)
         {
             Collider2D col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Player"));
-            Debug.DrawLine(peepee, point, Color.yellow, attackDelay);
+            if(col && col.GetComponent<PCScript>())
+            {
+                StartCoroutine(pc.ReceiveDamage(damage, 0.3f));
+            }
         }
         yield return new WaitForSeconds(attackDelay);
         attacking = false;
