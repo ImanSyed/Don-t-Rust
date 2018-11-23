@@ -9,7 +9,7 @@ public class PCScript : MonoBehaviour {
     [SerializeField] GameObject dust;
 
 
-    Crafting craftUI;
+    public Crafting craftUI;
 
     public int[] resources = new int[4];
     [HideInInspector] public bool hasSpace = true;
@@ -24,7 +24,7 @@ public class PCScript : MonoBehaviour {
 
     Collider2D col;
 
-    Vector3 pos;
+    Vector3 pos, craftUIPos;
 
     GameObject killer, dustEffect;
 
@@ -32,6 +32,7 @@ public class PCScript : MonoBehaviour {
     private void Start()
     {
         craftUI = GetComponentInChildren<Crafting>();
+        craftUIPos = craftUI.transform.position;
     }
 
     void Update()
@@ -51,7 +52,7 @@ public class PCScript : MonoBehaviour {
 
     void Inputs()
     {
-        if ((Vector2)craftUI.transform.localPosition != craftUI.destination)
+        if (!craftUI || (Vector2)craftUI.transform.localPosition != craftUI.destination)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -82,8 +83,7 @@ public class PCScript : MonoBehaviour {
 
     void Move()
     {
-
-        if ((Vector2)craftUI.transform.localPosition == craftUI.start)
+        if (!craftUI || (Vector2)craftUI.transform.localPosition == craftUI.start)
         {
             pos = transform.position;
             float speed = originalSpeed;
@@ -204,15 +204,33 @@ public class PCScript : MonoBehaviour {
     }
 
     void ToggleCrafting() {
-        GetComponent<Animator>().SetBool("Running", false);
-        foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+        if (craftUI)
         {
-            if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+            GetComponent<Animator>().SetBool("Running", false);
+            foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
             {
-                child.GetComponent<Animator>().SetBool("Running", false);
+                if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+                {
+                    child.GetComponent<Animator>().SetBool("Running", false);
+                }
             }
+            craftUI.Toggle();
         }
-        craftUI.Toggle();
+    }
+
+    public void ToggleCraftUI()
+    {
+        if (craftUI)
+        {
+            Debug.Log(2);
+            craftUI = null;
+        }
+        else
+        {
+            Debug.Log(1);
+            craftUI = FindObjectOfType<Crafting>();
+            craftUI.transform.localPosition = craftUIPos;
+        }
     }
 
     void Equip()
