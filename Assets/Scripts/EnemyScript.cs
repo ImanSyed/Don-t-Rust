@@ -208,7 +208,7 @@ public class EnemyScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if((collision.gameObject.tag == "Interactables" || collision.gameObject.tag == "Wall") && waypoint != Vector2.zero)
+        if (collision.gameObject.layer == 10)
         {
             waypoint = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
         }

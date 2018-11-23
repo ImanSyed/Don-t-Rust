@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114015519509577138}
   - component: {fileID: 61732009008420338}
   - component: {fileID: 50759814162314260}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Pile o' junk
   m_TagString: Interactable
   m_Icon: {fileID: 0}

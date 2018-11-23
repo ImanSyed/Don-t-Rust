@@ -21,7 +21,7 @@ public class Crafting : MonoBehaviour {
     {
         start = transform.localPosition;
         destination = start;
-        destination.y -= 2f;
+        destination.y = 0.525f;
         activeTray = parentIcons[counter1].transform.GetChild(0).gameObject;
         childIcons = activeTray.GetComponentsInChildren<Transform>();
         temp[0] = childIcons[1];
@@ -59,7 +59,7 @@ public class Crafting : MonoBehaviour {
 
     void Controls()
     {
-        if (activeTray.transform.localPosition.x == -1.35f || activeTray.transform.localPosition.x == 2.65f)
+        if (activeTray.transform.localPosition.x == -0.75f || activeTray.transform.localPosition.x == 0.75f)
         {
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
@@ -101,7 +101,7 @@ public class Crafting : MonoBehaviour {
                 activeTray.GetComponent<Animator>().Play("Forward", 0);
             }
 
-            if (activeTray.transform.localPosition.x == 2.65f)
+            if (activeTray.transform.localPosition.x == 0.75f)
             {
                 if(childIcons[counter2].GetComponent<SpriteRenderer>().color != Color.red)
                 {
