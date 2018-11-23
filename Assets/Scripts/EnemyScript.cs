@@ -198,12 +198,20 @@ public class EnemyScript : MonoBehaviour {
             Collider2D col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Player"));
             if(col && col.GetComponent<PCScript>())
             {
-                StartCoroutine(pc.ReceiveDamage(damage, 0.3f));
+                StartCoroutine(pc.ReceiveDamage(damage, 0.3f, this));
             }
         }
         yield return new WaitForSeconds(attackDelay);
         attacking = false;
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if((collision.gameObject.tag == "Interactables" || collision.gameObject.tag == "Wall") && waypoint != Vector2.zero)
+        {
+            waypoint = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

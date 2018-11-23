@@ -23,6 +23,8 @@ public class PCScript : MonoBehaviour {
 
     Vector3 pos;
 
+    GameObject killer;
+
 
     private void Start()
     {
@@ -251,7 +253,7 @@ public class PCScript : MonoBehaviour {
         attacking = false;
     }
 
-    public IEnumerator ReceiveDamage(float amount, float stunDuration)
+    public IEnumerator ReceiveDamage(float amount, float stunDuration, EnemyScript enemy)
     {
         health -= amount;
         stunned = true;
@@ -262,6 +264,7 @@ public class PCScript : MonoBehaviour {
             StartCoroutine(KillMe());
         }
         yield return new WaitForSeconds(stunDuration);
+        killer = enemy.gameObject;
         stunned = false;
         
     }
@@ -270,6 +273,7 @@ public class PCScript : MonoBehaviour {
     {
 
         yield return new WaitForSeconds(1f);
+        FindObjectOfType<Follow>().target = killer.transform;
         Destroy(gameObject);
     }
 

@@ -2,7 +2,7 @@
 
 public class Follow : MonoBehaviour {
 
-    [SerializeField] Transform target;
+    public Transform target;
 
 
     void Update()
