@@ -24,7 +24,7 @@ public class PCScript : MonoBehaviour {
 
     Collider2D col;
 
-    Vector3 pos, craftUIPos;
+    Vector3 pos;
 
     GameObject killer, dustEffect;
 
@@ -32,7 +32,8 @@ public class PCScript : MonoBehaviour {
     private void Start()
     {
         craftUI = GetComponentInChildren<Crafting>();
-        craftUIPos = craftUI.transform.position;
+        craftUI.gameObject.SetActive(false);
+
     }
 
     void Update()
@@ -52,7 +53,7 @@ public class PCScript : MonoBehaviour {
 
     void Inputs()
     {
-        if (!craftUI || (Vector2)craftUI.transform.localPosition != craftUI.destination)
+        if (!craftUI.isActiveAndEnabled || (Vector2)craftUI.transform.localPosition != craftUI.destination)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -83,7 +84,7 @@ public class PCScript : MonoBehaviour {
 
     void Move()
     {
-        if (!craftUI || (Vector2)craftUI.transform.localPosition == craftUI.start)
+        if (!craftUI.isActiveAndEnabled || (Vector2)craftUI.transform.localPosition == craftUI.start)
         {
             pos = transform.position;
             float speed = originalSpeed;
@@ -218,26 +219,12 @@ public class PCScript : MonoBehaviour {
         }
     }
 
-    public void ToggleCraftUI()
-    {
-        if (craftUI)
-        {
-            Debug.Log(2);
-            craftUI = null;
-        }
-        else
-        {
-            Debug.Log(1);
-            craftUI = FindObjectOfType<Crafting>();
-            craftUI.transform.localPosition = craftUIPos;
-        }
-    }
-
+   
     void Equip()
     {
 
     }
-
+    
     IEnumerator Attack()
     {
         attacking = true;
@@ -348,9 +335,24 @@ public class PCScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Interactables")
+        if(collision.gameObject.layer == 10 || collision.gameObject.layer == 12)
         {
             pos = transform.position;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Craft"))
+        {
+            craftUI.gameObject.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Craft"))
+        {
+            craftUI.gameObject.SetActive(false);
         }
     }
 }
