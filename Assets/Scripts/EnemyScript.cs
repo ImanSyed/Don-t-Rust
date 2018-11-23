@@ -101,11 +101,11 @@ public class EnemyScript : MonoBehaviour {
         {
             if (pc.transform.position.x > transform.position.x)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = true;
             }
             else if (pc.transform.position.x < transform.position.x)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = false;
             }
         }
     }
@@ -163,11 +163,11 @@ public class EnemyScript : MonoBehaviour {
         {
             if (pc.transform.position.x > transform.position.x)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = true;
             }
             else if (pc.transform.position.x < transform.position.x)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = false;
             }
             transform.position = Vector2.MoveTowards(transform.position, pc.transform.position, currentSpeed);
         }
@@ -184,7 +184,7 @@ public class EnemyScript : MonoBehaviour {
         }
         if (enemyType == Enemy.red)
         {
-            attackDelay = 1f;
+            attackDelay = 0.7f;
         }
         if (enemyType == Enemy.yellow)
         {
@@ -192,7 +192,7 @@ public class EnemyScript : MonoBehaviour {
         }
         Vector2 point = pc.transform.position;
         point.y += 0.2f;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.21f);
         if (!stunned)
         {
             Collider2D col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Player"));

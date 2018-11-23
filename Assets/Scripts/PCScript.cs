@@ -6,8 +6,9 @@ using System.Collections;
 public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
-    [SerializeField] GameObject dust;
+    [SerializeField] GameObject dust, projectile;
 
+    [SerializeField] Slider fuelSlider, healthSlider;
 
     public Crafting craftUI;
 
@@ -47,7 +48,8 @@ public class PCScript : MonoBehaviour {
         if(energy > 0)
         {
             energy -= Time.deltaTime;
-            FindObjectOfType<Slider>().value = energy;
+            fuelSlider.value = energy;
+            healthSlider.value = health;
         }
     }
 
@@ -55,17 +57,6 @@ public class PCScript : MonoBehaviour {
     {
         if (!craftUI.isActiveAndEnabled || (Vector2)craftUI.transform.localPosition != craftUI.destination)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                
-                col = Physics2D.OverlapCircle(transform.position, 1, 1 << LayerMask.NameToLayer("Interactables"));
-                if (col && col.GetComponent<ObjectScript>())
-                {
-                    collecting = true;
-                    col.GetComponent<ObjectScript>().Interact();
-
-                }
-            }
             if (Input.GetKeyDown(KeyCode.F) && !attacking)
             {
                 StartCoroutine(Attack());
@@ -81,7 +72,7 @@ public class PCScript : MonoBehaviour {
             legType++;
         }
     }
-
+   
     void Move()
     {
         if (!craftUI.isActiveAndEnabled || (Vector2)craftUI.transform.localPosition == craftUI.start)
@@ -205,7 +196,7 @@ public class PCScript : MonoBehaviour {
     }
 
     void ToggleCrafting() {
-        if (craftUI)
+        if (craftUI && craftUI.isActiveAndEnabled)
         {
             GetComponent<Animator>().SetBool("Running", false);
             foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
@@ -290,34 +281,21 @@ public class PCScript : MonoBehaviour {
         yield return new WaitForSeconds(stunDuration);
         killer = enemy.gameObject;
         stunned = false;
-        
     }
 
     IEnumerator KillMe()
     {
-
         yield return new WaitForSeconds(1f);
         FindObjectOfType<Follow>().target = killer.transform;
         Destroy(gameObject);
     }
 
-    public IEnumerator AddToInventory(string item, int amount)
+    public void AddToInventory(string item, int amount)
     {
-        GetComponent<Animator>().SetBool("Running", false);
-        foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
-        {
-            if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
-            {
-                child.GetComponent<Animator>().SetBool("Running", false);
-            }
-        }
-        yield return new WaitForSeconds(1.25f);
         switch(item)
         {
             case "Gears":
                 resources[0] += amount;
-                Destroy(col.gameObject);
-                col = null;
                 break;
             case "Red Arms":
                 break;
@@ -336,8 +314,7 @@ public class PCScript : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 10 || collision.gameObject.layer == 12)
-        {
-            pos = transform.position;
+        { 
         }
     }
 

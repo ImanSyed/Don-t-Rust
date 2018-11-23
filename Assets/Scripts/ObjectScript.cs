@@ -19,11 +19,15 @@ public class ObjectScript : MonoBehaviour {
         GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 32);
     }
 
-    public void Interact()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (myType == ObjectType.gears)
+        if (collision.gameObject.CompareTag("Player") && !collision.isTrigger)
         {
-            StartCoroutine(pc.AddToInventory("Gears", amount));
+            if (myType == ObjectType.gears)
+            {
+                pc.AddToInventory("Gears", amount);
+                Destroy(gameObject);
+            }
         }
     }
 }
