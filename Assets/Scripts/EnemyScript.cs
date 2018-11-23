@@ -241,7 +241,6 @@ public class EnemyScript : MonoBehaviour {
             {
                 aggro = false;
                 trigger.radius = 1.75f;
-
             }
             else
             {

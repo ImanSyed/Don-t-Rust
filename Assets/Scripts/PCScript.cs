@@ -6,6 +6,9 @@ using System.Collections;
 public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
+    [SerializeField] GameObject dust;
+
+
     Crafting craftUI;
 
     public int[] resources = new int[4];
@@ -23,7 +26,7 @@ public class PCScript : MonoBehaviour {
 
     Vector3 pos;
 
-    GameObject killer;
+    GameObject killer, dustEffect;
 
 
     private void Start()
@@ -112,9 +115,19 @@ public class PCScript : MonoBehaviour {
             }
             if (pos.x != transform.position.x || pos.y != transform.position.y)
             {
+                if (!dustEffect)
+                {
+                    Vector2 tempPos = transform.position;
+                    tempPos.y += 0.25f;
+                    dustEffect = Instantiate(dust, tempPos, Quaternion.identity);
+                    dustEffect.GetComponent<SpriteRenderer>().flipX = GetComponent<SpriteRenderer>().flipX;
+                    dustEffect.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 4;
+                    StartCoroutine(DestroyDust());
+                }
                 if (!GetComponent<Animator>().GetBool("Running"))
                 {
                     GetComponent<Animator>().SetBool("Running", true);
+                   
                     foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
                     {
                         if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
@@ -125,23 +138,29 @@ public class PCScript : MonoBehaviour {
                 }
                 if (pos.x < transform.position.x)
                 {
-                    GetComponent<SpriteRenderer>().flipX = false;
-                    foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+                    if (GetComponent<SpriteRenderer>().flipX)
                     {
-                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs" || child.gameObject.name == "Shadow")
+                        GetComponent<SpriteRenderer>().flipX = false;
+                        foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
                         {
-                            child.flipX = false;
+                            if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs" || child.gameObject.name == "Shadow")
+                            {
+                                child.flipX = false;
+                            }
                         }
                     }
                 }
                 else if(pos.x > transform.position.x)
                 {
-                    GetComponent<SpriteRenderer>().flipX = true;
-                    foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+                    if (!GetComponent<SpriteRenderer>().flipX)
                     {
-                        if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs" || child.gameObject.name == "Shadow")
+                        GetComponent<SpriteRenderer>().flipX = true;
+                        foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
                         {
-                            child.flipX = true;
+                            if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs" || child.gameObject.name == "Shadow")
+                            {
+                                child.flipX = true;
+                            }
                         }
                     }
                 }
@@ -178,7 +197,7 @@ public class PCScript : MonoBehaviour {
                 }
                 else if (child.gameObject.name == "Shadow")
                 {
-                    child.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 4;
+                    child.sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 5;
                 }
             }
         }
@@ -299,6 +318,14 @@ public class PCScript : MonoBehaviour {
                 break;
         }
         collecting = false;
+    }
+
+    IEnumerator DestroyDust()
+    {
+        yield return new WaitForSeconds(0.417f);
+        GameObject effect = dustEffect;
+        dustEffect = null;
+        Destroy(effect);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
