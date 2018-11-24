@@ -119,7 +119,7 @@ public class PCScript : MonoBehaviour {
                 if (!GetComponent<Animator>().GetBool("Running"))
                 {
                     GetComponent<Animator>().SetBool("Running", true);
-                   
+
                     foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
                     {
                         if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
@@ -210,10 +210,105 @@ public class PCScript : MonoBehaviour {
         }
     }
 
-   
+
     void Equip()
     {
+        foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (child.gameObject.name == "Arms")
+            {
+                switch (armType)
+                {
+                    case 1:
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        GetComponent<Animator>().SetLayerWeight(1, 1);
+                        GetComponent<Animator>().SetLayerWeight(2, 0);
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        break;
+                    case 2:
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        GetComponent<Animator>().SetLayerWeight(1, 0);
+                        GetComponent<Animator>().SetLayerWeight(2, 1);
+                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        break;
+                    case 3:
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        GetComponent<Animator>().SetLayerWeight(1, 0);
+                        GetComponent<Animator>().SetLayerWeight(2, 0);
+                        GetComponent<Animator>().SetLayerWeight(3, 1);
+                        break;
+                    default:
+                        GetComponent<Animator>().SetLayerWeight(0, 1);
+                        GetComponent<Animator>().SetLayerWeight(1, 0);
+                        GetComponent<Animator>().SetLayerWeight(2, 0);
+                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        break;
 
+                }
+            }
+            else if (child.gameObject.name == "Torso")
+            {
+                switch (torsoType)
+                {
+                    case 1:
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        GetComponent<Animator>().SetLayerWeight(1, 1);
+                        GetComponent<Animator>().SetLayerWeight(2, 0);
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        break;
+                    case 2:
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        GetComponent<Animator>().SetLayerWeight(1, 0);
+                        GetComponent<Animator>().SetLayerWeight(2, 1);
+                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        break;
+                    case 3:
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        GetComponent<Animator>().SetLayerWeight(1, 0);
+                        GetComponent<Animator>().SetLayerWeight(2, 0);
+                        GetComponent<Animator>().SetLayerWeight(3, 1);
+                        break;
+                    default:
+                        GetComponent<Animator>().SetLayerWeight(0, 1);
+                        GetComponent<Animator>().SetLayerWeight(1, 0);
+                        GetComponent<Animator>().SetLayerWeight(2, 0);
+                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        break;
+
+                }
+            }
+            else if (child.gameObject.name == "Legs")
+            {
+                switch (legType)
+                {
+                    case 1:
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        GetComponent<Animator>().SetLayerWeight(1, 1);
+                        GetComponent<Animator>().SetLayerWeight(2, 0);
+                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        break;
+                    case 2:
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        GetComponent<Animator>().SetLayerWeight(1, 0);
+                        GetComponent<Animator>().SetLayerWeight(2, 1);
+                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        break;
+                    case 3:
+                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        GetComponent<Animator>().SetLayerWeight(1, 0);
+                        GetComponent<Animator>().SetLayerWeight(2, 0);
+                        GetComponent<Animator>().SetLayerWeight(3, 1);
+                        break;
+                    default:
+                        GetComponent<Animator>().SetLayerWeight(0, 1);
+                        GetComponent<Animator>().SetLayerWeight(1, 0);
+                        GetComponent<Animator>().SetLayerWeight(2, 0);
+                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        break;
+
+                }
+            }
+        }
     }
     
     IEnumerator Attack()
@@ -223,27 +318,13 @@ public class PCScript : MonoBehaviour {
         float damage = originalDamage;
         float stunDuration = 0.3f;
         float attackDelay = 0.75f;
-        switch (armType)
+        GetComponent<Animator>().Play("Attack");
+        foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
         {
-            case 1:
-                damage += -5;
-                stunDuration = 0.65f;
-                break;
-            case 2:
-                damage += 15;
-                attackDelay = 1f;
-                break;
-            default:
-                GetComponent<Animator>().Play("Attack1", 0);
-                foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
-                {
-                    if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
-                    {
-                        child.GetComponent<Animator>().Play("Attack1", 0);
-                    }
-                }
-                damage = originalDamage;
-                break;
+            if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+            {
+                child.GetComponent<Animator>().Play("Attack", 0);
+            }
         }
         yield return new WaitForSeconds(0.1f);
         Vector2 point = transform.position;
@@ -267,6 +348,7 @@ public class PCScript : MonoBehaviour {
         yield return new WaitForSeconds(attackDelay);
         attacking = false;
     }
+     
 
     public IEnumerator ReceiveDamage(float amount, float stunDuration, EnemyScript enemy)
     {

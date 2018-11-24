@@ -97,7 +97,7 @@ public class EnemyScript : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, waypoint, originalSpeed);   
         }
 
-        if (alert)
+        if (alert && pc)
         {
             if (pc.transform.position.x > transform.position.x)
             {
@@ -192,6 +192,7 @@ public class EnemyScript : MonoBehaviour {
         }
         Vector2 point = pc.transform.position;
         point.y += 0.2f;
+        anim.Play("Attack", 0);
         yield return new WaitForSeconds(0.21f);
         if (!stunned)
         {
