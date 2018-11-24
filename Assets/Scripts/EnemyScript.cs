@@ -87,11 +87,11 @@ public class EnemyScript : MonoBehaviour {
             }
             if (waypoint.x > transform.position.x)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                GetComponent<SpriteRenderer>().flipX = true;
             }
             else if(waypoint.x < transform.position.x)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                GetComponent<SpriteRenderer>().flipX = false;
             }
 
             transform.position = Vector2.MoveTowards(transform.position, waypoint, originalSpeed);   
@@ -220,7 +220,6 @@ public class EnemyScript : MonoBehaviour {
         {
             if (enemyType == Enemy.yellow)
             {
-
                 aggro = true;
                 trigger.radius = 3.25f;
             }

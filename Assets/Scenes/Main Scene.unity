@@ -5100,8 +5100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 481561868}
-  minPlane: {x: -5, y: -5}
-  maxPlane: {x: 5, y: 5}
+  minPlane: {x: -4, y: -5}
+  maxPlane: {x: 4, y: 5}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -6193,6 +6193,12 @@ Prefab:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212999297292671502, guid: b34663773aed5704eb0663057871c918,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300134, guid: 4e173a0e69753814aa2308928ebe00ef,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b34663773aed5704eb0663057871c918, type: 2}
   m_IsPrefabAsset: 0
