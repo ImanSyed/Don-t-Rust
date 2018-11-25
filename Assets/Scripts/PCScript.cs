@@ -71,6 +71,7 @@ public class PCScript : MonoBehaviour {
         {
             legType++;
             armType++;
+            torsoType++;
             Equip();
         }
     }
@@ -222,7 +223,6 @@ public class PCScript : MonoBehaviour {
                 switch (armType)
                 {
                     case 1:
-                        Debug.Log(child.GetComponent<Animator>().GetCurrentAnimatorClipInfo(armType));
                         child.GetComponent<Animator>().SetLayerWeight(1, 0);
                         child.GetComponent<Animator>().SetLayerWeight(2, 1);
                         child.GetComponent<Animator>().SetLayerWeight(3, 0);
