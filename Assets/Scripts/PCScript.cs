@@ -70,6 +70,8 @@ public class PCScript : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Q))
         {
             legType++;
+            armType++;
+            Equip();
         }
     }
    
@@ -220,28 +222,29 @@ public class PCScript : MonoBehaviour {
                 switch (armType)
                 {
                     case 1:
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
-                        GetComponent<Animator>().SetLayerWeight(1, 1);
-                        GetComponent<Animator>().SetLayerWeight(2, 0);
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
+
+                        child.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
                     case 2:
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
-                        GetComponent<Animator>().SetLayerWeight(1, 0);
-                        GetComponent<Animator>().SetLayerWeight(2, 1);
-                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
                     case 3:
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
-                        GetComponent<Animator>().SetLayerWeight(1, 0);
-                        GetComponent<Animator>().SetLayerWeight(2, 0);
-                        GetComponent<Animator>().SetLayerWeight(3, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 1);
                         break;
                     default:
-                        GetComponent<Animator>().SetLayerWeight(0, 1);
-                        GetComponent<Animator>().SetLayerWeight(1, 0);
-                        GetComponent<Animator>().SetLayerWeight(2, 0);
-                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
 
                 }
@@ -251,28 +254,28 @@ public class PCScript : MonoBehaviour {
                 switch (torsoType)
                 {
                     case 1:
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
-                        GetComponent<Animator>().SetLayerWeight(1, 1);
-                        GetComponent<Animator>().SetLayerWeight(2, 0);
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
                     case 2:
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
-                        GetComponent<Animator>().SetLayerWeight(1, 0);
-                        GetComponent<Animator>().SetLayerWeight(2, 1);
-                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
                     case 3:
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
-                        GetComponent<Animator>().SetLayerWeight(1, 0);
-                        GetComponent<Animator>().SetLayerWeight(2, 0);
-                        GetComponent<Animator>().SetLayerWeight(3, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 1);
                         break;
                     default:
-                        GetComponent<Animator>().SetLayerWeight(0, 1);
-                        GetComponent<Animator>().SetLayerWeight(1, 0);
-                        GetComponent<Animator>().SetLayerWeight(2, 0);
-                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
 
                 }
@@ -282,28 +285,28 @@ public class PCScript : MonoBehaviour {
                 switch (legType)
                 {
                     case 1:
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
-                        GetComponent<Animator>().SetLayerWeight(1, 1);
-                        GetComponent<Animator>().SetLayerWeight(2, 0);
-                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
                     case 2:
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
-                        GetComponent<Animator>().SetLayerWeight(1, 0);
-                        GetComponent<Animator>().SetLayerWeight(2, 1);
-                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
                     case 3:
-                        GetComponent<Animator>().SetLayerWeight(0, 0);
-                        GetComponent<Animator>().SetLayerWeight(1, 0);
-                        GetComponent<Animator>().SetLayerWeight(2, 0);
-                        GetComponent<Animator>().SetLayerWeight(3, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 1);
                         break;
                     default:
-                        GetComponent<Animator>().SetLayerWeight(0, 1);
-                        GetComponent<Animator>().SetLayerWeight(1, 0);
-                        GetComponent<Animator>().SetLayerWeight(2, 0);
-                        GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(1, 1);
+                        child.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
 
                 }
@@ -323,7 +326,7 @@ public class PCScript : MonoBehaviour {
         {
             if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
             {
-                child.GetComponent<Animator>().Play("Attack", 0);
+                child.GetComponent<Animator>().Play("Attack");
             }
         }
         yield return new WaitForSeconds(0.1f);

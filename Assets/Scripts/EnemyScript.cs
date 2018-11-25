@@ -127,6 +127,7 @@ public class EnemyScript : MonoBehaviour {
         health -= amount;
         stunned = true;
         attacking = false;
+        anim.Play("Stun", 0);
         yield return new WaitForSeconds(stunDuration);
         stunned = false;
         if (health <= 0)
