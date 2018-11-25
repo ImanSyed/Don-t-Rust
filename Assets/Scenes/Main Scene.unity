@@ -5422,7 +5422,7 @@ Animator:
   m_GameObject: {fileID: 621986932}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: db2d60215af84b240a039b6d1404848c, type: 2}
+  m_Controller: {fileID: 22100000, guid: e63dd704b250cd24187e802441d70453, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6139,66 +6139,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 50438442018150202, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114041034686952134, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: enemyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1003701947102546, guid: b34663773aed5704eb0663057871c918, type: 2}
-      propertyPath: m_Layer
-      value: 8
+      propertyPath: m_Name
+      value: Stun
       objectReference: {fileID: 0}
-    - target: {fileID: 58317874148293806, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_Radius
-      value: 1.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 58317874148293806, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50438442018150202, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50438442018150202, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_UseAutoMass
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212999297292671502, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212999297292671502, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212999297292671502, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212999297292671502, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 212999297292671502, guid: b34663773aed5704eb0663057871c918,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300134, guid: 4e173a0e69753814aa2308928ebe00ef,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b34663773aed5704eb0663057871c918, type: 2}
   m_IsPrefabAsset: 0

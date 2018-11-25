@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 58317874148293806}
   - component: {fileID: 61879138997925748}
   - component: {fileID: 50438442018150202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -79,7 +79,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1.75
 --- !u!61 &61879138997925748
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -92,7 +92,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.15}
+  m_Offset: {x: 0, y: 0.5269308}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -103,7 +103,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.34199476, y: 0.35564828}
+  m_Size: {x: 0.34199476, y: 0.31731653}
   m_EdgeRadius: 0
 --- !u!95 &95510367017774820
 Animator:
@@ -171,9 +171,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: f1ce2f606049fc34fb5ac2b2b9f1d115, type: 3}
+  m_Sprite: {fileID: 21300134, guid: 4e173a0e69753814aa2308928ebe00ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
