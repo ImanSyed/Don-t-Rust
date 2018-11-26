@@ -19,6 +19,7 @@ public class EnemyScript : MonoBehaviour {
     Animator anim;
 
     [SerializeField] CircleCollider2D trigger;
+    [SerializeField] GameObject deathEffect;
 
     Vector2 waypoint;
 
@@ -144,9 +145,11 @@ public class EnemyScript : MonoBehaviour {
 
     IEnumerator KillMe()
     {
+        GameObject de = Instantiate(deathEffect, transform.position, transform.rotation);
         aggro = attacking = stunned = alert = rest = false;
         dying = true;
         yield return new WaitForSeconds(1f);
+        Destroy(de);
         Destroy(gameObject);
     }
 

@@ -6,9 +6,9 @@ using System.Collections;
 public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
-    [SerializeField] GameObject dust, projectile;
-    [SerializeField] AnimatorOverrideController d1, d2, d3;
-    RuntimeAnimatorController d0;
+    [SerializeField] GameObject dust, attackEffect, projectile;
+    [SerializeField] AnimatorOverrideController d1, d2, d3, a1, a2, a3;
+    RuntimeAnimatorController d0, a0;
 
     [SerializeField] Slider fuelSlider, healthSlider;
 
