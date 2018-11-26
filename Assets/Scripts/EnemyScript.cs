@@ -145,11 +145,11 @@ public class EnemyScript : MonoBehaviour {
 
     IEnumerator KillMe()
     {
-        GameObject de = Instantiate(deathEffect, transform.position, transform.rotation);
+        //GameObject de = Instantiate(deathEffect, transform.position, transform.rotation);
         aggro = attacking = stunned = alert = rest = false;
         dying = true;
         yield return new WaitForSeconds(1f);
-        Destroy(de);
+        //Destroy(de);
         Destroy(gameObject);
     }
 
