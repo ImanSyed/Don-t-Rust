@@ -6,8 +6,7 @@ using System.Collections;
 public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
-    [SerializeField] GameObject dust, attackEffect, projectile;
-    [SerializeField] AnimatorOverrideController d1, d2, d3, a1, a2, a3;
+    [SerializeField] GameObject dustE, attackE, projectile;
     RuntimeAnimatorController d0, a0;
 
     [SerializeField] Slider fuelSlider, healthSlider;
@@ -29,12 +28,12 @@ public class PCScript : MonoBehaviour {
 
     Vector3 pos;
 
-    GameObject killer, dustEffect;
+    GameObject killer, dustEffect, attackEffect;
 
 
     private void Start()
     {
-        d0 = dust.GetComponent<Animator>().runtimeAnimatorController;
+        d0 = dustE.GetComponent<Animator>().runtimeAnimatorController;
         craftUI = GetComponentInChildren<Crafting>();
         craftUI.gameObject.SetActive(false);
 
@@ -117,25 +116,25 @@ public class PCScript : MonoBehaviour {
                 {
                     Vector2 tempPos = transform.position;
                     tempPos.y += 0.25f;
-                    switch (legType)
+                    /*switch (legType)
                     {
                         case 1:
-                            dust.GetComponent<Animator>().runtimeAnimatorController = d1;
+                            dustE.GetComponent<Animator>().runtimeAnimatorController = d1;
                             break;
                         case 2:
-                            dust.GetComponent<Animator>().runtimeAnimatorController = d2;
+                            dustE.GetComponent<Animator>().runtimeAnimatorController = d2;
                             break;
                         case 3:
-                            dust.GetComponent<Animator>().runtimeAnimatorController = d3;
+                            dustE.GetComponent<Animator>().runtimeAnimatorController = d3;
                             break;
                         default:
-                            dust.GetComponent<Animator>().runtimeAnimatorController = d0;
+                            dustE.GetComponent<Animator>().runtimeAnimatorController = d0;
                             break;
-                    }
-                    dustEffect = Instantiate(dust, tempPos, Quaternion.identity);
+                    }*/
+                    dustEffect = Instantiate(dustE, tempPos, Quaternion.identity);
                     dustEffect.GetComponent<SpriteRenderer>().flipX = GetComponent<SpriteRenderer>().flipX;
                     dustEffect.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 4;
-                    StartCoroutine(DestroyDust());
+                    StartCoroutine(DestroyEffect(dustEffect));
                 }
                 if (!GetComponent<Animator>().GetBool("Running"))
                 {
@@ -345,19 +344,67 @@ public class PCScript : MonoBehaviour {
         {
             if (child.gameObject.name == "Arms")
             {
+                attackEffect = Instantiate(attackE, transform.position, transform.rotation);
+                Vector2 ypos = attackEffect.transform.position;
+                ypos.y -= 0.25f;
+                attackEffect.transform.position = ypos;
                 switch (armType)
                 {
                     case 1:
                         child.GetComponent<Animator>().Play("Attack", 2);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(2, 1);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(4, 0);
+                        if (GetComponent<SpriteRenderer>().flipX)
+                        {
+                            attackEffect.GetComponent<SpriteRenderer>().flipX = true;
+                        }
+                        else
+                        {
+                            attackEffect.GetComponent<SpriteRenderer>().flipX = false;
+                        }
+                        attackEffect.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder + 1;
+                        StartCoroutine(DestroyEffect(attackEffect));
                         break;
                     case 2:
                         child.GetComponent<Animator>().Play("Attack", 3);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(3, 1);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(4, 0);
+                        if (GetComponent<SpriteRenderer>().flipX)
+                        {
+                            attackEffect.GetComponent<SpriteRenderer>().flipX = true;
+                        }
+                        else
+                        {
+                            attackEffect.GetComponent<SpriteRenderer>().flipX = false;
+                        }
+                        attackEffect.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder + 1;
+                        StartCoroutine(DestroyEffect(attackEffect));
                         break;
                     case 3:
                         child.GetComponent<Animator>().Play("Attack", 4);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(4, 1);
+                        if (GetComponent<SpriteRenderer>().flipX)
+                        {
+                            attackEffect.GetComponent<SpriteRenderer>().flipX = true;
+                        }
+                        else
+                        {
+                            attackEffect.GetComponent<SpriteRenderer>().flipX = false;
+                        }
+                        attackEffect.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder + 1;
+                        StartCoroutine(DestroyEffect(attackEffect));
                         break;
                     default:
                         child.GetComponent<Animator>().Play("Attack");
+                        GameObject ae = attackEffect;
+                        Destroy(ae);
                         break;
                 }
                 
@@ -422,12 +469,11 @@ public class PCScript : MonoBehaviour {
         collecting = false;
     }
 
-    IEnumerator DestroyDust()
+    IEnumerator DestroyEffect(GameObject e)
     {
         yield return new WaitForSeconds(0.417f);
-        GameObject effect = dustEffect;
-        dustEffect = null;
-        Destroy(effect);
+        GameObject effect = e;
+        Destroy(e);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
