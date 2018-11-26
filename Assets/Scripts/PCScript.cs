@@ -7,6 +7,8 @@ public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
     [SerializeField] GameObject dust, projectile;
+    [SerializeField] AnimatorOverrideController d1, d2, d3;
+    RuntimeAnimatorController d0;
 
     [SerializeField] Slider fuelSlider, healthSlider;
 
@@ -32,6 +34,7 @@ public class PCScript : MonoBehaviour {
 
     private void Start()
     {
+        d0 = dust.GetComponent<Animator>().runtimeAnimatorController;
         craftUI = GetComponentInChildren<Crafting>();
         craftUI.gameObject.SetActive(false);
 
@@ -114,6 +117,21 @@ public class PCScript : MonoBehaviour {
                 {
                     Vector2 tempPos = transform.position;
                     tempPos.y += 0.25f;
+                    switch (legType)
+                    {
+                        case 1:
+                            dust.GetComponent<Animator>().runtimeAnimatorController = d1;
+                            break;
+                        case 2:
+                            dust.GetComponent<Animator>().runtimeAnimatorController = d2;
+                            break;
+                        case 3:
+                            dust.GetComponent<Animator>().runtimeAnimatorController = d3;
+                            break;
+                        default:
+                            dust.GetComponent<Animator>().runtimeAnimatorController = d0;
+                            break;
+                    }
                     dustEffect = Instantiate(dust, tempPos, Quaternion.identity);
                     dustEffect.GetComponent<SpriteRenderer>().flipX = GetComponent<SpriteRenderer>().flipX;
                     dustEffect.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder - 4;
@@ -229,6 +247,7 @@ public class PCScript : MonoBehaviour {
                         child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
                     case 2:
+                        Debug.Log(123);
                         child.GetComponent<Animator>().SetLayerWeight(1, 0);
                         child.GetComponent<Animator>().SetLayerWeight(2, 0);
                         child.GetComponent<Animator>().SetLayerWeight(3, 1);
@@ -324,9 +343,24 @@ public class PCScript : MonoBehaviour {
         GetComponent<Animator>().Play("Attack");
         foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
         {
-            if (child.gameObject.name == "Arms" || child.gameObject.name == "Torso" || child.gameObject.name == "Legs")
+            if (child.gameObject.name == "Arms")
             {
-                child.GetComponent<Animator>().Play("Attack");
+                switch (armType)
+                {
+                    case 1:
+                        child.GetComponent<Animator>().Play("Attack", 2);
+                        break;
+                    case 2:
+                        child.GetComponent<Animator>().Play("Attack", 3);
+                        break;
+                    case 3:
+                        child.GetComponent<Animator>().Play("Attack", 4);
+                        break;
+                    default:
+                        child.GetComponent<Animator>().Play("Attack");
+                        break;
+                }
+                
             }
         }
         yield return new WaitForSeconds(0.1f);

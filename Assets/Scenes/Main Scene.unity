@@ -4997,6 +4997,9 @@ MonoBehaviour:
   originalSpeed: 0.05
   dust: {fileID: 1352856967356804, guid: 686b47c1db4d8704d8d052dfe599c230, type: 2}
   projectile: {fileID: 0}
+  d1: {fileID: 22100000, guid: cf066ff47e0172e4c8e6b6b7263ce102, type: 2}
+  d2: {fileID: 22100000, guid: 8b690e0ad1b5b6f4c9466436a05c2daf, type: 2}
+  d3: {fileID: 22100000, guid: d0978ceb079a80146865ec3bda719d26, type: 2}
   fuelSlider: {fileID: 1814759069}
   healthSlider: {fileID: 1982977283}
   craftUI: {fileID: 0}
