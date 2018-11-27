@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpawnScript : MonoBehaviour {
 
@@ -15,10 +13,10 @@ public class SpawnScript : MonoBehaviour {
         while (count > 0)
         {
             GameObject e = Instantiate(enemy, transform.position, transform.rotation);
+            transform.position = new Vector2(Random.Range(minBounds.x, maxBounds.x), Random.Range(minBounds.y, maxBounds.y));
             e.GetComponent<EnemyScript>().Initialize(this);
             enemies[count - 1] = e.GetComponent<EnemyScript>();
             count--;
-            transform.position = new Vector2(Random.Range(minBounds.x, minBounds.y), Random.Range(maxBounds.x, maxBounds.y));
         }
         foreach(EnemyScript es in enemies)
         {

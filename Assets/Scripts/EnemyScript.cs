@@ -285,11 +285,11 @@ public class EnemyScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 10 || (!spawning && collision.gameObject.tag == "Enemy") )
         {
             waypoint = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
         }
-        else if(spawning && collision.gameObject.tag == "Enemy")
+        if(spawning && collision.gameObject.tag == "Enemy")
         {
             mySpawner.count++;
             Destroy(gameObject);

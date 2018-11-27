@@ -6792,22 +6792,22 @@ Prefab:
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: minBounds.x
-      value: -3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: minBounds.y
-      value: -3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: maxBounds.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: maxBounds.y
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
