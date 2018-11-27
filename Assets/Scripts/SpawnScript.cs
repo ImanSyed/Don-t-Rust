@@ -24,10 +24,12 @@ public class SpawnScript : MonoBehaviour {
         {
             es.spawning = false;
         }
+        InvokeRepeating("Check", 6, 6);
 	}
 	
 
-	void Update () {
-		
-	}
+	void Check()
+    {
+
+    }
 }

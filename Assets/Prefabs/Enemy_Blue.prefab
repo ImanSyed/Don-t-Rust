@@ -138,6 +138,9 @@ MonoBehaviour:
   spawning: 0
   trigger: {fileID: 58887219180969022}
   deathEffect: {fileID: 0}
+  scrap1: {fileID: 1697372272798588, guid: 9fc9090fe643bd74db9b6b09097cc92e, type: 2}
+  scrap2: {fileID: 1697372272798588, guid: 9fc9090fe643bd74db9b6b09097cc92e, type: 2}
+  scrap3: {fileID: 1697372272798588, guid: 9fc9090fe643bd74db9b6b09097cc92e, type: 2}
 --- !u!212 &212398020431280182
 SpriteRenderer:
   m_ObjectHideFlags: 1

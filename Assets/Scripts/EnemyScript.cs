@@ -19,11 +19,10 @@ public class EnemyScript : MonoBehaviour {
     Animator anim;
     SpawnScript mySpawner;
 
-
     public bool spawning = true;
 
     [SerializeField] CircleCollider2D trigger;
-    [SerializeField] GameObject deathEffect;
+    [SerializeField] GameObject deathEffect, scrap1, scrap2, scrap3;
 
     Vector2 waypoint;
 
@@ -147,7 +146,7 @@ public class EnemyScript : MonoBehaviour {
         else if(!aggro)
         {
             aggro = true;
-            trigger.radius = 2.5f;
+            trigger.radius = 3.5f;
         }
         
     }
@@ -159,6 +158,70 @@ public class EnemyScript : MonoBehaviour {
         dying = true;
         yield return new WaitForSeconds(1f);
         //Destroy(de);
+        GameObject s1 = null, s2 = null, s3 = null;
+        float r1 = Random.Range(0f, 1f);
+        if(r1 > 0.1f && r1 <= 0.5f)
+        {
+            float r2 = Random.Range(0, 1);
+            if(r2 >= 0 && r2 < 0.33f)
+            {
+                s1 = Instantiate(scrap1, transform.position, transform.rotation);
+            }
+            else if (r2 >= 0.33f && r2 < 0.66f)
+            {
+                s1 = Instantiate(scrap2, transform.position, transform.rotation);
+            }
+            else
+            {
+                s1 = Instantiate(scrap3, transform.position, transform.rotation);
+            }
+        }
+        else if (r1 > 0.5f && r1 < 0.85f)
+        {
+            float r2 = Random.Range(0, 1);
+            if (r2 >= 0 && r2 < 0.33f)
+            {
+                s1 = Instantiate(scrap1, transform.position, transform.rotation);
+                s2 = Instantiate(scrap2, transform.position, transform.rotation);
+
+            }
+            else if (r2 >= 0.33f && r2 < 0.66f)
+            {
+                s1 = Instantiate(scrap2, transform.position, transform.rotation);
+                s2 = Instantiate(scrap3, transform.position, transform.rotation);
+            }
+            else
+            {
+                s1 = Instantiate(scrap1, transform.position, transform.rotation);
+                s2 = Instantiate(scrap3, transform.position, transform.rotation);
+            }
+        }
+        else if(r1 >= 0.85f && r1 <= 1f)
+        {
+            s1 = Instantiate(scrap1, transform.position, transform.rotation);
+            s2 = Instantiate(scrap2, transform.position, transform.rotation);
+            s3 = Instantiate(scrap3, transform.position, transform.rotation);
+        }
+        if (s1 != null)
+        {
+            Vector2 pos = transform.position;
+            pos.x += Random.Range(-0.3f, 0.3f);
+            pos.y += Random.Range(-0.3f, 0.3f);
+            s1.transform.position = pos;
+            if (s2 != null)
+            {
+                pos.x += Random.Range(-0.3f, 0.3f);
+                pos.y += Random.Range(-0.3f, 0.3f);
+                s2.transform.position = pos;
+                if (s3 != null)
+                {
+                    pos.x += Random.Range(-0.3f, 0.3f);
+                    pos.y += Random.Range(-0.3f, 0.3f);
+                    s3.transform.position = pos;
+                }
+            }
+        }
+        mySpawner.count++;
         Destroy(gameObject);
     }
 
