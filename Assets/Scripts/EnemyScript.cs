@@ -22,7 +22,7 @@ public class EnemyScript : MonoBehaviour {
     public bool spawning = true;
 
     [SerializeField] CircleCollider2D trigger;
-    [SerializeField] GameObject deathEffect, scrap1, scrap2, scrap3;
+    [SerializeField] GameObject deathEffect, scrap;
 
     Vector2 waypoint;
 
@@ -165,15 +165,15 @@ public class EnemyScript : MonoBehaviour {
             float r2 = Random.Range(0, 1);
             if(r2 >= 0 && r2 < 0.33f)
             {
-                s1 = Instantiate(scrap1, transform.position, transform.rotation);
+                s1 = Instantiate(scrap, transform.position, transform.rotation);
             }
             else if (r2 >= 0.33f && r2 < 0.66f)
             {
-                s1 = Instantiate(scrap2, transform.position, transform.rotation);
+                s1 = Instantiate(scrap, transform.position, transform.rotation);
             }
             else
             {
-                s1 = Instantiate(scrap3, transform.position, transform.rotation);
+                s1 = Instantiate(scrap, transform.position, transform.rotation);
             }
         }
         else if (r1 > 0.5f && r1 < 0.85f)
@@ -181,26 +181,26 @@ public class EnemyScript : MonoBehaviour {
             float r2 = Random.Range(0, 1);
             if (r2 >= 0 && r2 < 0.33f)
             {
-                s1 = Instantiate(scrap1, transform.position, transform.rotation);
-                s2 = Instantiate(scrap2, transform.position, transform.rotation);
+                s1 = Instantiate(scrap, transform.position, transform.rotation);
+                s2 = Instantiate(scrap, transform.position, transform.rotation);
 
             }
             else if (r2 >= 0.33f && r2 < 0.66f)
             {
-                s1 = Instantiate(scrap2, transform.position, transform.rotation);
-                s2 = Instantiate(scrap3, transform.position, transform.rotation);
+                s1 = Instantiate(scrap, transform.position, transform.rotation);
+                s2 = Instantiate(scrap, transform.position, transform.rotation);
             }
             else
             {
-                s1 = Instantiate(scrap1, transform.position, transform.rotation);
-                s2 = Instantiate(scrap3, transform.position, transform.rotation);
+                s1 = Instantiate(scrap, transform.position, transform.rotation);
+                s2 = Instantiate(scrap, transform.position, transform.rotation);
             }
         }
         else if(r1 >= 0.85f && r1 <= 1f)
         {
-            s1 = Instantiate(scrap1, transform.position, transform.rotation);
-            s2 = Instantiate(scrap2, transform.position, transform.rotation);
-            s3 = Instantiate(scrap3, transform.position, transform.rotation);
+            s1 = Instantiate(scrap, transform.position, transform.rotation);
+            s2 = Instantiate(scrap, transform.position, transform.rotation);
+            s3 = Instantiate(scrap, transform.position, transform.rotation);
         }
         if (s1 != null)
         {

@@ -6759,11 +6759,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4826292825583278, guid: 0442d5004a356a34c9f1a52daa2afd71, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.324047
+      value: -4.42
       objectReference: {fileID: 0}
     - target: {fileID: 4826292825583278, guid: 0442d5004a356a34c9f1a52daa2afd71, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.3705451
+      value: 2.23
       objectReference: {fileID: 0}
     - target: {fileID: 4826292825583278, guid: 0442d5004a356a34c9f1a52daa2afd71, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6792,22 +6792,22 @@ Prefab:
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: minBounds.x
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: minBounds.y
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: maxBounds.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: maxBounds.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
