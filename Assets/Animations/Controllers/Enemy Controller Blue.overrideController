@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Enemy Controller Blue
+  m_Controller: {fileID: 9100000, guid: 964f6879d601faf41b457b9e854b2442, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 7fa0f27ce84d37040b15f0df34f836b1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e2490a9dda567254aa0cfc578f4774d4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6c4e03c70a746154083f73c410dd228f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 12ff12d0fc1f09043827eca3972cc338, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cfe55915bb146684a89e4edd1673bc2d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 91e9524ebe67bc6449c11b4962b1d076, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 37b99652dfa9ec74fbad9124e1962d68, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1ad6fa3e5f834744bbc10fff2d4c6f08, type: 2}

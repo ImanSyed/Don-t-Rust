@@ -19,7 +19,6 @@ public class SpawnScript : MonoBehaviour {
             enemies[count - 1] = e.GetComponent<EnemyScript>();
             count--;
             transform.position = new Vector2(Random.Range(minBounds.x, minBounds.y), Random.Range(maxBounds.x, maxBounds.y));
-            Debug.Log(1);
         }
         foreach(EnemyScript es in enemies)
         {

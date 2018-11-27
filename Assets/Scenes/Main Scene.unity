@@ -6809,6 +6809,12 @@ Prefab:
       propertyPath: maxBounds.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
+        type: 2}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1804259092164810, guid: eaeaacd66408c454db2c625ca61754ec,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0442d5004a356a34c9f1a52daa2afd71, type: 2}
   m_IsPrefabAsset: 0

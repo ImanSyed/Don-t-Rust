@@ -52,7 +52,7 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: Green
+    m_Name: Blue
     m_StateMachine: {fileID: 1107586354412128194}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -629,7 +629,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cc03b1f70f4408d408f911df6f500700, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0687c2c45b6dc9041aa80d07c0d011d7, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -655,7 +655,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a33e37de62e5f554699c0b80c80e095d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 951d9d2cc00c97942bc842c4b4482d94, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -681,7 +681,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: a33e37de62e5f554699c0b80c80e095d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 742717f0bc2126544ab56bf70c9d9995, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -707,7 +707,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cc03b1f70f4408d408f911df6f500700, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2a2f588180c5962448608ad2de21327f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -838,7 +838,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 685b1fcd2c5a29e45b08deb3f06cb6e1, type: 2}
+  m_Motion: {fileID: 7400000, guid: cc5199927793ae64ba3dae55991a0fb1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -865,7 +865,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 685b1fcd2c5a29e45b08deb3f06cb6e1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 34796538c0dab0d4eb58d6151389e137, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -904,7 +904,7 @@ AnimatorStateMachine:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Green
+  m_Name: Blue
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102385579568343874}
