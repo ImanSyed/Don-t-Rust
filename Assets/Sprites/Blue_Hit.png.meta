@@ -5,6 +5,9 @@ TextureImporter:
     21300000: Red_Hit_0
     21300002: Red_Hit_1
     21300004: Red_Hit_2
+    21300006: Blue_Hit_0
+    21300008: Blue_Hit_1
+    21300010: Blue_Hit_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -87,7 +90,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red_Hit_0
+      name: Blue_Hit_0
       rect:
         serializedVersion: 2
         x: 0
@@ -101,13 +104,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 387efbc3a83064f4bb82e98bd47472d6
+      spriteID: fc19ea8debd45ba4c886a35c080bf44d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_Hit_1
+      name: Blue_Hit_1
       rect:
         serializedVersion: 2
         x: 32
@@ -121,13 +124,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 974d82faac18abf488f76e3d322e49f8
+      spriteID: 21c20ae8d5053ab469a55a74af45db89
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_Hit_2
+      name: Blue_Hit_2
       rect:
         serializedVersion: 2
         x: 64
@@ -141,7 +144,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ecb63656ed794c4592b250637d50d7f
+      spriteID: 7198523f98553ff498ca53a589747877
       vertices: []
       indices: 
       edges: []
