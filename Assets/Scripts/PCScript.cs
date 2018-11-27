@@ -352,10 +352,9 @@ public class PCScript : MonoBehaviour {
                 {
                     case 1:
                         child.GetComponent<Animator>().Play("Attack", 2);
-                        attackEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
-                        attackEffect.GetComponent<Animator>().SetLayerWeight(2, 1);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(1, 1);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
                         attackEffect.GetComponent<Animator>().SetLayerWeight(3, 0);
-                        attackEffect.GetComponent<Animator>().SetLayerWeight(4, 0);
                         if (GetComponent<SpriteRenderer>().flipX)
                         {
                             attackEffect.GetComponent<SpriteRenderer>().flipX = true;
@@ -370,9 +369,8 @@ public class PCScript : MonoBehaviour {
                     case 2:
                         child.GetComponent<Animator>().Play("Attack", 3);
                         attackEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
-                        attackEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
-                        attackEffect.GetComponent<Animator>().SetLayerWeight(3, 1);
-                        attackEffect.GetComponent<Animator>().SetLayerWeight(4, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(2, 1);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(3, 0);
                         if (GetComponent<SpriteRenderer>().flipX)
                         {
                             attackEffect.GetComponent<SpriteRenderer>().flipX = true;
@@ -388,8 +386,7 @@ public class PCScript : MonoBehaviour {
                         child.GetComponent<Animator>().Play("Attack", 4);
                         attackEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
                         attackEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
-                        attackEffect.GetComponent<Animator>().SetLayerWeight(3, 0);
-                        attackEffect.GetComponent<Animator>().SetLayerWeight(4, 1);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(3, 1);
                         if (GetComponent<SpriteRenderer>().flipX)
                         {
                             attackEffect.GetComponent<SpriteRenderer>().flipX = true;
@@ -403,6 +400,9 @@ public class PCScript : MonoBehaviour {
                         break;
                     default:
                         child.GetComponent<Animator>().Play("Attack");
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        attackEffect.GetComponent<Animator>().SetLayerWeight(3, 0);
                         GameObject ae = attackEffect;
                         Destroy(ae);
                         break;

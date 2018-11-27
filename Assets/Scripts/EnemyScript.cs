@@ -6,7 +6,7 @@ public class EnemyScript : MonoBehaviour {
 
     public enum Enemy
     {
-        red, green, yellow
+        red, blue, yellow
     }
 
     public Enemy enemyType;
@@ -17,6 +17,10 @@ public class EnemyScript : MonoBehaviour {
 
     PCScript pc;
     Animator anim;
+    SpawnScript mySpawner;
+
+
+    public bool spawning = true;
 
     [SerializeField] CircleCollider2D trigger;
     [SerializeField] GameObject deathEffect;
@@ -26,7 +30,7 @@ public class EnemyScript : MonoBehaviour {
 	void Start () {
         anim = GetComponent<Animator>();
         pc = FindObjectOfType<PCScript>();
-        if(enemyType == Enemy.green)
+        if(enemyType == Enemy.blue)
         {
             originalSpeed = 0.02f;
             health = 50;
@@ -70,6 +74,11 @@ public class EnemyScript : MonoBehaviour {
             }
         }
 	}
+
+    public void Initialize(SpawnScript ss)
+    {
+        mySpawner = ss;
+    }
 
     void Wander()
     {
@@ -182,7 +191,7 @@ public class EnemyScript : MonoBehaviour {
         anim.SetBool("Running", false);
         attacking = true;
         float attackDelay = 0;
-        if(enemyType == Enemy.green)
+        if(enemyType == Enemy.blue)
         {
             attackDelay = 0.5f;
         }
@@ -217,8 +226,13 @@ public class EnemyScript : MonoBehaviour {
         {
             waypoint = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
         }
+        else if(spawning && collision.gameObject.tag == "Enemy")
+        {
+            mySpawner.count++;
+            Destroy(gameObject);
+        }
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" && !collision.isTrigger)
