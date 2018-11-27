@@ -13,15 +13,13 @@ public class Crafting : MonoBehaviour {
 
 
     GameObject activeTray;
+    public bool activateControls;
 
 
     short counter1, counter2;
 
     private void Start()
     {
-        start = transform.localPosition;
-        destination = start;
-        destination.y = 0.525f;
         activeTray = parentIcons[counter1].transform.GetChild(0).gameObject;
         childIcons = activeTray.GetComponentsInChildren<Transform>();
         temp[0] = childIcons[1];
@@ -32,26 +30,7 @@ public class Crafting : MonoBehaviour {
 
     private void Update()
     {
-        if (moveDirection == 1)
-        {
-            if((Vector2)transform.localPosition == destination)
-            {
-                moveDirection = 0;
-                activeTray = parentIcons[counter1].transform.GetChild(0).gameObject;
-                activeTray.GetComponent<Animator>().Play("Forward", 0);
-            }
-            transform.localPosition = Vector2.MoveTowards(transform.localPosition, destination, 0.1f);
-        }
-        else if(moveDirection == -1)
-        {
-            if ((Vector2)transform.localPosition == start)
-            {
-                moveDirection = 0;
-            }
-            transform.localPosition = Vector2.MoveTowards(transform.localPosition, start, 0.1f);
-        }
-
-        if ((Vector2)transform.localPosition == destination)
+        if (activateControls)
         {
             Controls();
         }
@@ -103,9 +82,9 @@ public class Crafting : MonoBehaviour {
 
             if (activeTray.transform.localPosition.x == 0.75f)
             {
-                if(childIcons[counter2].GetComponent<SpriteRenderer>().color != Color.red)
+                if(childIcons[counter2].GetComponent<SpriteRenderer>().color != Color.grey)
                 {
-                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.red;
+                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.grey;
 
                 }
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
@@ -117,7 +96,7 @@ public class Crafting : MonoBehaviour {
                     {
                         counter2 = 0;
                     }
-                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.red;
+                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.grey;
                     childIcons[counter2].GetComponent<IconScript>().Check();
 
                 }
@@ -130,7 +109,7 @@ public class Crafting : MonoBehaviour {
                     {
                         counter2 = (short)(childIcons.Length - 1);
                     }
-                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.red;
+                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.grey;
                     childIcons[counter2].GetComponent<IconScript>().Check();
                 }
             }
@@ -139,17 +118,15 @@ public class Crafting : MonoBehaviour {
 
     public void Toggle()
     {
-        if((Vector2)transform.localPosition == destination)
+        if (activateControls)
         {
-            moveDirection = -1;  
-            childIcons[counter2].GetComponent<IconScript>().available = false;
-            childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.white;
-
+            activateControls = false;
+            activeTray.GetComponent<Animator>().Play("Back", 0);
         }
-        else if((Vector2)transform.localPosition == start)
+        else
         {
-            childIcons[counter2].GetComponent<IconScript>().Check();
-            moveDirection = 1;
+            activateControls = true;
+            activeTray.GetComponent<Animator>().Play("Forward", 0);
         }
     }
 }

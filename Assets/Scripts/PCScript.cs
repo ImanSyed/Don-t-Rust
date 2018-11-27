@@ -56,7 +56,7 @@ public class PCScript : MonoBehaviour {
 
     void Inputs()
     {
-        if (!craftUI.isActiveAndEnabled || (Vector2)craftUI.transform.localPosition != craftUI.destination)
+        if (!craftUI.isActiveAndEnabled || !craftUI.activateControls)
         {
             if (Input.GetKeyDown(KeyCode.F) && !attacking)
             {
@@ -79,7 +79,7 @@ public class PCScript : MonoBehaviour {
    
     void Move()
     {
-        if (!craftUI.isActiveAndEnabled || (Vector2)craftUI.transform.localPosition == craftUI.start)
+        if (!craftUI.isActiveAndEnabled || !craftUI.activateControls)
         {
             pos = transform.position;
             float speed = originalSpeed;
