@@ -22,7 +22,7 @@ public class SpawnScript : MonoBehaviour {
         {
             es.spawning = false;
         }
-        InvokeRepeating("Check", 5, 5);
+        InvokeRepeating("Check", 10, 10);
 	}
 	
 
@@ -30,7 +30,6 @@ public class SpawnScript : MonoBehaviour {
     {
         if(count > 0)
         {
-            Debug.Log(1);
             GameObject e = Instantiate(enemy, transform.position, transform.rotation);
             transform.position = new Vector2(Random.Range(minBounds.x, maxBounds.x), Random.Range(minBounds.y, maxBounds.y));
             e.GetComponent<EnemyScript>().Initialize(this);

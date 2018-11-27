@@ -5805,6 +5805,7 @@ MonoBehaviour:
   - {fileID: 883902964}
   - {fileID: 1840159150}
   - {fileID: 0}
+  activateControls: 0
 --- !u!1 &1084751411
 GameObject:
   m_ObjectHideFlags: 0
@@ -6495,15 +6496,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4826292825583278, guid: 0442d5004a356a34c9f1a52daa2afd71, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.42
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4826292825583278, guid: 0442d5004a356a34c9f1a52daa2afd71, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4826292825583278, guid: 0442d5004a356a34c9f1a52daa2afd71, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.047851562
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4826292825583278, guid: 0442d5004a356a34c9f1a52daa2afd71, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6533,12 +6534,12 @@ Prefab:
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: minBounds.y
-      value: -0.5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
       propertyPath: maxBounds.x
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114242138998637586, guid: 0442d5004a356a34c9f1a52daa2afd71,
         type: 2}
