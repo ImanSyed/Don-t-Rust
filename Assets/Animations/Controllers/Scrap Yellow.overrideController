@@ -1,0 +1,12 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Scrap Yellow
+  m_Controller: {fileID: 9100000, guid: 143fe81e9305bd5438d8ef62f69aa6e4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ed3de1614ec37994989c4723010127ca, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d1bddc34f7457d74baf47b260e983955, type: 2}
