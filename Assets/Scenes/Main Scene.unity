@@ -5743,7 +5743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2666221e44b30d4392faa99999c1650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: 
+  item: Red Legs
   available: 0
   requirements: 01000000000000000000000000000000
 --- !u!1 &883902964
@@ -6281,7 +6281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2666221e44b30d4392faa99999c1650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: 
+  item: Red Torso
   available: 0
   requirements: 01000000000000000000000000000000
 --- !u!1 &1333306900
