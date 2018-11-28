@@ -40,15 +40,14 @@ public class IconScript: MonoBehaviour{
     IEnumerator Craft()
     {
         available = false;
-        yield return new WaitForSeconds(1);
         short c = 0;
-        Debug.Log(12);
-        while(c < requirements.Length - 1)
+        while (c < requirements.Length - 1)
         {
             pc.resources[c, 0] -= requirements[c];
             pc.redCount.text = pc.resources[c, 0].ToString();
             c++;
         }
+        yield return new WaitForSeconds(1);
         pc.AddToInventory(item, 1);
         Check();
     }

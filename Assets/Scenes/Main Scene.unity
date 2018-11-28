@@ -10215,6 +10215,7 @@ MonoBehaviour:
   originalSpeed: 0.05
   dustE: {fileID: 1352856967356804, guid: 686b47c1db4d8704d8d052dfe599c230, type: 2}
   attackE: {fileID: 1764019120234570, guid: 722509f7daa290948b60da91f3ec3b47, type: 2}
+  hitEffect: {fileID: 1749961596776342, guid: 5e72c7443c5f4ea418275e050691615b, type: 2}
   projectile: {fileID: 0}
   redCount: {fileID: 151906564}
   blueCount: {fileID: 1912712614}
@@ -10222,6 +10223,7 @@ MonoBehaviour:
   fuelSlider: {fileID: 1814759069}
   healthSlider: {fileID: 1982977283}
   craftUI: {fileID: 0}
+  canCraft: 0
 --- !u!61 &481561870
 BoxCollider2D:
   m_ObjectHideFlags: 0
