@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 690e4632f46fa3040a84098325ef3ce8
+guid: 3cab45655cbfa314da74c270fb2052a5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Player_HUD_UI_0
-    21300002: Player_HUD_UI_1
+    21300000: Player_HUD_Back_0
+    21300002: Player_HUD_Back_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -86,7 +86,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_HUD_UI_0
+      name: Player_HUD_Back_0
       rect:
         serializedVersion: 2
         x: 0
@@ -100,13 +100,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 559fe95ce6c7069439d1bc221b5d44ab
+      spriteID: def6f1eb66a630344a37584e85fd9205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_HUD_UI_1
+      name: Player_HUD_Back_1
       rect:
         serializedVersion: 2
         x: 16
@@ -120,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 576db56b51eff16449c94caf96a45c5c
+      spriteID: 50617e0d1667c3d469e8427e6ee21750
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 79342973e6163ba48b9b838daab75fbd
+    spriteID: 09a2d94e6b23bf94aaae82e1208f7631
     vertices: []
     indices: 
     edges: []
