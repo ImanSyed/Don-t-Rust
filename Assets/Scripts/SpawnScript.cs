@@ -25,7 +25,6 @@ public class SpawnScript : MonoBehaviour {
         InvokeRepeating("Check", 10, 10);
 	}
 	
-
 	void Check()
     {
         if(count > 0)

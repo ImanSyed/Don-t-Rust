@@ -26,7 +26,7 @@ public class EnemyScript : MonoBehaviour {
 
     Vector2 waypoint;
 
-	void Start () {
+	void Awake () {
         anim = GetComponent<Animator>();
         pc = FindObjectOfType<PCScript>();
         if(enemyType == Enemy.blue)
