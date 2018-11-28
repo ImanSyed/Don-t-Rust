@@ -22,7 +22,7 @@ public class SpawnScript : MonoBehaviour {
         {
             es.spawning = false;
         }
-        InvokeRepeating("Check", 10, 10);
+        InvokeRepeating("Check", 15, 15);
 	}
 	
 	void Check()

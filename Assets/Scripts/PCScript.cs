@@ -5,7 +5,7 @@ using System.Collections;
 public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
-    [SerializeField] GameObject dustE, attackE, projectile;
+    [SerializeField] GameObject dustE, attackE, hitEffect, projectile;
     public TMPro.TextMeshPro redCount, blueCount, yellowCount;
 
     RuntimeAnimatorController d0, a0;
@@ -28,12 +28,13 @@ public class PCScript : MonoBehaviour {
 
     GameObject killer, dustEffect;
 
+    public bool canCraft;
+
 
     private void Start()
     {
         d0 = dustE.GetComponent<Animator>().runtimeAnimatorController;
         craftUI = GetComponentInChildren<Crafting>();
-        craftUI.gameObject.SetActive(false);
 
     }
 
@@ -214,7 +215,7 @@ public class PCScript : MonoBehaviour {
     }
 
     void ToggleCrafting() {
-        if (craftUI && craftUI.isActiveAndEnabled)
+        if (canCraft)
         {
             GetComponent<Animator>().SetBool("Running", false);
             foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
@@ -341,21 +342,46 @@ public class PCScript : MonoBehaviour {
         {
             if (child.gameObject.name == "Arms")
             {
+                GameObject tempEffect = attackE;
                 switch (armType)
                 {
                     case 1:
                         child.GetComponent<Animator>().Play("Attack", 2);
+                        tempEffect = Instantiate(attackE, transform.position, transform.rotation);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(0, 0);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(1, 1);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
                         break;
                     case 2:
+                        tempEffect = Instantiate(attackE, transform.position, transform.rotation);
                         child.GetComponent<Animator>().Play("Attack", 3);
+                        tempEffect = Instantiate(attackE, transform.position, transform.rotation);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(0, 0);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(2, 1);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(3, 0);
                         break;
                     case 3:
+                        tempEffect = Instantiate(attackE, transform.position, transform.rotation);
                         child.GetComponent<Animator>().Play("Attack", 4);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(0, 0);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(3, 1);
                         break;
                     default:
                         child.GetComponent<Animator>().Play("Attack");
                         break;
                 }
+                if (GetComponent<SpriteRenderer>().flipX)
+                {
+                    tempEffect.GetComponent<SpriteRenderer>().flipX = true;
+                }
+                else
+                {
+                    tempEffect.GetComponent<SpriteRenderer>().flipX = false;
+                }
+                StartCoroutine(DestroyEffect(tempEffect));
             }
         }
         yield return new WaitForSeconds(0.1f);
@@ -372,7 +398,13 @@ public class PCScript : MonoBehaviour {
         col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Enemies"));
         if (col)
         {
+            GameObject tempEffect = Instantiate(hitEffect, col.gameObject.transform.position, Quaternion.identity);
+            Vector2 ypos = tempEffect.transform.position;
+            ypos.y += 0.5f;
+            tempEffect.transform.position = ypos;
+            StartCoroutine(DestroyEffect(tempEffect));
             StartCoroutine(col.GetComponent<EnemyScript>().ReceiveDamage(damage, stunDuration)); 
+
         }
         yield return new WaitForSeconds(0.15f);
         attackStun = false;
@@ -468,8 +500,8 @@ public class PCScript : MonoBehaviour {
     IEnumerator DestroyEffect(GameObject e)
     {
         yield return new WaitForSeconds(0.417f);
-        GameObject effect = e;
-        Destroy(e);
+        GameObject eff = e;
+        Destroy(eff);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -481,16 +513,17 @@ public class PCScript : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Craft"))
+       if (collision.CompareTag("Craft"))
         {
-            craftUI.gameObject.SetActive(true);
+            canCraft = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Craft"))
         {
-            craftUI.gameObject.SetActive(false);
+             canCraft = false;
+
         }
     }
 }

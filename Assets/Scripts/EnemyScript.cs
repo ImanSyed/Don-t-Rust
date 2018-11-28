@@ -269,7 +269,7 @@ public class EnemyScript : MonoBehaviour {
         Vector2 point = pc.transform.position;
         point.y += 0.2f;
         anim.Play("Attack", 0);
-        yield return new WaitForSeconds(0.21f);
+        yield return new WaitForSeconds(0.75f);
         if (!stunned)
         {
             Collider2D col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Player"));
