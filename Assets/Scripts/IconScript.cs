@@ -44,9 +44,13 @@ public class IconScript: MonoBehaviour{
         while (c < requirements.Length - 1)
         {
             pc.resources[c, 0] -= requirements[c];
-            pc.redCount.text = pc.resources[c, 0].ToString();
+           
             c++;
         }
+        pc.redCount.text = pc.resources[0, 0].ToString();
+        pc.blueCount.text = pc.resources[1, 0].ToString();
+        pc.yellowCount.text = pc.resources[2, 0].ToString();
+
         yield return new WaitForSeconds(1);
         pc.AddToInventory(item, 1);
         Check();

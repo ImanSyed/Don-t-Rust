@@ -344,6 +344,8 @@ public class PCScript : MonoBehaviour {
                         tempEffect.GetComponent<Animator>().SetLayerWeight(0, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(1, 1);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
+                        tempEffect.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        StartCoroutine(DestroyEffect(tempEffect));
                         break;
                     case 2:
                         tempEffect = Instantiate(attackE, transform.position, transform.rotation);
@@ -353,6 +355,7 @@ public class PCScript : MonoBehaviour {
                         tempEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(2, 1);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(3, 0);
+                        StartCoroutine(DestroyEffect(tempEffect));
                         break;
                     case 3:
                         tempEffect = Instantiate(attackE, transform.position, transform.rotation);
@@ -361,6 +364,7 @@ public class PCScript : MonoBehaviour {
                         tempEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(3, 1);
+                        StartCoroutine(DestroyEffect(tempEffect));
                         break;
                     default:
                         child.GetComponent<Animator>().Play("Attack");
@@ -374,7 +378,7 @@ public class PCScript : MonoBehaviour {
                 {
                     tempEffect.GetComponent<SpriteRenderer>().flipX = false;
                 }
-                StartCoroutine(DestroyEffect(tempEffect));
+                
             }
         }
         yield return new WaitForSeconds(0.1f);
