@@ -41,10 +41,10 @@ public class IconScript: MonoBehaviour{
     {
         available = false;
         short c = 0;
-        while (c < requirements.Length - 1)
+        while (c < requirements.Length)
         {
             pc.resources[c, 0] -= requirements[c];
-           
+            Debug.Log(pc.resources[c, 0]);
             c++;
         }
         pc.redCount.text = pc.resources[0, 0].ToString();
