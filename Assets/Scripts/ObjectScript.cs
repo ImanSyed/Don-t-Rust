@@ -4,7 +4,7 @@ public class ObjectScript : MonoBehaviour {
 
     public enum ObjectType
     {
-        none, gears
+        none, red, blue, yellow
     }
 
     public ObjectType myType;
@@ -23,10 +23,22 @@ public class ObjectScript : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player") && !collision.isTrigger)
         {
-            if (myType == ObjectType.gears)
+            if (myType == ObjectType.red)
             {
-                pc.AddToInventory("Gears", amount);
+                pc.AddToInventory("Red", amount);
                 Destroy(gameObject);
+            }
+            else if (myType == ObjectType.blue)
+            {
+                pc.AddToInventory("Blue", amount);
+                Destroy(gameObject);
+                
+            }
+            else if (myType == ObjectType.yellow)
+            {
+                pc.AddToInventory("Yellow", amount);
+                Destroy(gameObject);
+
             }
         }
     }

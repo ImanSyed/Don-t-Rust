@@ -6,13 +6,15 @@ public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
     [SerializeField] GameObject dustE, attackE, projectile;
+    [SerializeField] TMPro.TextMeshPro redCount, blueCount, yellowCount;
+
     RuntimeAnimatorController d0, a0;
 
     [SerializeField] Slider fuelSlider, healthSlider;
 
     public Crafting craftUI;
 
-    public int[] resources = new int[4];
+    public int[] resources = new int[3];
     [HideInInspector] public bool hasSpace = true;
 
     public GameObject[] inventory;
@@ -357,7 +359,6 @@ public class PCScript : MonoBehaviour {
                         child.GetComponent<Animator>().Play("Attack");
                         break;
                 }
-                
             }
         }
         yield return new WaitForSeconds(0.1f);
@@ -409,10 +410,17 @@ public class PCScript : MonoBehaviour {
     {
         switch(item)
         {
-            case "Gears":
+            case "Red":
                 resources[0] += amount;
+                redCount.text = resources[0].ToString();
                 break;
-            case "Red Arms":
+            case "Blue":
+                resources[1] += amount;
+                blueCount.text = resources[1].ToString();
+                break;
+            case "Yellow":
+                resources[2] += amount;
+                yellowCount.text = resources[2].ToString();
                 break;
         }
         collecting = false;
