@@ -256,20 +256,20 @@ public class EnemyScript : MonoBehaviour {
         float attackDelay = 0;
         if(enemyType == Enemy.blue)
         {
-            attackDelay = 0.5f;
+            attackDelay =1f;
         }
         if (enemyType == Enemy.red)
         {
-            attackDelay = 0.7f;
+            attackDelay = 1.25f;
         }
         if (enemyType == Enemy.yellow)
         {
-            attackDelay = 0.75f;
+            attackDelay = 1.4f;
         }
         Vector2 point = pc.transform.position;
         point.y += 0.2f;
         anim.Play("Attack", 0);
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.3f);
         if (!stunned)
         {
             Collider2D col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Player"));

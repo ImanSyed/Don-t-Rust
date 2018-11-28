@@ -23,7 +23,7 @@ public class IconScript: MonoBehaviour{
 
     public void Check()
     {
-        for (int i = 0; i < requirements.Length - 1; i++)
+        for (int i = 0; i < requirements.Length; i++)
         {
             if (pc.resources[i, 0] >= requirements[i])
             {
