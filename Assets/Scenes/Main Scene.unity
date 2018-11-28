@@ -10422,7 +10422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2666221e44b30d4392faa99999c1650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: 
+  item: Yellow Torso
   available: 0
   requirements: 000000000000000001000000
 --- !u!212 &548171612
@@ -11190,7 +11190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2666221e44b30d4392faa99999c1650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: 
+  item: Yellow Legs
   available: 0
   requirements: 000000000000000001000000
 --- !u!212 &1223190755
@@ -12201,7 +12201,7 @@ GameObject:
   - component: {fileID: 1910746492}
   - component: {fileID: 1910746494}
   m_Layer: 0
-  m_Name: RedCount (2)
+  m_Name: YellowCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12411,7 +12411,7 @@ GameObject:
   - component: {fileID: 1912712614}
   - component: {fileID: 1912712610}
   m_Layer: 0
-  m_Name: RedCount (1)
+  m_Name: BlueCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
