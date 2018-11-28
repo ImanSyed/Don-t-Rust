@@ -4,7 +4,7 @@ using System.Collections;
 public class IconScript: MonoBehaviour{
     public string item;
     public bool available;
-    public int[] requirements = new int[5];
+    public int[] requirements = new int[3];
 
     PCScript pc;
 
@@ -15,7 +15,7 @@ public class IconScript: MonoBehaviour{
 
     private void Update()
     {
-        if(available && Input.GetKeyDown(KeyCode.Space) && pc.hasSpace)
+        if(available && Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(Craft());
         }
@@ -25,7 +25,7 @@ public class IconScript: MonoBehaviour{
     {
         for (int i = 0; i < requirements.Length - 1; i++)
         {
-            if (pc.resources[i] >= requirements[i])
+            if (pc.resources[i, 0] >= requirements[i])
             {
                 available = true;
             }
@@ -42,9 +42,11 @@ public class IconScript: MonoBehaviour{
         available = false;
         yield return new WaitForSeconds(1);
         short c = 0;
-        while(c < pc.resources.Length - 1)
+        Debug.Log(12);
+        while(c < requirements.Length - 1)
         {
-            pc.resources[c] -= requirements[c];
+            pc.resources[c, 0] -= requirements[c];
+            pc.redCount.text = pc.resources[c, 0].ToString();
             c++;
         }
         pc.AddToInventory(item, 1);

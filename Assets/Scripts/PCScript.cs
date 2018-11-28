@@ -6,7 +6,7 @@ public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
     [SerializeField] GameObject dustE, attackE, projectile;
-    [SerializeField] TMPro.TextMeshPro redCount, blueCount, yellowCount;
+    public TMPro.TextMeshPro redCount, blueCount, yellowCount;
 
     RuntimeAnimatorController d0, a0;
 
@@ -14,10 +14,7 @@ public class PCScript : MonoBehaviour {
 
     public Crafting craftUI;
 
-    public int[] resources = new int[3];
-    [HideInInspector] public bool hasSpace = true;
-
-    public GameObject[] inventory;
+    public int[,] resources = new int[3, 4];
 
     float energy = 750, originalDamage = 10, health = 50;
 
@@ -411,18 +408,60 @@ public class PCScript : MonoBehaviour {
         switch(item)
         {
             case "Red":
-                resources[0] += amount;
-                redCount.text = resources[0].ToString();
+                resources[0, 0] += amount;
+                redCount.text = resources[0, 0].ToString();
                 break;
             case "Blue":
-                resources[1] += amount;
-                blueCount.text = resources[1].ToString();
+                resources[1, 0] += amount;
+                blueCount.text = resources[1, 0].ToString();
                 break;
             case "Yellow":
-                resources[2] += amount;
-                yellowCount.text = resources[2].ToString();
+                resources[2, 0] += amount;
+                yellowCount.text = resources[2, 0].ToString();
                 break;
+            case "Red Arms":
+                resources[0, 1] += amount;
+                armType = 1;
+                break;
+            case "Blue Arms":
+                resources[1, 1] += amount;
+                armType = 2;
+                break;
+            case "Yellow Arms":
+                resources[2, 1] += amount;
+                armType = 3;
+                break;
+            case "Red Torso":
+                torsoType = 1;
+                resources[0, 2] += amount;
+                break;
+            case "Blue Torseo":
+                torsoType = 2;
+
+                resources[1, 2] += amount;
+                break;
+            case "Yellow Torso":
+                torsoType = 3;
+
+                resources[2, 2] += amount;
+                break;
+            case "Red Legs":
+                legType = 1;
+
+                resources[0, 3] += amount;
+                break;
+            case "Blue Legs":
+                resources[1, 3] += amount;
+                legType = 2;
+
+                break;
+            case "Yellow Legs":
+                resources[2, 3] += amount;
+                legType = 3;
+                break;
+
         }
+        Equip();
         collecting = false;
     }
 

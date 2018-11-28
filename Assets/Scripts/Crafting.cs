@@ -127,6 +127,7 @@ public class Crafting : MonoBehaviour {
         {
             activateControls = true;
             activeTray.GetComponent<Animator>().Play("Forward", 0);
+            childIcons[counter2].GetComponent<IconScript>().Check();
         }
     }
 }
