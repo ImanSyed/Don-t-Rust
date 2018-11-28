@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: e17c9a1c1853a2e41b37f0e7e0e9fc7c
+guid: 19f3e5dfb420a064180711cb782e9253
 TextureImporter:
   fileIDToRecycleName:
-    21300000: CraftingGrounds_0
-    21300002: CraftingGrounds_1
-    21300004: CraftingGrounds_2
-    21300006: CraftingGrounds_3
-    21300008: CraftingGrounds_4
-    21300010: CraftingGrounds_5
+    21300000: CrarftingGrounds_0
+    21300002: CrarftingGrounds_1
+    21300004: CrarftingGrounds_2
+    21300006: CrarftingGrounds_3
+    21300008: CrarftingGrounds_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -101,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CraftingGrounds_0
+      name: CrarftingGrounds_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,13 +114,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66bc12568b3ab6e4ba75dd78ea542649
+      spriteID: 657de53d28597e54f8a322d32b06f00e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CraftingGrounds_1
+      name: CrarftingGrounds_1
       rect:
         serializedVersion: 2
         x: 64
@@ -135,13 +134,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c565cf3a298afd64db1039c4f563b0f1
+      spriteID: e91e136b19524b04ebf79e948db02ad4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CraftingGrounds_2
+      name: CrarftingGrounds_2
       rect:
         serializedVersion: 2
         x: 128
@@ -155,13 +154,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80d67bd2364a08e49878f096c691d019
+      spriteID: 8b6ea8403d43ce74f98441563803c2b8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CraftingGrounds_3
+      name: CrarftingGrounds_3
       rect:
         serializedVersion: 2
         x: 192
@@ -175,13 +174,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cab21be5d24772a4ebf6227a8e7a7d88
+      spriteID: 67e7f37d6ff57ce4db441cc1008554d6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CraftingGrounds_4
+      name: CrarftingGrounds_4
       rect:
         serializedVersion: 2
         x: 256
@@ -195,27 +194,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a76d0362c03bb1949a6bbcf617b9859c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CraftingGrounds_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89786a09548f3d042bb0a47ca54a5630
+      spriteID: de8343c1d0ed79f4c82a104959512c3c
       vertices: []
       indices: 
       edges: []
@@ -223,7 +202,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5ee5237684b45ed4fafbd2ffd21d08ed
+    spriteID: f7e62f65f38586a4bbd36da0cc298885
     vertices: []
     indices: 
     edges: []
