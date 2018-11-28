@@ -400,7 +400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &151906562
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5139,9 +5139,6 @@ MonoBehaviour:
   fuelSlider: {fileID: 1814759069}
   healthSlider: {fileID: 1982977283}
   craftUI: {fileID: 0}
-  resources: 00000000000000000000000000000000
-  hasSpace: 1
-  inventory: []
 --- !u!61 &481561870
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7110,7 +7107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1910746492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7320,7 +7317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1912712609
 RectTransform:
   m_ObjectHideFlags: 0
