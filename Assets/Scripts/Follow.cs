@@ -11,15 +11,16 @@ public class Follow : MonoBehaviour {
         if (target)
         {
            
-            Vector3 pos = transform.position;
-            if (target.position.x > minPlane.x && target.position.x < maxPlane.x)
+            Vector3 pos = target.position;
+            pos.z = -10;
+            /*if (target.position.x > minPlane.x && target.position.x < maxPlane.x)
             {
                 pos.x = target.position.x;
             }
             if (target.position.y > minPlane.y && target.position.y < maxPlane.y)
             {
                 pos.y = target.position.y;
-            }
+            }*/
             transform.position = pos;
         }
     }

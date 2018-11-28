@@ -45,8 +45,8 @@ public class PCScript : MonoBehaviour {
             Move();
             Inputs();
         }
-        
-        if(energy > 0)
+
+        if (energy > 0)
         {
             energy -= Time.deltaTime;
             fuelSlider.value = energy;
