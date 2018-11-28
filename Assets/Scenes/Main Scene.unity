@@ -638,6 +638,11 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 114015519509577138, guid: 7cb61a8ff5ae5c645857fc94758228b3,
+        type: 2}
+      propertyPath: myType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7cb61a8ff5ae5c645857fc94758228b3, type: 2}
@@ -752,9 +757,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2666221e44b30d4392faa99999c1650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Red Arms
+  item: Yellow Arms
   available: 0
-  requirements: 01000000000000000000000000000000
+  requirements: 000000000000000001000000
 --- !u!212 &324009059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10419,7 +10424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 01000000000000000000000000000000
+  requirements: 000000000000000001000000
 --- !u!212 &548171612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10504,6 +10509,16 @@ Prefab:
     - target: {fileID: 4843261566152196, guid: 9fc9090fe643bd74db9b6b09097cc92e, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114140151565972852, guid: 9fc9090fe643bd74db9b6b09097cc92e,
+        type: 2}
+      propertyPath: myType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114140151565972852, guid: 9fc9090fe643bd74db9b6b09097cc92e,
+        type: 2}
+      propertyPath: amount
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fc9090fe643bd74db9b6b09097cc92e, type: 2}
@@ -10830,7 +10845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: Red Legs
   available: 0
-  requirements: 01000000000000000000000000000000
+  requirements: 010000000000000000000000
 --- !u!1 &883902964
 GameObject:
   m_ObjectHideFlags: 0
@@ -11003,9 +11018,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2666221e44b30d4392faa99999c1650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: 
+  item: Blue Torso
   available: 0
-  requirements: 01000000000000000000000000000000
+  requirements: 000000000100000000000000
 --- !u!212 &1004250619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11101,7 +11116,6 @@ MonoBehaviour:
   - {fileID: 55912247}
   - {fileID: 883902964}
   - {fileID: 1840159150}
-  - {fileID: 0}
   activateControls: 0
 --- !u!1 &1084751411
 GameObject:
@@ -11178,7 +11192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: 
   available: 0
-  requirements: 01000000000000000000000000000000
+  requirements: 000000000000000001000000
 --- !u!212 &1223190755
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11368,7 +11382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: Red Torso
   available: 0
-  requirements: 01000000000000000000000000000000
+  requirements: 010000000000000000000000
 --- !u!1 &1333306900
 GameObject:
   m_ObjectHideFlags: 0
@@ -11625,9 +11639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2666221e44b30d4392faa99999c1650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: Red Arms
+  item: Blue Arms
   available: 0
-  requirements: 01000000000000000000000000000000
+  requirements: 000000000100000000000000
 --- !u!212 &1469837858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12981,9 +12995,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2666221e44b30d4392faa99999c1650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: 
+  item: Blue Legs
   available: 0
-  requirements: 01000000000000000000000000000000
+  requirements: 000000000100000000000000
 --- !u!212 &2026818338
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13119,4 +13133,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: Red Arms
   available: 0
-  requirements: 01000000000000000000000000000000
+  requirements: 010000000000000000000000

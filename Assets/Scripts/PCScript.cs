@@ -68,13 +68,6 @@ public class PCScript : MonoBehaviour {
             ToggleCrafting();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            legType++;
-            armType++;
-            torsoType++;
-            Equip();
-        }
     }
    
     void Move()
