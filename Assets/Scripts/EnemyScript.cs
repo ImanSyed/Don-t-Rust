@@ -219,18 +219,18 @@ public class EnemyScript : MonoBehaviour {
         if (s1 != null)
         {
             Vector2 pos = transform.position;
-            pos.x += Random.Range(-0.1f, 0.1f);
-            pos.y += Random.Range(-0.1f, 0.1f);
+            pos.x += Random.Range(-0.3f, 0.3f);
+            pos.y += Random.Range(-0.3f, 0.3f);
             s1.transform.position = pos;
             if (s2 != null)
             {
-                pos.x += Random.Range(-0.1f, 0.1f);
-                pos.y += Random.Range(-0.1f, 0.1f);
+                pos.x += Random.Range(-0.3f, 0.3f);
+                pos.y += Random.Range(-0.3f, 0.3f);
                 s2.transform.position = pos;
                 if (s3 != null)
                 {
-                    pos.x += Random.Range(-0.1f, 0.1f);
-                    pos.y += Random.Range(-0.1f, 0.1f);
+                    pos.x += Random.Range(-0.3f, 0.3f);
+                    pos.y += Random.Range(-0.3f, 0.3f);
                     s3.transform.position = pos;
                 }
             }
