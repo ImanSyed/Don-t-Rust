@@ -94,7 +94,6 @@ public class Crafting : MonoBehaviour {
                 if(cursor.transform.position != childIcons[counter2].transform.position)
                 {
                     cursor.transform.position = childIcons[counter2].transform.position;
-                    Debug.Log(cursor.transform.position);
                 }
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                 {
