@@ -7,7 +7,7 @@ public class Crafting : MonoBehaviour {
     [HideInInspector] public Vector2 start, destination;
 
     [SerializeField] GameObject[] parentIcons;
-
+    [SerializeField] GameObject cursor;
     IconScript[] childIcons;
     IconScript[] temp = new IconScript[3];
 
@@ -32,11 +32,12 @@ public class Crafting : MonoBehaviour {
         {
             Controls();
         }
+        cursor.transform.position = childIcons[counter2].transform.position;
     }
 
     void Controls()
     {
-        if (activeTray.transform.localPosition.x == -0.75f || activeTray.transform.localPosition.x == 0.75f)
+        if (activeTray.transform.localPosition.x == -1f || activeTray.transform.localPosition.x == 1f)
         {
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
@@ -88,23 +89,22 @@ public class Crafting : MonoBehaviour {
                 activeTray.GetComponent<Animator>().Play("Forward", 0);
             }
 
-            if (activeTray.transform.localPosition.x == 0.75f)
+            if (activeTray.transform.localPosition.x == 1f)
             {
-                if(childIcons[counter2].GetComponent<SpriteRenderer>().color != Color.grey)
+                if(cursor.transform.position != childIcons[counter2].transform.position)
                 {
-                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.grey;
-
+                    cursor.transform.position = childIcons[counter2].transform.position;
+                    Debug.Log(cursor.transform.position);
                 }
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.white;
                     childIcons[counter2].GetComponent<IconScript>().available = false;
                     counter2++;
                     if (counter2 > childIcons.Length - 1)
                     {
                         counter2 = 0;
                     }
-                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.grey;
+                    cursor.transform.position = childIcons[counter2].transform.position;
                     childIcons[counter2].GetComponent<IconScript>().Check();
                     foreach (IconScript icon in childIcons)
                     {
@@ -114,14 +114,14 @@ public class Crafting : MonoBehaviour {
                 }
                 if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.white;
                     childIcons[counter2].GetComponent<IconScript>().available = false;
                     counter2--;
                     if (counter2 < 0)
                     {
                         counter2 = (short)(childIcons.Length - 1);
                     }
-                    childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.grey;
+                    cursor.transform.position = childIcons[counter2].transform.position;
+                    Debug.Log(cursor.transform.position);
                     childIcons[counter2].GetComponent<IconScript>().Check();
                     foreach (IconScript icon in childIcons)
                     {
