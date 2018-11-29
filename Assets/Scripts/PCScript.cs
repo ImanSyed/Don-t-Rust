@@ -456,13 +456,13 @@ public class PCScript : MonoBehaviour {
             point.y += 0.5f;
             if (GetComponent<SpriteRenderer>().flipX)
             {
-                point.x += 0.5f;
+                point.x += 0.2f;
                 GameObject b = Instantiate(projectile, point, Quaternion.identity);
                 b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 300);
             }
             else
             {
-                point.x -= 0.5f;
+                point.x -= 0.2f;
                 GameObject b = Instantiate(projectile, point, Quaternion.identity);
                 b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 300);
             }
@@ -663,11 +663,6 @@ public class PCScript : MonoBehaviour {
     {
         if(collision.gameObject.layer == 10 || collision.gameObject.layer == 12)
         { 
-        }
-        if(collision.gameObject.layer == 11)
-        {
-            Destroy(collision.gameObject);
-            StartCoroutine(ReceiveDamage(10, 0.25f, FindObjectOfType<EnemyScript>()));
         }
     }
 
