@@ -272,13 +272,13 @@ public class EnemyScript : MonoBehaviour {
         point.y += 0.5f;
         if (GetComponent<SpriteRenderer>().flipX)
         {
-            point.x += 0.2f;
+            point.x += 0.5f;
             GameObject b = Instantiate(projectile, point, Quaternion.identity);
             b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 300);
         }
         else
         {
-            point.x -= 0.2f;
+            point.x -= 0.5f;
             GameObject b = Instantiate(projectile, point, Quaternion.identity);
             b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 300);
         }

@@ -11,10 +11,8 @@ public class Crafting : MonoBehaviour {
     IconScript[] childIcons;
     IconScript[] temp = new IconScript[3];
 
-
     GameObject activeTray;
     public bool activateControls;
-
 
     short counter1, counter2;
 
@@ -150,7 +148,6 @@ public class Crafting : MonoBehaviour {
             {
                 icon.Display();
             }
-
         }
     }
 }
