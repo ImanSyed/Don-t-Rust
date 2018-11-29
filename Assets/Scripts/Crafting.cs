@@ -8,8 +8,8 @@ public class Crafting : MonoBehaviour {
 
     [SerializeField] GameObject[] parentIcons;
 
-    Transform[] childIcons;
-    Transform[] temp = new Transform[3];
+    IconScript[] childIcons;
+    IconScript[] temp = new IconScript[3];
 
 
     GameObject activeTray;
@@ -21,10 +21,10 @@ public class Crafting : MonoBehaviour {
     private void Start()
     {
         activeTray = parentIcons[counter1].transform.GetChild(0).gameObject;
-        childIcons = activeTray.GetComponentsInChildren<Transform>();
-        temp[0] = childIcons[1];
-        temp[1] = childIcons[2];
-        temp[2] = childIcons[3];
+        childIcons = activeTray.GetComponentsInChildren<IconScript>();
+        temp[0] = childIcons[0];
+        temp[1] = childIcons[1];
+        temp[2] = childIcons[2];
         childIcons = temp;
     }
 
@@ -52,12 +52,16 @@ public class Crafting : MonoBehaviour {
                     counter1 = 0;
                 }
                 activeTray = parentIcons[counter1].transform.GetChild(0).gameObject;
-                childIcons = activeTray.GetComponentsInChildren<Transform>();
-                temp[0] = childIcons[1];
-                temp[1] = childIcons[2];
-                temp[2] = childIcons[3];
+                childIcons = activeTray.GetComponentsInChildren<IconScript>();
+                temp[0] = childIcons[0];
+                temp[1] = childIcons[1];
+                temp[2] = childIcons[2];
                 childIcons = temp;
                 childIcons[counter2].GetComponent<IconScript>().Check();
+                foreach (IconScript icon in childIcons)
+                {
+                    icon.Display();
+                }
                 activeTray.GetComponent<Animator>().Play("Forward", 0);
 
             }
@@ -73,12 +77,16 @@ public class Crafting : MonoBehaviour {
                     counter1 = (short)(parentIcons.Length - 1);
                 }
                 activeTray = parentIcons[counter1].transform.GetChild(0).gameObject;
-                childIcons = activeTray.GetComponentsInChildren<Transform>();
-                temp[0] = childIcons[1];
-                temp[1] = childIcons[2];
-                temp[2] = childIcons[3];
+                childIcons = activeTray.GetComponentsInChildren<IconScript>();
+                temp[0] = childIcons[0];
+                temp[1] = childIcons[1];
+                temp[2] = childIcons[2];
                 childIcons = temp;
                 childIcons[counter2].GetComponent<IconScript>().Check();
+                foreach (IconScript icon in childIcons)
+                {
+                    icon.Display();
+                }
                 activeTray.GetComponent<Animator>().Play("Forward", 0);
             }
 
@@ -100,6 +108,10 @@ public class Crafting : MonoBehaviour {
                     }
                     childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.grey;
                     childIcons[counter2].GetComponent<IconScript>().Check();
+                    foreach (IconScript icon in childIcons)
+                    {
+                        icon.Display();
+                    }
 
                 }
                 if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
@@ -113,6 +125,10 @@ public class Crafting : MonoBehaviour {
                     }
                     childIcons[counter2].GetComponent<SpriteRenderer>().color = Color.grey;
                     childIcons[counter2].GetComponent<IconScript>().Check();
+                    foreach (IconScript icon in childIcons)
+                    {
+                        icon.Display();
+                    }
                 }
             }
         }
@@ -130,6 +146,11 @@ public class Crafting : MonoBehaviour {
             activateControls = true;
             activeTray.GetComponent<Animator>().Play("Forward", 0);
             childIcons[counter2].GetComponent<IconScript>().Check();
+            foreach (IconScript icon in childIcons)
+            {
+                icon.Display();
+            }
+
         }
     }
 }

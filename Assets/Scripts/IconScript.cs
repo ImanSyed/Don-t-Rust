@@ -5,7 +5,7 @@ public class IconScript: MonoBehaviour{
     public string item;
     public bool available;
     public int[] requirements = new int[3];
-
+    [SerializeField] Sprite av, unav;
     PCScript pc;
 
     private void Start()
@@ -28,10 +28,28 @@ public class IconScript: MonoBehaviour{
             if (pc.resources[i, 0] >= requirements[i])
             {
                 available = true;
+                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = av;
             }
             else
             {
                 available = false;
+                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = unav;
+                return;
+            }
+        }
+    }
+
+    public void Display()
+    {
+        for (int i = 0; i < requirements.Length; i++)
+        {
+            if (pc.resources[i, 0] >= requirements[i])
+            {
+                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = av;
+            }
+            else
+            {
+                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = unav;
                 return;
             }
         }
@@ -51,6 +69,10 @@ public class IconScript: MonoBehaviour{
         pc.yellowCount.text = pc.resources[2, 0].ToString();
 
         yield return new WaitForSeconds(1);
+        foreach(IconScript icon in FindObjectsOfType<IconScript>())
+        {
+            icon.Display();
+        }
         pc.AddToInventory(item, 1);
         Check();
     }
