@@ -6,21 +6,20 @@ public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
     [SerializeField] GameObject dustE, attackE, hitEffect, projectile;
+    [SerializeField] IconSwitch icon1, icon2, icon3;
     public TMPro.TextMeshPro redCount, blueCount, yellowCount;
 
     RuntimeAnimatorController d0, a0;
-
-    [SerializeField] Slider fuelSlider, healthSlider;
 
     public Crafting craftUI;
 
     public int[,] resources = new int[3, 4];
 
-    float energy = 750, originalDamage = 10, health = 50;
+    public float originalDamage = 10, health = 50;
 
     bool collecting, attacking, attackStun, hitStun, stunned;
 
-    short armType, torsoType, legType;
+    short armType, torsoType, legType, attackCounter;
 
     Collider2D col;
 
@@ -34,7 +33,7 @@ public class PCScript : MonoBehaviour {
     private void Start()
     {
         d0 = dustE.GetComponent<Animator>().runtimeAnimatorController;
-        craftUI = GetComponentInChildren<Crafting>();
+        craftUI = FindObjectOfType<Crafting>();
 
     }
 
@@ -45,24 +44,47 @@ public class PCScript : MonoBehaviour {
             Move();
             Inputs();
         }
-
-        if (energy > 0)
-        {
-            energy -= Time.deltaTime;
-            fuelSlider.value = energy;
-            healthSlider.value = health;
-        }
     }
 
     void Inputs()
     {
         if (!craftUI.isActiveAndEnabled || !craftUI.activateControls)
         {
-            if (Input.GetKeyDown(KeyCode.F) && !attacking)
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 StartCoroutine(Attack());
             }
-
+            if(Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                icon1.Swap();
+                if (armType > 2)
+                {
+                    armType = 0;
+                }
+                if (resources[armType, 1] > 0)
+                {
+                    armType++;
+                    Equip();
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                icon2.Swap();
+                torsoType++;
+                if (torsoType > 2)
+                {
+                    torsoType = 0;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                icon3.Swap();
+                legType++;
+                if (legType > 2)
+                {
+                    legType = 0;
+                }
+            }
         }
         if (Input.GetKeyDown(KeyCode.C)){
             ToggleCrafting();
@@ -330,7 +352,8 @@ public class PCScript : MonoBehaviour {
         float damage = originalDamage;
         float stunDuration = 0.3f;
         float attackDelay = 0.75f;
-        GetComponent<Animator>().Play("Attack");
+        GetComponent<Animator>().StopPlayback();
+        GetComponent<Animator>().Play("Attack", -1, 0);
         foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
         {
             if (child.gameObject.name == "Arms")
@@ -339,7 +362,7 @@ public class PCScript : MonoBehaviour {
                 switch (armType)
                 {
                     case 1:
-                        child.GetComponent<Animator>().Play("Attack", 2);
+                        child.GetComponent<Animator>().Play("Attack", 2, 0);
                         tempEffect = Instantiate(attackE, transform.position, transform.rotation);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(0, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(1, 1);
@@ -349,7 +372,7 @@ public class PCScript : MonoBehaviour {
                         break;
                     case 2:
                         tempEffect = Instantiate(attackE, transform.position, transform.rotation);
-                        child.GetComponent<Animator>().Play("Attack", 3);
+                        child.GetComponent<Animator>().Play("Attack", 3, 0);
                         tempEffect = Instantiate(attackE, transform.position, transform.rotation);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(0, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
@@ -359,7 +382,7 @@ public class PCScript : MonoBehaviour {
                         break;
                     case 3:
                         tempEffect = Instantiate(attackE, transform.position, transform.rotation);
-                        child.GetComponent<Animator>().Play("Attack", 4);
+                        child.GetComponent<Animator>().Play("Attack", 4, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(0, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(1, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
@@ -370,6 +393,7 @@ public class PCScript : MonoBehaviour {
                         child.GetComponent<Animator>().Play("Attack");
                         break;
                 }
+
                 if (GetComponent<SpriteRenderer>().flipX)
                 {
                     tempEffect.GetComponent<SpriteRenderer>().flipX = true;
@@ -379,6 +403,42 @@ public class PCScript : MonoBehaviour {
                     tempEffect.GetComponent<SpriteRenderer>().flipX = false;
                 }
                 
+            }
+            if (child.gameObject.name == "Torso")
+            {
+                switch (torsoType)
+                {
+                    case 1:
+                        child.GetComponent<Animator>().Play("Attack", 2, 0);
+                        break;
+                    case 2:
+                        child.GetComponent<Animator>().Play("Attack", 3, 0);
+                        break;
+                    case 3:
+                        child.GetComponent<Animator>().Play("Attack", 4, 0);
+                        break;
+                    default:
+                        child.GetComponent<Animator>().Play("Attack");
+                        break;
+                }
+            }
+            if (child.gameObject.name == "Legs")
+            {
+                switch (legType)
+                {
+                    case 1:
+                        child.GetComponent<Animator>().Play("Attack", 2, 0);
+                        break;
+                    case 2:
+                        child.GetComponent<Animator>().Play("Attack", 3, 0);
+                        break;
+                    case 3:
+                        child.GetComponent<Animator>().Play("Attack", 4, 0);
+                        break;
+                    default:
+                        child.GetComponent<Animator>().Play("Attack");
+                        break;
+                }
             }
         }
         yield return new WaitForSeconds(0.1f);
@@ -403,19 +463,80 @@ public class PCScript : MonoBehaviour {
             StartCoroutine(col.GetComponent<EnemyScript>().ReceiveDamage(damage, stunDuration)); 
 
         }
-        yield return new WaitForSeconds(0.15f);
+        attackCounter++;
+        if (attackCounter == 3)
+        {
+           yield return new WaitForSeconds(1.5f);
+            attackCounter = 0;
+        }
         attackStun = false;
-        yield return new WaitForSeconds(attackDelay);
-        attacking = false;
+        Debug.Log("ATTACKING");
     }
-     
+
 
     public IEnumerator ReceiveDamage(float amount, float stunDuration, EnemyScript enemy)
     {
         health -= amount;
         stunned = true;
         attacking = false;
-        GetComponent<Animator>().Play("Stunned", 0);
+        GetComponent<Animator>().Play("Hit");
+        foreach (SpriteRenderer child in GetComponentsInChildren<SpriteRenderer>())
+        {
+            if (child.gameObject.name == "Arms")
+            {
+                switch (torsoType)
+                {
+                    case 1:
+                        child.GetComponent<Animator>().Play("Hit", 2, 0);
+                        break;
+                    case 2:
+                        child.GetComponent<Animator>().Play("Hit", 3, 0);
+                        break;
+                    case 3:
+                        child.GetComponent<Animator>().Play("Hit", 4, 0);
+                        break;
+                    default:
+                        child.GetComponent<Animator>().Play("Hit");
+                        break;
+                }
+                if (child.gameObject.name == "Torso")
+                {
+                    switch (torsoType)
+                    {
+                        case 1:
+                            child.GetComponent<Animator>().Play("Hit", 2, 0);
+                            break;
+                        case 2:
+                            child.GetComponent<Animator>().Play("Hit", 3, 0);
+                            break;
+                        case 3:
+                            child.GetComponent<Animator>().Play("Hit", 4, 0);
+                            break;
+                        default:
+                            child.GetComponent<Animator>().Play("Hit");
+                            break;
+                    }
+                }
+                if (child.gameObject.name == "Legs")
+                {
+                    switch (legType)
+                    {
+                        case 1:
+                            child.GetComponent<Animator>().Play("Hit", 2, 0);
+                            break;
+                        case 2:
+                            child.GetComponent<Animator>().Play("Hit", 3, 0);
+                            break;
+                        case 3:
+                            child.GetComponent<Animator>().Play("Hit", 4, 0);
+                            break;
+                        default:
+                            child.GetComponent<Animator>().Play("Hit");
+                            break;
+                    }
+                }
+            }
+        }
         if (health <= 0)
         {
             StartCoroutine(KillMe());
@@ -424,6 +545,7 @@ public class PCScript : MonoBehaviour {
         killer = enemy.gameObject;
         stunned = false;
     }
+   
 
     IEnumerator KillMe()
     {
@@ -451,46 +573,52 @@ public class PCScript : MonoBehaviour {
             case "Red Arms":
                 resources[0, 1] += amount;
                 armType = 1;
+                icon1.Check();
                 break;
             case "Blue Arms":
                 resources[1, 1] += amount;
                 armType = 2;
+                icon1.Check();
                 break;
             case "Yellow Arms":
                 resources[2, 1] += amount;
                 armType = 3;
+                icon1.Check();
                 break;
             case "Red Torso":
                 torsoType = 1;
                 resources[0, 2] += amount;
+                icon2.Check();
                 break;
-            case "Blue Torseo":
+            case "Blue Torso":
                 torsoType = 2;
-
+                icon2.Check();
                 resources[1, 2] += amount;
                 break;
             case "Yellow Torso":
                 torsoType = 3;
-
+                icon2.Check();
                 resources[2, 2] += amount;
                 break;
             case "Red Legs":
                 legType = 1;
-
+                icon3.Check();
                 resources[0, 3] += amount;
                 break;
             case "Blue Legs":
                 resources[1, 3] += amount;
                 legType = 2;
-
+                icon3.Check();
                 break;
             case "Yellow Legs":
                 resources[2, 3] += amount;
                 legType = 3;
+                icon3.Check();
                 break;
 
         }
         Equip();
+
         collecting = false;
     }
 
