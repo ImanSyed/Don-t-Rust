@@ -7,6 +7,7 @@ public class IconScript: MonoBehaviour{
     public int[] requirements = new int[3];
     [SerializeField] Sprite av, unav;
     PCScript pc;
+    [SerializeField] GameObject effect;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class IconScript: MonoBehaviour{
     {
         if(available && Input.GetKeyDown(KeyCode.Space))
         {
+            GameObject e = Instantiate(effect, transform.position, Quaternion.identity);
             StartCoroutine(Craft());
         }
     }
