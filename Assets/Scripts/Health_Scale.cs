@@ -10,6 +10,6 @@ public class Health_Scale : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        hColor.transform.localScale = new Vector3(0, hScale, 0);
+        hColor.transform.localScale = new Vector3(1, hScale, 1);
 	}
 }
