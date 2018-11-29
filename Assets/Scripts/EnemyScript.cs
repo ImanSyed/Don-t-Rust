@@ -328,6 +328,12 @@ public class EnemyScript : MonoBehaviour {
             mySpawner.count++;
             Destroy(gameObject);
         }
+        if(collision.gameObject.layer == 11)
+        {
+            Destroy(collision.gameObject);
+            aggro = true;
+            StartCoroutine(ReceiveDamage(10, 0.3f));
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
