@@ -22,7 +22,9 @@ public class EnemyScript : MonoBehaviour {
     public bool spawning = true;
 
     [SerializeField] CircleCollider2D trigger;
-    [SerializeField] GameObject deathEffect, scrap;
+    [SerializeField] GameObject deathEffect, scrap, projectile;
+
+    float shootingCooldown = 5;
 
     Vector2 waypoint;
 
@@ -33,12 +35,12 @@ public class EnemyScript : MonoBehaviour {
         {
             originalSpeed = 0.02f;
             health = 50;
-            damage = 10;
+            damage = 5;
         }
         else if(enemyType == Enemy.red)
         {
             originalSpeed = 0.035f;
-            damage = 7.5f;
+            damage = 10f;
             health = 40;
 
         }
@@ -46,7 +48,7 @@ public class EnemyScript : MonoBehaviour {
         {
             originalSpeed = 0.01f;
             health = 60;
-            damage = 15f;
+            damage = 20f;
         }
         currentSpeed = originalSpeed;
     }
@@ -69,6 +71,14 @@ public class EnemyScript : MonoBehaviour {
                 if (currentSpeed == originalSpeed)
                 {
                     currentSpeed += 0.025f;
+                }
+                if (enemyType == Enemy.blue && transform.position.y >= pc.transform.position.y - 0.25f && transform.position.y <= pc.transform.position.y + 0.25f)
+                {
+                    shootingCooldown += Time.deltaTime;
+                    if (shootingCooldown >= 3)
+                    {
+                        StartCoroutine(Shoot());
+                    }
                 }
             }
         }
@@ -253,6 +263,28 @@ public class EnemyScript : MonoBehaviour {
         }
     }
 
+    IEnumerator Shoot()
+    {
+        shootingCooldown = 0;
+        anim.Play("Attack", 0);
+        yield return new WaitForSeconds(0.65f);            
+        Vector2 point = transform.position;
+        point.y += 0.5f;
+        if (GetComponent<SpriteRenderer>().flipX)
+        {
+            point.x += 0.2f;
+            GameObject b = Instantiate(projectile, point, Quaternion.identity);
+            b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 300);
+        }
+        else
+        {
+            point.x -= 0.2f;
+            GameObject b = Instantiate(projectile, point, Quaternion.identity);
+            b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 300);
+        }
+        
+    }
+
     IEnumerator PerformAttack()
     {
         anim.SetBool("Running", false);
@@ -287,7 +319,6 @@ public class EnemyScript : MonoBehaviour {
         }
         yield return new WaitForSeconds(cooldown);
         attacking = false;
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
