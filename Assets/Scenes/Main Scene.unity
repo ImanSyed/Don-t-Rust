@@ -1237,6 +1237,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1263,6 +1264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 481561868}
+  shakeMagnitude: 5
+  roughness: 5
+  numberOfShakes: 2
   minPlane: {x: -4, y: -4}
   maxPlane: {x: 4, y: 4}
 --- !u!20 &519420031
@@ -1318,6 +1322,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c2ec792ea046334dbf516d91988126e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &548171609
 GameObject:
   m_ObjectHideFlags: 0
@@ -59900,10 +59915,6 @@ MonoBehaviour:
   - {fileID: 21300004, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300010, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300016, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
-  spritesLocked:
-  - {fileID: 21300004, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
-  - {fileID: 21300010, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
-  - {fileID: 21300016, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
   partType: 3
 --- !u!1 &1366402052
 GameObject:
@@ -59990,10 +60001,6 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300008, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300014, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
-  spritesLocked:
-  - {fileID: 21300002, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
-  - {fileID: 21300008, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
-  - {fileID: 21300014, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
   partType: 2
 --- !u!1 &1367850092
 GameObject:
@@ -60372,10 +60379,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300006, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300012, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
-  spritesLocked:
-  - {fileID: 21300000, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
-  - {fileID: 21300006, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
-  - {fileID: 21300012, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
   partType: 1
 --- !u!1001 &1726331331
 Prefab:
