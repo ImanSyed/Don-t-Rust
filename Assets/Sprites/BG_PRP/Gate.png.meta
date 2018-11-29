@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-guid: 2f05a4173fcaca047acb331c8f37a5cf
+guid: 4a1543580980de045994c85466a5fb52
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Activators_B_0
-    21300002: Activators_B_1
-    21300004: Activators_B_2
-    21300006: Activators_B_3
-    21300008: Activators_B_4
-    21300010: Activators_B_5
+    21300000: Gate_0
+    21300002: Gate_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -86,97 +82,48 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Activators_B_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 36
-        width: 72
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 966a0eac31334614b9077bdb03c51355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Activators_B_1
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 36
-        width: 72
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a6dbb1d76bb0f7840adf5346fb67c805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Activators_B_2
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 36
-        width: 72
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2012dafe9e986c042b60de7db6962ee9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Activators_B_3
+      name: Gate_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 72
-        height: 36
+        width: 128
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 876bea2e0a7d937438231edba000c6e6
+      spriteID: c42942f3183efc540904b4f1ab3e2751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Activators_B_4
+      name: Gate_1
       rect:
         serializedVersion: 2
-        x: 72
+        x: 128
         y: 0
-        width: 72
-        height: 36
+        width: 128
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,27 +131,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4127a8a53457cfc4984fd9596ae9c2a8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Activators_B_5
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 72
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8901531e2fd4e4c4594f21fc6d8d20a3
+      spriteID: b774a19861f2d8b4e8c45750825ed27d
       vertices: []
       indices: 
       edges: []
@@ -212,7 +139,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: de5aa85d3a71b114a9b64e43c67c4915
+    spriteID: e318e2b5f8aea554ea8eefaf0ca0f6ad
     vertices: []
     indices: 
     edges: []
