@@ -110,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 1
   amount: 1
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!212 &212062762474217194
 SpriteRenderer:
   m_ObjectHideFlags: 1

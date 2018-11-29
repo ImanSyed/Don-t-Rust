@@ -12,6 +12,8 @@ public class ObjectScript : MonoBehaviour {
     PCScript pc;
 
     [SerializeField] int amount = 1;
+	[SerializeField] GameObject collectFX;
+
 
     private void Start()
     {
@@ -23,20 +25,24 @@ public class ObjectScript : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player") && !collision.isTrigger)
         {
+			
             if (myType == ObjectType.red)
             {
                 pc.AddToInventory("Red", amount);
-                Destroy(gameObject);
+				GameObject fx= Instantiate(collectFX, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+				Destroy(gameObject);
             }
             else if (myType == ObjectType.blue)
             {
                 pc.AddToInventory("Blue", amount);
+				GameObject fx= Instantiate(collectFX, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
                 Destroy(gameObject);
                 
             }
             else if (myType == ObjectType.yellow)
             {
                 pc.AddToInventory("Yellow", amount);
+				GameObject fx= Instantiate(collectFX, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
                 Destroy(gameObject);
 
             }

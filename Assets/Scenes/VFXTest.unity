@@ -842,6 +842,9 @@ MonoBehaviour:
   item: Yellow Arms
   available: 0
   requirements: 000000000000000001000000
+  av: {fileID: 0}
+  unav: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!212 &324009059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1371,6 +1374,9 @@ MonoBehaviour:
   item: Yellow Torso
   available: 0
   requirements: 000000000000000001000000
+  av: {fileID: 0}
+  unav: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!212 &548171612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58717,6 +58723,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c749567a18b0ad04e87d0963f0a3a720, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1001 &652784222
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4163562690461490, guid: fb8bacbaaf7009e438b3542f9319a4e5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.606
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163562690461490, guid: fb8bacbaaf7009e438b3542f9319a4e5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.366
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163562690461490, guid: fb8bacbaaf7009e438b3542f9319a4e5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163562690461490, guid: fb8bacbaaf7009e438b3542f9319a4e5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163562690461490, guid: fb8bacbaaf7009e438b3542f9319a4e5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163562690461490, guid: fb8bacbaaf7009e438b3542f9319a4e5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163562690461490, guid: fb8bacbaaf7009e438b3542f9319a4e5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163562690461490, guid: fb8bacbaaf7009e438b3542f9319a4e5, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb8bacbaaf7009e438b3542f9319a4e5, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &733309467
 Prefab:
   m_ObjectHideFlags: 0
@@ -58863,6 +58911,9 @@ MonoBehaviour:
   item: Red Legs
   available: 0
   requirements: 010000000000000000000000
+  av: {fileID: 0}
+  unav: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!1 &883902964
 GameObject:
   m_ObjectHideFlags: 0
@@ -59172,6 +59223,9 @@ MonoBehaviour:
   item: Blue Torso
   available: 0
   requirements: 000000000100000000000000
+  av: {fileID: 0}
+  unav: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!212 &1004250619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59267,6 +59321,7 @@ MonoBehaviour:
   - {fileID: 55912247}
   - {fileID: 883902964}
   - {fileID: 1840159150}
+  cursor: {fileID: 0}
   activateControls: 0
 --- !u!1001 &1028529606
 Prefab:
@@ -59444,6 +59499,9 @@ MonoBehaviour:
   item: Yellow Legs
   available: 0
   requirements: 000000000000000001000000
+  av: {fileID: 0}
+  unav: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!212 &1223190755
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59762,6 +59820,9 @@ MonoBehaviour:
   item: Red Torso
   available: 0
   requirements: 010000000000000000000000
+  av: {fileID: 0}
+  unav: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!1 &1333306900
 GameObject:
   m_ObjectHideFlags: 0
@@ -60216,6 +60277,9 @@ MonoBehaviour:
   item: Blue Arms
   available: 0
   requirements: 000000000100000000000000
+  av: {fileID: 0}
+  unav: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!212 &1469837858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -60929,6 +60993,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1861748867
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4641506223123340, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641506223123340, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641506223123340, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641506223123340, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641506223123340, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641506223123340, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641506223123340, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641506223123340, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1897712772
 Prefab:
   m_ObjectHideFlags: 0
@@ -61693,6 +61799,9 @@ MonoBehaviour:
   item: Blue Legs
   available: 0
   requirements: 000000000100000000000000
+  av: {fileID: 0}
+  unav: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!212 &2026818338
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -61988,6 +62097,9 @@ MonoBehaviour:
   item: Red Arms
   available: 0
   requirements: 010000000000000000000000
+  av: {fileID: 0}
+  unav: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!1001 &2121858395
 Prefab:
   m_ObjectHideFlags: 0
