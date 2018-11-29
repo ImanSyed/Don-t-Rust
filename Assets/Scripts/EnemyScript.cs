@@ -86,6 +86,10 @@ public class EnemyScript : MonoBehaviour {
             {
                 waypoint = Vector2.zero;
             }
+            if(Vector2.Distance(transform.position, mySpawner.startPos) > 5)
+            {
+                waypoint = mySpawner.startPos;
+            }
             else if (!anim.GetBool("Running"))
             {
                 anim.SetBool("Running", true);
@@ -288,17 +292,21 @@ public class EnemyScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 10 || (!spawning && collision.gameObject.tag == "Enemy") )
-        {
-            waypoint = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
-        }
         if(spawning && collision.gameObject.tag == "Enemy")
         {
             mySpawner.count++;
             Destroy(gameObject);
         }
     }
-    
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 10 || (!spawning && collision.gameObject.tag == "Enemy"))
+        {
+            waypoint = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" && !collision.isTrigger)

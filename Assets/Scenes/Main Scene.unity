@@ -1156,7 +1156,7 @@ MonoBehaviour:
   dustE: {fileID: 1352856967356804, guid: 686b47c1db4d8704d8d052dfe599c230, type: 2}
   attackE: {fileID: 1764019120234570, guid: 722509f7daa290948b60da91f3ec3b47, type: 2}
   hitEffect: {fileID: 1749961596776342, guid: 5e72c7443c5f4ea418275e050691615b, type: 2}
-  projectile: {fileID: 0}
+  projectile: {fileID: 1007044890000202, guid: 833ef64e071c292468bd153c67bee918, type: 2}
   icon1: {fileID: 1640157362}
   icon2: {fileID: 1366402056}
   icon3: {fileID: 1364462733}
@@ -1298,7 +1298,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.11
+  orthographic size: 2.109375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -61749,6 +61749,7 @@ GameObject:
   - component: {fileID: 2072283283}
   - component: {fileID: 2072283282}
   - component: {fileID: 2072283281}
+  - component: {fileID: 2072283285}
   m_Layer: 0
   m_Name: Lock
   m_TagString: Untagged
@@ -61767,10 +61768,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66db597c1a3e57d49a9bddf71fc287de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armsRequired: 0
-  torsoRequired: 0
-  legsRequired: 0
-  unlocked: {fileID: 0}
+  armsRequired: 1
+  torsoRequired: 2
+  legsRequired: 3
+  unlocked: {fileID: 21300006, guid: 2f05a4173fcaca047acb331c8f37a5cf, type: 3}
 --- !u!212 &2072283282
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -61805,8 +61806,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_SortingOrder: -10000
+  m_Sprite: {fileID: 21300000, guid: 2f05a4173fcaca047acb331c8f37a5cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -61824,12 +61825,27 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2072283280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.55, y: 8.03, z: 115.69798}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalPosition: {x: 10.94, y: 5.83, z: 115.69798}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2072283285
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2072283280}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.25
 --- !u!1001 &2074034844
 Prefab:
   m_ObjectHideFlags: 0
