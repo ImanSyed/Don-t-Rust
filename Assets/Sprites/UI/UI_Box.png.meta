@@ -3,6 +3,8 @@ guid: ca598b99b43ad0f439d0f27e1c083990
 TextureImporter:
   fileIDToRecycleName:
     21300000: UI_Box_0
+    21300002: UI_Box_1
+    21300004: UI_Box_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -112,16 +114,56 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 12
-        height: 12
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 2, y: 2, z: 2, w: 2}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3a72831014ca7446be2e9be09e5542f
+      spriteID: f9a0ffc01353e3246b6f3d98c8689fcb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Box_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc45d4d95430f4847b938b86eeadfc4c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Box_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28302b67619ae8746a81b7f29332205f
       vertices: []
       indices: 
       edges: []
