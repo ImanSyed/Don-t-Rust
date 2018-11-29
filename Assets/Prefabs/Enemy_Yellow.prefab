@@ -137,7 +137,8 @@ MonoBehaviour:
   enemyType: 2
   spawning: 0
   trigger: {fileID: 58887219180969022}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 1652213222950714, guid: fb8bacbaaf7009e438b3542f9319a4e5,
+    type: 2}
   scrap: {fileID: 1697372272798588, guid: 3192798c3fe3ea44688f8c8483790c40, type: 2}
   projectile: {fileID: 0}
 --- !u!212 &212398020431280182
