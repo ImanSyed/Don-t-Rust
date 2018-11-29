@@ -167,11 +167,12 @@ public class EnemyScript : MonoBehaviour {
 
     IEnumerator KillMe()
     {
-        //GameObject de = Instantiate(deathEffect, transform.position, transform.rotation);
+		
+		GameObject de = Instantiate(deathEffect, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
+		// will autoDestroy
         aggro = attacking = stunned = alert = rest = false;
         dying = true;
         yield return new WaitForSeconds(1f);
-        //Destroy(de);
         GameObject s1 = null, s2 = null, s3 = null;
         float r1 = Random.Range(0f, 1f);
         if(r1 > 0.1f && r1 <= 0.5f)
