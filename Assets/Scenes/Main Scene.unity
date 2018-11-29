@@ -1263,9 +1263,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 481561868}
-  shakeMagnitude: 5
-  roughness: 5
-  numberOfShakes: 2
   minPlane: {x: -4, y: -4}
   maxPlane: {x: 4, y: 4}
 --- !u!20 &519420031
@@ -59903,6 +59900,10 @@ MonoBehaviour:
   - {fileID: 21300004, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300010, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300016, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
+  spritesLocked:
+  - {fileID: 21300004, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
+  - {fileID: 21300010, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
+  - {fileID: 21300016, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
   partType: 3
 --- !u!1 &1366402052
 GameObject:
@@ -59989,6 +59990,10 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300008, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300014, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
+  spritesLocked:
+  - {fileID: 21300002, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
+  - {fileID: 21300008, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
+  - {fileID: 21300014, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
   partType: 2
 --- !u!1 &1367850092
 GameObject:
@@ -60367,6 +60372,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300006, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
   - {fileID: 21300012, guid: 5385c8ac0318f2e449b88da51fe7f37b, type: 3}
+  spritesLocked:
+  - {fileID: 21300000, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
+  - {fileID: 21300006, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
+  - {fileID: 21300012, guid: 015b502f4dab3bb4c9771fcdc8dcbd87, type: 3}
   partType: 1
 --- !u!1001 &1726331331
 Prefab:
