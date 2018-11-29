@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Health_Scale : MonoBehaviour
 {
@@ -13,7 +11,6 @@ public class Health_Scale : MonoBehaviour
         pc = FindObjectOfType<PCScript>();
     }
 
-    // Update is called once per frame
     void Update ()
     {
         hColor.transform.localScale = new Vector3(1, pc.health / 100, 1);
