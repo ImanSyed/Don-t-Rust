@@ -1167,7 +1167,7 @@ MonoBehaviour:
   craftUI: {fileID: 0}
   originalDamage: 10
   health: 50
-  armType: 0
+  armsType: 0
   torsoType: 0
   legType: 0
   attackCounter: 0
@@ -1269,8 +1269,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 481561868}
-  minPlane: {x: -8, y: -8}
-  maxPlane: {x: 8, y: 8}
+  shakeMagnitude: 2
+  roughness: 3
+  numberOfShakes: 2
+  minPlane: {x: -5, y: -5}
+  maxPlane: {x: 5, y: 5}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -61764,6 +61767,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66db597c1a3e57d49a9bddf71fc287de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armsRequired: 0
+  torsoRequired: 0
+  legsRequired: 0
+  unlocked: {fileID: 0}
 --- !u!212 &2072283282
 SpriteRenderer:
   m_ObjectHideFlags: 0

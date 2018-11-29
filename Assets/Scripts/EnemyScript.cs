@@ -253,23 +253,26 @@ public class EnemyScript : MonoBehaviour {
     {
         anim.SetBool("Running", false);
         attacking = true;
-        float attackDelay = 0;
+        float cooldown = 0, attackDelay = 0;
         if(enemyType == Enemy.blue)
         {
-            attackDelay =1f;
+            cooldown = 1f;
+            attackDelay = 0.25f;
         }
         if (enemyType == Enemy.red)
         {
-            attackDelay = 1.25f;
+            attackDelay = 0.25f;
+            cooldown = 1.25f;
         }
         if (enemyType == Enemy.yellow)
         {
-            attackDelay = 1.4f;
+            attackDelay = 0.75f;
+            cooldown = 1.4f;
         }
         Vector2 point = pc.transform.position;
         point.y += 0.2f;
         anim.Play("Attack", 0);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(attackDelay);
         if (!stunned)
         {
             Collider2D col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Player"));
@@ -278,7 +281,7 @@ public class EnemyScript : MonoBehaviour {
                 StartCoroutine(pc.ReceiveDamage(damage, 0.3f, this));
             }
         }
-        yield return new WaitForSeconds(attackDelay);
+        yield return new WaitForSeconds(cooldown);
         attacking = false;
 
     }

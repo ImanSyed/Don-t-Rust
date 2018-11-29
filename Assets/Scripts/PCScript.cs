@@ -20,7 +20,7 @@ public class PCScript : MonoBehaviour {
 
     public float originalDamage = 10, health = 50;
 
-    bool collecting, attacking, attackStun, hitStun, stunned;
+    bool collecting, attacking, attackStun, hitStun, stunned, dying;
 
     public short armsType, torsoType, legType, attackCounter;
 
@@ -42,7 +42,7 @@ public class PCScript : MonoBehaviour {
 
     void Update()
     {
-        if (!collecting && !attackStun && !stunned)
+        if (!collecting && !attackStun && !stunned && !dying)
         {
             Move();
             Inputs();
@@ -558,6 +558,7 @@ public class PCScript : MonoBehaviour {
 
     IEnumerator KillMe()
     {
+        dying = true;
         yield return new WaitForSeconds(1f);
         FindObjectOfType<Follow>().target = killer.transform;
         Destroy(gameObject);

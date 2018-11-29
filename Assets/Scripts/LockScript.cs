@@ -4,7 +4,8 @@ public class LockScript : MonoBehaviour {
 
     PCScript pc;
     bool pcNear;
-    [SerializeField] short armsRequired, torsoRequired, legsRequired; 
+    [SerializeField] short armsRequired, torsoRequired, legsRequired;
+    [SerializeField] Sprite unlocked;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +18,7 @@ public class LockScript : MonoBehaviour {
         {
             if(pc.armsType == armsRequired && pc.torsoType == torsoRequired && pc.legType == legsRequired)
             {
-
+                GetComponent<SpriteRenderer>().sprite = unlocked;
             }
         }
 	}
