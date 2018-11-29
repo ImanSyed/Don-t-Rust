@@ -86,7 +86,7 @@ public class EnemyScript : MonoBehaviour {
             {
                 waypoint = Vector2.zero;
             }
-            if(Vector2.Distance(transform.position, mySpawner.startPos) > 5)
+            if(Vector2.Distance(transform.position, mySpawner.startPos) > 6)
             {
                 waypoint = mySpawner.startPos;
             }
