@@ -19,6 +19,7 @@ public class IconScript: MonoBehaviour{
         if(available && Input.GetKeyDown(KeyCode.Space))
         {
             GameObject e = Instantiate(effect, transform.position, Quaternion.identity);
+            StartCoroutine(DestroyEffect(e));
             StartCoroutine(Craft());
         }
     }
@@ -55,6 +56,12 @@ public class IconScript: MonoBehaviour{
                 return;
             }
         }
+    }
+
+    IEnumerator DestroyEffect(GameObject eff)
+    {
+        yield return new WaitForSeconds(0.4f);
+        Destroy(eff);
     }
 
     IEnumerator Craft()
