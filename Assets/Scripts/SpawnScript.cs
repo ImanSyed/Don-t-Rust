@@ -6,9 +6,11 @@ public class SpawnScript : MonoBehaviour {
     [SerializeField] Vector2 minBounds, maxBounds;
     [SerializeField] GameObject enemy;
     EnemyScript[] enemies;
- 
+
+    public Vector2 startPos;
 
 	void Start () {
+        startPos = transform.position;
         enemies = new EnemyScript[count];
         while (count > 0)
         {

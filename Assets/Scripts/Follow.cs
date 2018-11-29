@@ -22,14 +22,15 @@ public class Follow : MonoBehaviour
            
 			Vector3 pos = target.position;
 			pos.z = -10;
-			if (target.position.x > minPlane.x && target.position.x < maxPlane.x)
+            /*if (target.position.x > minPlane.x && target.position.x < maxPlane.x)
             {
                 pos.x = target.position.x;
             }
             if (target.position.y > minPlane.y && target.position.y < maxPlane.y)
             {
                 pos.y = target.position.y;
-            }
+            }*/
+            transform.position = pos;
 
 			if (Input.GetKeyDown (KeyCode.F)) {
 				shaking = true;
@@ -40,10 +41,13 @@ public class Follow : MonoBehaviour
 			}
 			if (shaking) {
 				tarX = pos.x + shakeMagnitude / 10f;
-				tarY = pos.y + shakeMagnitude / 10f;
-			} else {
+                tarY = pos.y + shakeMagnitude / 10f;
+
+            }
+            else {
 				tarX = pos.x;
-		        tarY = pos.y;
+                tarY = pos.y;
+
 			}
 
 			if (countdown > 0) countdown--;
@@ -62,10 +66,9 @@ public class Follow : MonoBehaviour
 			if (shakeX == 0 && shakeY == 0)
 				shaking = false;
 
+            transform.position = new Vector3(transform.position.x + 0.01f * (tarX - transform.position.x), transform.position.y + 0.01f * (tarY - transform.position.y), pos.z);
 
-			transform.position = new Vector3 (transform.position.x + 0.01f*(tarX-transform.position.x), transform.position.y + 0.01f*(tarY-transform.position.y) , pos.z);
-
-			if (shakeX <= 0)
+            if (shakeX <= 0)
 				shakeX = 0;
 			else
 				shakeX -= shakeMagnitude / 100f;

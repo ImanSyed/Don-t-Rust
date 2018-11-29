@@ -32,7 +32,6 @@ public class PCScript : MonoBehaviour {
 
     public bool canCraft;
 
-
     private void Start()
     {
         d0 = dustE.GetComponent<Animator>().runtimeAnimatorController;
@@ -355,7 +354,7 @@ public class PCScript : MonoBehaviour {
             }
         }
     }
-    
+
     IEnumerator Attack()
     {
         attacking = true;
@@ -411,7 +410,7 @@ public class PCScript : MonoBehaviour {
                     tempEffect.GetComponent<SpriteRenderer>().flipX = false;
                 }
                 tempEffect.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder + 1;
-                
+
             }
             if (child.gameObject.name == "Torso")
             {
@@ -451,37 +450,58 @@ public class PCScript : MonoBehaviour {
             }
         }
         yield return new WaitForSeconds(0.1f);
-        Vector2 point = transform.position;
-        point.y += 0.5f;
-        if (GetComponent<SpriteRenderer>().flipX)
+        if (armsType == 2)
         {
-            point.x += 0.5f;
+            Vector2 point = transform.position;
+            point.y += 0.5f;
+            if (GetComponent<SpriteRenderer>().flipX)
+            {
+                point.x += 0.2f;
+                GameObject b = Instantiate(projectile, point, Quaternion.identity);
+                b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 300);
+            }
+            else
+            {
+                point.x -= 0.2f;
+                GameObject b = Instantiate(projectile, point, Quaternion.identity);
+                b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 300);
+            }
+            yield return new WaitForSeconds(0.25f);
+            attackStun = false;
         }
         else
         {
-            point.x -= 0.5f;
-        }
-        col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Enemies"));
-        if (col)
-        {
-            GameObject tempEffect = Instantiate(hitEffect, col.gameObject.transform.position, Quaternion.identity);
-            Vector2 ypos = tempEffect.transform.position;
-            ypos.y += 0.5f;
-            tempEffect.transform.position = ypos;
-            StartCoroutine(DestroyEffect(tempEffect));
-            StartCoroutine(col.GetComponent<EnemyScript>().ReceiveDamage(damage, stunDuration)); 
+            Vector2 point = transform.position;
+            point.y += 0.5f;
+            if (GetComponent<SpriteRenderer>().flipX)
+            {
+                point.x += 0.5f;
+            }
+            else
+            {
+                point.x -= 0.5f;
+            }
+            col = Physics2D.OverlapCircle(point, 0.25f, 1 << LayerMask.NameToLayer("Enemies"));
+            if (col)
+            {
+                GameObject tempEffect = Instantiate(hitEffect, col.gameObject.transform.position, Quaternion.identity);
+                Vector2 ypos = tempEffect.transform.position;
+                ypos.y += 0.5f;
+                tempEffect.transform.position = ypos;
+                StartCoroutine(DestroyEffect(tempEffect));
+                StartCoroutine(col.GetComponent<EnemyScript>().ReceiveDamage(damage, stunDuration));
 
+            }
+            attackCounter++;
+            if (attackCounter == 3)
+            {
+                //yield return new WaitForSeconds(1.5f);
+                attackCounter = 0;
+            }
+            yield return new WaitForSeconds(0.25f);
+            attackStun = false;
         }
-        attackCounter++;
-        if (attackCounter == 3)
-        {
-            //yield return new WaitForSeconds(1.5f);
-            attackCounter = 0;
-        }
-        yield return new WaitForSeconds(0.25f);
-        attackStun = false;
     }
-
 
     public IEnumerator ReceiveDamage(float amount, float stunDuration, EnemyScript enemy)
     {
