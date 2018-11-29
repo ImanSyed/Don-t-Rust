@@ -57,6 +57,7 @@ public class Crafting : MonoBehaviour {
                 temp[1] = childIcons[2];
                 temp[2] = childIcons[3];
                 childIcons = temp;
+                childIcons[counter2].GetComponent<IconScript>().Check();
                 activeTray.GetComponent<Animator>().Play("Forward", 0);
 
             }
@@ -77,6 +78,7 @@ public class Crafting : MonoBehaviour {
                 temp[1] = childIcons[2];
                 temp[2] = childIcons[3];
                 childIcons = temp;
+                childIcons[counter2].GetComponent<IconScript>().Check();
                 activeTray.GetComponent<Animator>().Play("Forward", 0);
             }
 
