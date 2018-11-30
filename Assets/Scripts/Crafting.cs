@@ -120,7 +120,6 @@ public class Crafting : MonoBehaviour {
                         counter2 = (short)(childIcons.Length - 1);
                     }
                     cursor.transform.position = childIcons[counter2].transform.position;
-                    Debug.Log(cursor.transform.position);
                     childIcons[counter2].GetComponent<IconScript>().Check();
                     foreach (IconScript icon in childIcons)
                     {

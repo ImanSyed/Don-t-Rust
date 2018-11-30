@@ -36,15 +36,13 @@ public class ObjectScript : MonoBehaviour {
             {
                 pc.AddToInventory("Blue", amount);
 				GameObject fx= Instantiate(collectFX, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-                Destroy(gameObject);
-                
+                Destroy(gameObject); 
             }
             else if (myType == ObjectType.yellow)
             {
                 pc.AddToInventory("Yellow", amount);
 				GameObject fx= Instantiate(collectFX, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
                 Destroy(gameObject);
-
             }
         }
     }

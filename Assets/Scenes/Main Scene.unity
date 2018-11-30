@@ -464,8 +464,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1080,10 +1080,12 @@ MonoBehaviour:
   attackE: {fileID: 1764019120234570, guid: 722509f7daa290948b60da91f3ec3b47, type: 2}
   hitEffect: {fileID: 1749961596776342, guid: 5e72c7443c5f4ea418275e050691615b, type: 2}
   projectile: {fileID: 1007044890000202, guid: 833ef64e071c292468bd153c67bee918, type: 2}
+  gate: {fileID: 0}
   icon1: {fileID: 1640157362}
   icon2: {fileID: 1601247521}
   icon3: {fileID: 113226023}
   C: {fileID: 950393686}
+  endGameSprite: {fileID: 0}
   redCount: {fileID: 1329428482}
   blueCount: {fileID: 869093128}
   yellowCount: {fileID: 1134172666}
@@ -1092,8 +1094,9 @@ MonoBehaviour:
   health: 50
   armsType: 0
   torsoType: 0
-  legType: 0
+  legsType: 0
   attackCounter: 0
+  lockCounter: 0
   canCraft: 0
 --- !u!61 &481561870
 BoxCollider2D:
@@ -1147,7 +1150,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -60113,8 +60116,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -60333,8 +60336,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -60726,7 +60729,7 @@ GameObject:
   - component: {fileID: 1825245414}
   m_Layer: 0
   m_Name: Gate
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
