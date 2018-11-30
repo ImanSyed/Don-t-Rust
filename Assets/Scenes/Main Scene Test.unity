@@ -407,6 +407,8 @@ GameObject:
   m_Component:
   - component: {fileID: 98213451}
   - component: {fileID: 98213452}
+  - component: {fileID: 98213454}
+  - component: {fileID: 98213453}
   m_Layer: 0
   m_Name: Orbs_2 (2)
   m_TagString: Untagged
@@ -473,6 +475,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &98213453
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 98213450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35948563, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &98213454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 98213450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b34f64954b7b9408dd8e45c95ba4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  amount: 0
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!1 &113226018
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +697,8 @@ GameObject:
   m_Component:
   - component: {fileID: 204225218}
   - component: {fileID: 204225219}
+  - component: {fileID: 204225221}
+  - component: {fileID: 204225220}
   m_Layer: 0
   m_Name: Orbs_2 (1)
   m_TagString: Untagged
@@ -722,6 +765,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &204225220
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204225217}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35948563, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &204225221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204225217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b34f64954b7b9408dd8e45c95ba4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  amount: 0
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!1 &207715084
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +907,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224429036}
   - component: {fileID: 224429037}
+  - component: {fileID: 224429039}
+  - component: {fileID: 224429038}
   m_Layer: 0
   m_Name: Orbs_2 (5)
   m_TagString: Untagged
@@ -891,6 +975,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &224429038
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 224429035}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35948563, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &224429039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 224429035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b34f64954b7b9408dd8e45c95ba4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  amount: 0
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!1 &243489946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,6 +1359,8 @@ GameObject:
   m_Component:
   - component: {fileID: 417990635}
   - component: {fileID: 417990634}
+  - component: {fileID: 417990637}
+  - component: {fileID: 417990636}
   m_Layer: 0
   m_Name: Orbs_2 (8)
   m_TagString: Untagged
@@ -1302,6 +1427,45 @@ Transform:
   m_Father: {fileID: 1096283630}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &417990636
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417990633}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35948563, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &417990637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417990633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b34f64954b7b9408dd8e45c95ba4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  amount: 0
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!1 &481561865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1773,8 @@ GameObject:
   m_Component:
   - component: {fileID: 565940646}
   - component: {fileID: 565940647}
+  - component: {fileID: 565940649}
+  - component: {fileID: 565940648}
   m_Layer: 0
   m_Name: Orbs_2
   m_TagString: Untagged
@@ -1675,6 +1841,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &565940648
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 565940645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35948563, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &565940649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 565940645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b34f64954b7b9408dd8e45c95ba4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  amount: 0
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!1001 &612951181
 Prefab:
   m_ObjectHideFlags: 0
@@ -1946,6 +2151,7 @@ MonoBehaviour:
   torsoRequired: 3
   legsRequired: 2
   unlocked: {fileID: 21300008, guid: 2f05a4173fcaca047acb331c8f37a5cf, type: 3}
+  C: {fileID: 0}
 --- !u!212 &635085348
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63258,6 +63464,8 @@ GameObject:
   m_Component:
   - component: {fileID: 845964142}
   - component: {fileID: 845964141}
+  - component: {fileID: 845964144}
+  - component: {fileID: 845964143}
   m_Layer: 0
   m_Name: Orbs_2 (6)
   m_TagString: Untagged
@@ -63324,6 +63532,45 @@ Transform:
   m_Father: {fileID: 1096283630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &845964143
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 845964140}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35948563, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &845964144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 845964140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b34f64954b7b9408dd8e45c95ba4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  amount: 0
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!1 &865353860
 GameObject:
   m_ObjectHideFlags: 0
@@ -63333,6 +63580,8 @@ GameObject:
   m_Component:
   - component: {fileID: 865353862}
   - component: {fileID: 865353861}
+  - component: {fileID: 865353864}
+  - component: {fileID: 865353863}
   m_Layer: 0
   m_Name: Orbs_2 (7)
   m_TagString: Untagged
@@ -63399,6 +63648,45 @@ Transform:
   m_Father: {fileID: 1096283630}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &865353863
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 865353860}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35948563, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &865353864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 865353860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b34f64954b7b9408dd8e45c95ba4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  amount: 0
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!114 &869093128 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114869404139135090, guid: 559ebbaaac9294d4aa20b252e74ca8d4,
@@ -63754,6 +64042,7 @@ MonoBehaviour:
   torsoRequired: 1
   legsRequired: 1
   unlocked: {fileID: 21300010, guid: 2f05a4173fcaca047acb331c8f37a5cf, type: 3}
+  C: {fileID: 0}
 --- !u!212 &1096283629
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63831,6 +64120,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1174210786}
   - component: {fileID: 1174210787}
+  - component: {fileID: 1174210789}
+  - component: {fileID: 1174210788}
   m_Layer: 0
   m_Name: Orbs_2 (4)
   m_TagString: Untagged
@@ -63897,6 +64188,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1174210788
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1174210785}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35948563, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &1174210789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1174210785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b34f64954b7b9408dd8e45c95ba4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  amount: 0
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!4 &1209185833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4586539294773142, guid: c749567a18b0ad04e87d0963f0a3a720,
@@ -64197,11 +64527,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4100331772354250, guid: 8eb0ffaffcda9604a818f58d7f347d72, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.75
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4100331772354250, guid: 8eb0ffaffcda9604a818f58d7f347d72, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4100331772354250, guid: 8eb0ffaffcda9604a818f58d7f347d72, type: 2}
       propertyPath: m_LocalPosition.z
@@ -64244,6 +64574,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1425858747}
   - component: {fileID: 1425858748}
+  - component: {fileID: 1425858750}
+  - component: {fileID: 1425858749}
   m_Layer: 0
   m_Name: Orbs_2 (3)
   m_TagString: Untagged
@@ -64310,6 +64642,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1425858749
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1425858746}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02, y: 0.09}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.35948563, y: 0.3}
+  m_EdgeRadius: 0
+--- !u!114 &1425858750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1425858746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5b34f64954b7b9408dd8e45c95ba4f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 0
+  amount: 0
+  collectFX: {fileID: 1412185228667296, guid: 6b402bdb07e54314b83440347e0240fb, type: 2}
 --- !u!1 &1461156075
 GameObject:
   m_ObjectHideFlags: 0
@@ -64410,7 +64781,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1463616231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 0.75, z: 0}
+  m_LocalPosition: {x: 3.49065, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1532643933}
@@ -65694,6 +66065,7 @@ MonoBehaviour:
   torsoRequired: 2
   legsRequired: 3
   unlocked: {fileID: 21300006, guid: 2f05a4173fcaca047acb331c8f37a5cf, type: 3}
+  C: {fileID: 0}
 --- !u!212 &2072283282
 SpriteRenderer:
   m_ObjectHideFlags: 0
