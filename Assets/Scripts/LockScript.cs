@@ -16,7 +16,7 @@ public class LockScript : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Space) && pcNear)
         {
-            if(pc.armsType == armsRequired && pc.torsoType == torsoRequired && pc.legType == legsRequired)
+            if(pc.armsType == armsRequired && pc.torsoType == torsoRequired && pc.legsType == legsRequired)
             {
                 GetComponent<SpriteRenderer>().sprite = unlocked;
             }

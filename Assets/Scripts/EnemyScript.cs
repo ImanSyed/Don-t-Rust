@@ -153,7 +153,7 @@ public class EnemyScript : MonoBehaviour {
             stunned = true;
             attacking = false;
             anim.Play("Stun", 0);
-            GetComponent<Rigidbody2D>().AddForce((pc.transform.position - transform.position) * 1000);
+            GetComponent<Rigidbody2D>().AddForce((transform.position - pc.transform.position) * 5000);
             yield return new WaitForSeconds(stunDuration);
             stunned = false;
             if (health <= 0)
@@ -176,6 +176,7 @@ public class EnemyScript : MonoBehaviour {
 		// will autoDestroy
         aggro = attacking = stunned = alert = rest = false;
         dying = true;
+        anim.Play("Stun");
         yield return new WaitForSeconds(1f);
         GameObject s1 = null, s2 = null, s3 = null;
         float r1 = Random.Range(0f, 1f);

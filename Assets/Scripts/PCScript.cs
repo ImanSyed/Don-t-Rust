@@ -20,7 +20,7 @@ public class PCScript : MonoBehaviour {
 
     bool collecting, attacking, attackStun, hitStun, stunned, dying;
 
-    public short armsType, torsoType, legType, attackCounter, lockCounter;
+    public short armsType, torsoType, legsType, attackCounter, lockCounter;
 
     Collider2D col;
 
@@ -72,7 +72,7 @@ public class PCScript : MonoBehaviour {
                 icon1.Check(armsType);
                 Equip();
             }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            if (Input.GetKeyDown(KeyCode.Alpha2) && torsoType != 0)
             {
                 torsoType++;
                 if (torsoType > 3)
@@ -90,22 +90,22 @@ public class PCScript : MonoBehaviour {
                 icon2.Check(torsoType);
                 Equip();
             }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (Input.GetKeyDown(KeyCode.Alpha3) && legsType != 0)
             {
-                legType++;
-                if (legType > 3)
+                legsType++;
+                if (legsType > 3)
                 {
-                    legType = 1;
+                    legsType = 1;
                 }
-                while (resources[legType - 1, 1] == 0)
+                while (resources[legsType - 1, 1] == 0)
                 {
-                    legType++;
-                    if (legType > 3)
+                    legsType++;
+                    if (legsType > 3)
                     {
-                        legType = 1;
+                        legsType = 1;
                     }
                 }
-                icon3.Check(legType);
+                icon3.Check(legsType);
                 Equip();
             }
         }
@@ -121,7 +121,7 @@ public class PCScript : MonoBehaviour {
         {
             pos = transform.position;
             float speed = originalSpeed;
-            switch (legType)
+            switch (legsType)
             {
                 case 1:
                     if (speed != originalSpeed + 0.025f)
@@ -321,7 +321,7 @@ public class PCScript : MonoBehaviour {
             }
             else if (child.gameObject.name == "Legs")
             {
-                switch (legType)
+                switch (legsType)
                 {
                     case 1:
                         child.GetComponent<Animator>().SetLayerWeight(1, 0);
@@ -429,7 +429,7 @@ public class PCScript : MonoBehaviour {
             }
             if (child.gameObject.name == "Legs")
             {
-                switch (legType)
+                switch (legsType)
                 {
                     case 1:
                         child.GetComponent<Animator>().Play("Attack", 2, 0);
@@ -545,7 +545,7 @@ public class PCScript : MonoBehaviour {
                 }
                 if (child.gameObject.name == "Legs")
                 {
-                    switch (legType)
+                    switch (legsType)
                     {
                         case 1:
                             child.GetComponent<Animator>().Play("Hit", 2, 0);
@@ -628,19 +628,19 @@ public class PCScript : MonoBehaviour {
                 resources[2, 2] += amount;
                 break;
             case "Red Legs":
-                legType = 1;
-                icon3.Check(legType);
+                legsType = 1;
+                icon3.Check(legsType);
                 resources[0, 3] += amount;
                 break;
             case "Blue Legs":
                 resources[1, 3] += amount;
-                legType = 2;
-                icon3.Check(legType);
+                legsType = 2;
+                icon3.Check(legsType);
                 break;
             case "Yellow Legs":
                 resources[2, 3] += amount;
-                legType = 3;
-                icon3.Check(legType);
+                legsType = 3;
+                icon3.Check(legsType);
                 break;
 
         }
