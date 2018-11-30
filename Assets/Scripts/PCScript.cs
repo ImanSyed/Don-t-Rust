@@ -35,7 +35,7 @@ public class PCScript : MonoBehaviour {
     {
         d0 = dustE.GetComponent<Animator>().runtimeAnimatorController;
         craftUI = FindObjectOfType<Crafting>();
-
+        Application.targetFrameRate = 60;
     }
 
     void Update()
