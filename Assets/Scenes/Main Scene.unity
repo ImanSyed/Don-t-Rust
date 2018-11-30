@@ -2599,9 +2599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66db597c1a3e57d49a9bddf71fc287de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armsRequired: 2
-  torsoRequired: 3
-  legsRequired: 2
+  armsRequired: 1
+  torsoRequired: 1
+  legsRequired: 1
   unlocked: {fileID: 21300008, guid: 2f05a4173fcaca047acb331c8f37a5cf, type: 3}
   C: {fileID: 798550217}
 --- !u!212 &912723236
@@ -2711,9 +2711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66db597c1a3e57d49a9bddf71fc287de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armsRequired: 3
-  torsoRequired: 1
-  legsRequired: 1
+  armsRequired: 2
+  torsoRequired: 2
+  legsRequired: 2
   unlocked: {fileID: 21300010, guid: 2f05a4173fcaca047acb331c8f37a5cf, type: 3}
   C: {fileID: 715786485}
 --- !u!212 &918047536
@@ -3421,8 +3421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66db597c1a3e57d49a9bddf71fc287de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armsRequired: 1
-  torsoRequired: 2
+  armsRequired: 3
+  torsoRequired: 3
   legsRequired: 3
   unlocked: {fileID: 21300006, guid: 2f05a4173fcaca047acb331c8f37a5cf, type: 3}
   C: {fileID: 1384066826}
@@ -3858,7 +3858,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 106578746}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
