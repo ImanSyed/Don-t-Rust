@@ -6,6 +6,8 @@ public class LockScript : MonoBehaviour {
     bool pcNear;
     [SerializeField] short armsRequired, torsoRequired, legsRequired;
     [SerializeField] Sprite unlocked;
+    [SerializeField] GameObject C;
+
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +16,7 @@ public class LockScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Space) && pcNear)
+		if(Input.GetKeyDown(KeyCode.C) && pcNear)
         {
             if(pc.armsType == armsRequired && pc.torsoType == torsoRequired && pc.legsType == legsRequired)
             {
@@ -29,6 +31,7 @@ public class LockScript : MonoBehaviour {
         if(collision.gameObject == pc.gameObject)
         {
             pcNear = true;
+            C.SetActive(true);
         }
     }
 
@@ -37,6 +40,7 @@ public class LockScript : MonoBehaviour {
         if (collision.gameObject == pc.gameObject)
         {
             pcNear = false;
+            C.SetActive(false);
         }
     }
 }
