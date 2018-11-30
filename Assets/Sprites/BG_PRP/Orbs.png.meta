@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 4a1543580980de045994c85466a5fb52
+guid: 72b869381dedfc146840df14f5edc5e2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Gate_0
-    21300002: Gate_1
+    21300000: Orbs_0
+    21300002: Orbs_1
+    21300004: Orbs_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -49,7 +50,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -93,56 +94,65 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gate_0
+      name: Orbs_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 96
+        width: 16
+        height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.268}
+      pivot: {x: 0.5, y: 0.4375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22c6e9b68a6ec7d4f9f4a379389e8be5
+      spriteID: 58e311693f6f2f749825a71001a7daa6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gate_1
+      name: Orbs_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 16
         y: 0
-        width: 128
-        height: 96
+        width: 16
+        height: 16
       alignment: 9
-      pivot: {x: 0.5, y: 0.268}
+      pivot: {x: 0.5, y: 0.4375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 494ab1b18f77dc646910231733ea363d
+      spriteID: ec4d20c707cd2bc47bbaa8aa16b5d602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orbs_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b8f2cab35424c48813799890a9e8e7
       vertices: []
       indices: 
       edges: []
@@ -150,7 +160,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e318e2b5f8aea554ea8eefaf0ca0f6ad
+    spriteID: f7b6c60e301480240850a825c02c81fd
     vertices: []
     indices: 
     edges: []

@@ -1094,7 +1094,7 @@ MonoBehaviour:
   health: 50
   armsType: 0
   torsoType: 0
-  legType: 0
+  legsType: 0
   attackCounter: 0
   lockCounter: 0
   canCraft: 0
@@ -60839,7 +60839,7 @@ BoxCollider2D:
   m_Offset: {x: 1.2092094, y: 1.2091742}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.268}
     oldSize: {x: 4, y: 3}
     newSize: {x: 4, y: 3}
     adaptiveTilingThreshold: 0.5
@@ -60864,7 +60864,7 @@ BoxCollider2D:
   m_Offset: {x: -0.34135544, y: 1.1093249}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.268}
     oldSize: {x: 4, y: 3}
     newSize: {x: 4, y: 3}
     adaptiveTilingThreshold: 0.5
