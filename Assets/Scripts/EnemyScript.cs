@@ -147,20 +147,24 @@ public class EnemyScript : MonoBehaviour {
 
     public IEnumerator ReceiveDamage(float amount, float stunDuration)
     {
-        health -= amount;
-        stunned = true;
-        attacking = false;
-        anim.Play("Stun", 0);
-        yield return new WaitForSeconds(stunDuration);
-        stunned = false;
-        if (health <= 0)
+        if (!dying)
         {
-            StartCoroutine(KillMe());
-        }
-        else if(!aggro)
-        {
-            aggro = true;
-            trigger.radius = 3.5f;
+            health -= amount;
+            stunned = true;
+            attacking = false;
+            anim.Play("Stun", 0);
+            GetComponent<Rigidbody2D>().AddForce((pc.transform.position - transform.position) * 1000);
+            yield return new WaitForSeconds(stunDuration);
+            stunned = false;
+            if (health <= 0)
+            {
+                StartCoroutine(KillMe());
+            }
+            else if (!aggro)
+            {
+                aggro = true;
+                trigger.radius = 3.5f;
+            }
         }
         
     }
@@ -220,18 +224,18 @@ public class EnemyScript : MonoBehaviour {
         if (s1 != null)
         {
             Vector2 pos = transform.position;
-            pos.x += Random.Range(-0.3f, 0.3f);
-            pos.y += Random.Range(-0.3f, 0.3f);
+            pos.x += Random.Range(-0.15f, 0.15f);
+            pos.y += Random.Range(-0.15f, 0.15f);
             s1.transform.position = pos;
             if (s2 != null)
             {
-                pos.x += Random.Range(-0.3f, 0.3f);
-                pos.y += Random.Range(-0.3f, 0.3f);
+                pos.x += Random.Range(-0.15f, 0.15f);
+                pos.y += Random.Range(-0.15f, 0.15f);
                 s2.transform.position = pos;
                 if (s3 != null)
                 {
-                    pos.x += Random.Range(-0.3f, 0.3f);
-                    pos.y += Random.Range(-0.3f, 0.3f);
+                    pos.x += Random.Range(-0.15f, 0.15f);
+                    pos.y += Random.Range(-0.15f, 0.15f);
                     s3.transform.position = pos;
                 }
             }
@@ -275,15 +279,14 @@ public class EnemyScript : MonoBehaviour {
         {
             point.x += 0.5f;
             GameObject b = Instantiate(projectile, point, Quaternion.identity);
-            b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 300);
+            b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 3f);
         }
         else
         {
             point.x -= 0.5f;
             GameObject b = Instantiate(projectile, point, Quaternion.identity);
-            b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 300);
+            b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 3f);
         }
-        
     }
 
     IEnumerator PerformAttack()
@@ -336,6 +339,11 @@ public class EnemyScript : MonoBehaviour {
         if (collision.gameObject.layer == 10 || (!spawning && collision.gameObject.tag == "Enemy"))
         {
             waypoint = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
+        }
+        if (collision.gameObject.layer == 11)
+        {
+            Destroy(collision.gameObject);
+            StartCoroutine(ReceiveDamage(10, 0.25f));
         }
     }
 

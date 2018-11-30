@@ -458,15 +458,15 @@ public class PCScript : MonoBehaviour {
             {
                 point.x += 0.5f;
                 GameObject b = Instantiate(projectile, point, Quaternion.identity);
-                b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 300);
+                b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 3f);
             }
             else
             {
                 point.x -= 0.5f;
                 GameObject b = Instantiate(projectile, point, Quaternion.identity);
-                b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 300);
+                b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 3f);
             }
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.5f);
             attackStun = false;
         }
         else
@@ -498,7 +498,7 @@ public class PCScript : MonoBehaviour {
                 //yield return new WaitForSeconds(1.5f);
                 attackCounter = 0;
             }
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.4f);
             attackStun = false;
         }
     }
