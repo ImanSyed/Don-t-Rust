@@ -79,7 +79,7 @@ public class PCScript : MonoBehaviour {
                 {
                     torsoType = 1;
                 }
-                while (resources[torsoType - 1, 1] == 0)
+                while (resources[torsoType - 1, 2] == 0)
                 {
                     torsoType++;
                     if (torsoType > 3)
@@ -97,7 +97,7 @@ public class PCScript : MonoBehaviour {
                 {
                     legsType = 1;
                 }
-                while (resources[legsType - 1, 1] == 0)
+                while (resources[legsType - 1, 3] == 0)
                 {
                     legsType++;
                     if (legsType > 3)

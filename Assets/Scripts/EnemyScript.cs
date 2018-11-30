@@ -75,7 +75,7 @@ public class EnemyScript : MonoBehaviour {
                 if (enemyType == Enemy.blue && transform.position.y >= pc.transform.position.y - 0.25f && transform.position.y <= pc.transform.position.y + 0.25f)
                 {
                     shootingCooldown += Time.deltaTime;
-                    if (shootingCooldown >= 3)
+                    if (shootingCooldown >= 2)
                     {
                         StartCoroutine(Shoot());
                     }

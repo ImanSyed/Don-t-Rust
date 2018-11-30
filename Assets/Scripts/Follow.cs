@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Follow : MonoBehaviour
 {
@@ -18,7 +20,16 @@ public class Follow : MonoBehaviour
 
 	void Update ()
 	{
-		if (target) {
+
+        if (target.gameObject.tag != "Player")
+        {
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+
+        if (target) {
            
 			Vector3 pos = target.position;
 			pos.z = -10;
