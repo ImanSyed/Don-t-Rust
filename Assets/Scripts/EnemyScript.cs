@@ -154,6 +154,7 @@ public class EnemyScript : MonoBehaviour {
             attacking = false;
             anim.Play("Stun", 0);
             GetComponent<Rigidbody2D>().AddForce((transform.position - pc.transform.position) * 5000);
+            FindObjectOfType<Follow>().shaking = true;
             yield return new WaitForSeconds(stunDuration);
             stunned = false;
             if (health <= 0)
