@@ -11,7 +11,7 @@ public class Follow : MonoBehaviour
 	public int numberOfShakes;
 
 
-	bool shaking = false;
+	public bool shaking = false;
 	float shakeX=0, shakeY=0;
 	float tarX=0, tarY=0;
 	int countdown=0;
@@ -42,16 +42,16 @@ public class Follow : MonoBehaviour
                 pos.y = target.position.y;
             }*/
             transform.position = pos;
+				
 
-			if (Input.GetKeyDown (KeyCode.F)) {
-				shaking = true;
-				shakesLeft = numberOfShakes;
-				countdown = roughness;
-
-
-			}
 			if (shaking) {
-				tarX = pos.x + shakeMagnitude / 10f;
+                if (shakesLeft != numberOfShakes)
+                {
+                    shakesLeft = numberOfShakes;
+                    countdown = roughness;
+
+                }
+                tarX = pos.x + shakeMagnitude / 10f;
                 tarY = pos.y + shakeMagnitude / 10f;
 
             }

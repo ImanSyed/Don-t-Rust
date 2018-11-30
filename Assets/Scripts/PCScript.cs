@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PCScript : MonoBehaviour {
@@ -44,13 +45,17 @@ public class PCScript : MonoBehaviour {
             Move();
             Inputs();
         }
+        else if (!dying && legsType == 3)
+        {
+            Move();
+        }
     }
 
     void Inputs()
     {
         if (!craftUI.isActiveAndEnabled || !craftUI.activateControls)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && !attacking)
             {
                 StartCoroutine(Attack());
             }
@@ -126,17 +131,24 @@ public class PCScript : MonoBehaviour {
                 case 1:
                     if (speed != originalSpeed + 0.025f)
                     {
-                        speed += originalSpeed + 0.025f;
+                        speed = originalSpeed + 0.025f;
                     }
                     break;
                 case 2:
-                    if (speed != originalSpeed - 0.025f)
+                    if (speed != originalSpeed + 0.005f)
                     {
-                        speed -= originalSpeed - 0.025f;
+                        speed = originalSpeed + 0.005f;
+                    }
+                    break;
+                case 3:
+                    if (speed != originalSpeed - 0.005f)
+                    {
+                        speed = originalSpeed - 0.005f;
+                        Debug.Log(1);
                     }
                     break;
                 default:
-                    speed = originalSpeed;
+                    speed = originalSpeed; 
                     break;
             }
             pos.x += Input.GetAxis("Horizontal") * speed;
@@ -392,6 +404,7 @@ public class PCScript : MonoBehaviour {
                         tempEffect.GetComponent<Animator>().SetLayerWeight(2, 0);
                         tempEffect.GetComponent<Animator>().SetLayerWeight(3, 1);
                         StartCoroutine(DestroyEffect(tempEffect));
+                        stunDuration = 0.75f;
                         break;
                     default:
                         child.GetComponent<Animator>().Play("Attack");
@@ -489,15 +502,11 @@ public class PCScript : MonoBehaviour {
                 StartCoroutine(col.GetComponent<EnemyScript>().ReceiveDamage(damage, stunDuration));
 
             }
-            attackCounter++;
-            if (attackCounter == 3)
-            {
-                //yield return new WaitForSeconds(1.5f);
-                attackCounter = 0;
-            }
             yield return new WaitForSeconds(0.4f);
             attackStun = false;
         }
+        yield return new WaitForSeconds(0.5f);
+        attacking = false;
     }
 
     public IEnumerator ReceiveDamage(float amount, float stunDuration, EnemyScript enemy)
@@ -588,13 +597,16 @@ public class PCScript : MonoBehaviour {
             case "Red":
                 resources[0, 0] += amount;
                 redCount.text = resources[0, 0].ToString();
+                health += 5;
                 break;
             case "Blue":
                 resources[1, 0] += amount;
                 blueCount.text = resources[1, 0].ToString();
+                health += 5;
                 break;
             case "Yellow":
                 resources[2, 0] += amount;
+                health += 5;
                 yellowCount.text = resources[2, 0].ToString();
                 break;
             case "Red Arms":
@@ -642,7 +654,6 @@ public class PCScript : MonoBehaviour {
                 legsType = 3;
                 icon3.Check(legsType);
                 break;
-
         }
         Equip();
 
@@ -677,7 +688,7 @@ public class PCScript : MonoBehaviour {
         }
         if(collision.gameObject.tag == "Finish" && lockCounter >= 3)
         {
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

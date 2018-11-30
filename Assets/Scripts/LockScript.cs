@@ -19,6 +19,7 @@ public class LockScript : MonoBehaviour {
             if(pc.armsType == armsRequired && pc.torsoType == torsoRequired && pc.legsType == legsRequired)
             {
                 GetComponent<SpriteRenderer>().sprite = unlocked;
+                pc.LockOpen();
             }
         }
 	}
