@@ -167,7 +167,6 @@ public class EnemyScript : MonoBehaviour {
                 trigger.radius = 3.5f;
             }
         }
-        
     }
 
     IEnumerator KillMe()
