@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
-
 
 public class PCScript : MonoBehaviour {
 
     [SerializeField] float originalSpeed;
-    [SerializeField] GameObject dustE, attackE, hitEffect, projectile;
+    [SerializeField] GameObject dustE, attackE, hitEffect, projectile, gate;
     [SerializeField] IconSwitch icon1, icon2, icon3;
     [SerializeField] SpriteRenderer C;
+    [SerializeField] Sprite endGameSprite;
     public TMPro.TextMeshPro redCount, blueCount, yellowCount;
 
     RuntimeAnimatorController d0, a0;
@@ -22,7 +20,7 @@ public class PCScript : MonoBehaviour {
 
     bool collecting, attacking, attackStun, hitStun, stunned, dying;
 
-    public short armsType, torsoType, legType, attackCounter;
+    public short armsType, torsoType, legType, attackCounter, lockCounter;
 
     Collider2D col;
 
@@ -349,7 +347,6 @@ public class PCScript : MonoBehaviour {
                         child.GetComponent<Animator>().SetLayerWeight(3, 0);
                         child.GetComponent<Animator>().SetLayerWeight(4, 0);
                         break;
-
                 }
             }
         }
@@ -458,15 +455,15 @@ public class PCScript : MonoBehaviour {
             {
                 point.x += 0.5f;
                 GameObject b = Instantiate(projectile, point, Quaternion.identity);
-                b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 300);
+                b.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 3f);
             }
             else
             {
                 point.x -= 0.5f;
                 GameObject b = Instantiate(projectile, point, Quaternion.identity);
-                b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 300);
+                b.GetComponent<Rigidbody2D>().AddForce(-Vector2.right * 3f);
             }
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.5f);
             attackStun = false;
         }
         else
@@ -498,7 +495,7 @@ public class PCScript : MonoBehaviour {
                 //yield return new WaitForSeconds(1.5f);
                 attackCounter = 0;
             }
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.4f);
             attackStun = false;
         }
     }
@@ -659,6 +656,15 @@ public class PCScript : MonoBehaviour {
         Destroy(eff);
     }
 
+    public void LockOpen()
+    {
+        lockCounter++;
+        if(lockCounter >= 3)
+        {
+            gate.GetComponent<SpriteRenderer>().sprite = endGameSprite;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 10 || collision.gameObject.layer == 12)
@@ -668,6 +674,10 @@ public class PCScript : MonoBehaviour {
         {
             Destroy(collision.gameObject);
             StartCoroutine(ReceiveDamage(10, 0.25f, FindObjectOfType<EnemyScript>()));
+        }
+        if(collision.gameObject.tag == "Finish" && lockCounter >= 3)
+        {
+
         }
     }
 
