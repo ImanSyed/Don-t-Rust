@@ -1,0 +1,745 @@
+fileFormatVersion: 2
+guid: 5286f86fe73d1184a87c3c48e69faeb9
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BG_Tiles_0
+    21300002: BG_Tiles_1
+    21300004: BG_Tiles_2
+    21300006: BG_Tiles_3
+    21300008: BG_Tiles_4
+    21300010: BG_Tiles_5
+    21300012: BG_Tiles_6
+    21300014: BG_Tiles_7
+    21300016: BG_Tiles_8
+    21300018: BG_Tiles_9
+    21300020: BG_Tiles_10
+    21300022: BG_Tiles_11
+    21300024: BG_Tiles_12
+    21300026: BG_Tiles_13
+    21300028: BG_Tiles_14
+    21300030: BG_Tiles_15
+    21300032: BG_Tiles_16
+    21300034: BG_Tiles_17
+    21300036: BG_Tiles_18
+    21300038: BG_Tiles_19
+    21300040: BG_Tiles_20
+    21300042: BG_Tiles_21
+    21300044: BG_Tiles_22
+    21300046: BG_Tiles_23
+    21300048: BG_Tiles_24
+    21300050: BG_Tiles_25
+    21300052: BG_Tiles_26
+    21300054: BG_Tiles_27
+    21300056: BG_Tiles_28
+    21300058: BG_Tiles_29
+    21300060: BG_Tiles_30
+    21300062: BG_Tiles_31
+    21300064: BG_Tiles_32
+    21300066: BG_Tiles_33
+    21300068: BG_Tiles_34
+    21300070: BG_Tiles_35
+    21300072: BG_Tiles_36
+    21300074: BG_Tiles_37
+    21300076: BG_Tiles_38
+    21300078: BG_Tiles_39
+    21300080: BG_Tiles_40
+    21300082: BG_Tiles_41
+    21300084: BG_Tiles_42
+    21300086: BG_Tiles_43
+    21300088: BG_Tiles_44
+    21300090: BG_Tiles_45
+    21300092: BG_Tiles_46
+    21300094: BG_Tiles_47
+    21300096: BG_Tiles_48
+    21300098: BG_Tiles_49
+    21300100: BG_Tiles_50
+    21300102: BG_Tiles_51
+    21300104: BG_Tiles_52
+    21300106: BG_Tiles_53
+    21300108: BG_Tiles_54
+    21300110: BG_Tiles_55
+    21300112: BG_Tiles_56
+    21300114: BG_Tiles_57
+    21300116: BG_Tiles_58
+    21300118: BG_Tiles_59
+    21300120: BG_Tiles_60
+    21300122: BG_Tiles_61
+    21300124: BG_Tiles_62
+    21300126: BG_Tiles_63
+    21300128: BG_Tiles_64
+    21300130: BG_Tiles_65
+    21300132: BG_Tiles_66
+    21300134: BG_Tiles_67
+    21300136: BG_Tiles_68
+    21300138: BG_Tiles_69
+    21300140: BG_Tiles_70
+    21300142: BG_Tiles_71
+    21300144: BG_Tiles_72
+    21300146: BG_Tiles_73
+    21300148: BG_Tiles_74
+    21300150: BG_Tiles_75
+    21300152: BG_Tiles_76
+    21300154: BG_Tiles_77
+    21300156: BG_Tiles_78
+    21300158: BG_Tiles_79
+    21300160: BG_Tiles_80
+    21300162: BG_Tiles_81
+    21300164: BG_Tiles_82
+    21300166: BG_Tiles_83
+    21300168: BG_Tiles_84
+    21300170: BG_Tiles_85
+    21300172: BG_Tiles_86
+    21300174: BG_Tiles_87
+    21300176: BG_Tiles_88
+    21300178: BG_Tiles_89
+    21300180: BG_Tiles_90
+    21300182: BG_Tiles_91
+    21300184: BG_Tiles_92
+    21300186: BG_Tiles_93
+    21300188: BG_Tiles_94
+    21300190: BG_Tiles_95
+    21300192: BG_Tiles_96
+    21300194: BG_Tiles_97
+    21300196: BG_Tiles_98
+    21300198: BG_Tiles_99
+    21300200: BG_Tiles_100
+    21300202: BG_Tiles_101
+    21300204: BG_Tiles_102
+    21300206: BG_Tiles_103
+    21300208: BG_Tiles_104
+    21300210: BG_Tiles_105
+    21300212: BG_Tiles_106
+    21300214: BG_Tiles_107
+    21300216: BG_Tiles_108
+    21300218: BG_Tiles_109
+    21300220: BG_Tiles_110
+    21300222: BG_Tiles_111
+    21300224: BG_Tiles_112
+    21300226: BG_Tiles_113
+    21300228: BG_Tiles_114
+    21300230: BG_Tiles_115
+    21300232: BG_Tiles_116
+    21300234: BG_Tiles_117
+    21300236: BG_Tiles_118
+    21300238: BG_Tiles_119
+    21300240: BG_CliffTiles_0
+    21300242: BG_CliffTiles_1
+    21300244: BG_CliffTiles_2
+    21300246: BG_CliffTiles_3
+    21300248: BG_CliffTiles_4
+    21300250: BG_CliffTiles_5
+    21300252: BG_CliffTiles_6
+    21300254: BG_CliffTiles_7
+    21300256: BG_CliffTiles_8
+    21300258: BG_CliffTiles_9
+    21300260: BG_CliffTiles_10
+    21300262: BG_CliffTiles_11
+    21300264: BG_CliffTiles_12
+    21300266: BG_CliffTiles_13
+    21300268: BG_CliffTiles_14
+    21300270: BG_CliffTiles_15
+    21300272: BG_CliffTiles_16
+    21300274: BG_CliffTiles_17
+    21300276: BG_CliffTiles_18
+    21300278: BG_CliffTiles_19
+    21300280: BG_CliffTiles_20
+    21300282: BG_CliffTiles_21
+    21300284: BG_CliffTiles_22
+    21300286: BG_CliffTiles_23
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BG_CliffTiles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2921e9150133051488cee3f7191bf1ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544506232c51df54096a6b1a6ef3e1d5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7da2fc457f9884c919776bbd0a969e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43141e542d174d247a50946fcc61564f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c6c5647ab652840b8d95d156f2c0ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b8f883d7c1410498df69816b0c83d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a15972aa4932647abdaa16ec7abb34
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5221faa52691a4eabf0039f0b1291d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b25c426c526b6f429954b24978602cb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ce3da0a8b0d6044a8ec6fd9a3eedc9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a2f244076a0db40a3937d3264ee6a4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 40
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3484a34d3b2590f42b6a5d9d148b082e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4369d47dfe25b43921f303542dad81
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 24
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71cf803b3b133344ab8e990a1ae4dd03
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 24
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3537795795267e4ea41cf5e3714f927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c25bfad0c77b1f4bae348950f911327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 24
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45cefd2dfe593f647bad4eb0ef156d9c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 24
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf02a681ca3ba2d42ae198721a8ef35b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9257aca59694c7647b61373f72116c49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf36d55c9eb70514babceac663fccd57
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf8ee396a60a5c40958c820d781187e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3137f3e57083b42aeab827c962bc43
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82de3b4f416ba0429820db24e910fb1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BG_CliffTiles_23
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 8
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1379d241240e0334cbf42a8db232091a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 82a905a8899468f44bece509fb0a0bca
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
